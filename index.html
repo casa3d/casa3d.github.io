@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head manifest=offline.appcache>
+    <script>ch={ap:applicationCache,shft:function(){info.innerText='',info.className=ch.l?ch.halt?'re':'end':''},init:function(){ch.ap.onprogress=function(e){if(e.total)info.innerText=((ch.l=e.loaded)/e.total*100).toFixed(0)},ch.ap.onupdateready=ch.ap.onnoupdate=ch.shft,ch.ap.onerror=function(e){ch.shft(ch.halt=1),ch.l&&confirm(ch.msg)?(ch.halt=0,info.className='prg',ch.ap.update()):console.clear()}}},ch.init()</script>
+    <title>casa3d.github.io</title>
+    <meta charset=UTF-8></meta>
+    <script src=js/index.js async></script>
+    <link rel=stylesheet href=css/index.css></head>
+  <body id=b style=margin:0;overflow:hidden>
+    <span id=info class=prg></span>
+    <fieldset id=fs class=subg>
+      <legend id=lg class=su></legend>
+      <section>
+        <label><input placeholder='a _ _ _ _'></label>
+        <label><input placeholder='* * * *' type=password></label>
+        <div>
+          <label><input placeholder='* * * *' type=password></label>
+          <input type=radio id=chk>
+          <span>
+            I Agree with these 
+            <a id=lnk class=noread href=support>Terms & Conditions of use</a></span></div>
+        <button id=ok></button></section></fieldset>
+    <footer id=ft>
+      <label>third-party libraries:</label>
+      <span>
+        <a href='//fontawesome.io' target='_new'>
+          <img src='davegandy.jpg' title='Font Awesome v4.2.0, Dave Gandy. Cambridge, MA'></a></span>
+      <span>
+        <a href='//threejs.org' target='_new'>
+          <img src='Mr.doob.jpg' title='Threejs rv61, Ricardo Cabello. Barcelona, Spain'></a></span>
+      <span>
+        <a href='//stuk.github.io/jszip' target='_new'>
+          <img src='Stuk.jpg' title='JSZip vr2.4.0, Stuart Knightley. Bay Area, CA'></a></span>
+      <span>
+        <a href='//jquery.com' target='_new'>
+          <img src='jeresig.jpg' title='jQuery v2.1.1, John Resig. Brooklyn, NY'></a></span></footer>
