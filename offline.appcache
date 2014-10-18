@@ -1,9 +1,13 @@
 CACHE MANIFEST
-#14.10.18 18:19
+#14.10.18 18:20
 CACHE:
 css/index.css
-css/fontawesome-webfont.woff
 js/index.js
+css/fontawesome-webfont.woff
+davegandy.jpg
+jeresig.jpg
+Mr.doob.jpg
+stuk.jpg
 lbs/idb.js
 lbs/jquery-2.x.js
 js/filler.js
