@@ -1,4 +1,3 @@
-#visas_style_div.popup{display:none !important}
 #info{position:fixed;z-index:1}
 @font-face{font-family:awesome;src:url("fontawesome-webfont.woff")}
 section label{display:block}
