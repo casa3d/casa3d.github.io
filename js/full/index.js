@@ -9,7 +9,7 @@ u={
 	t:function(n){//test
 		return new RegExp(n?'\\w{4}':'[a-z]{3}').test((u.st=u.i[n||0].value))&&!/\W/.test(u.st)},
 	shift:function(){//i.c('called shift fn')
-		var e=[cv,'.ops',fs,info],l
+		var e=[cv,'.ops',fs,info,ft],l
 		for(l in e)$(e[l]).toggleClass('no')
 		h.R(u.a=!u.a)},
 	ss:function(v){//session,value
