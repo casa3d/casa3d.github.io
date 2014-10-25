@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html manifest=offline.appcache>
   <head>
-    <script>ch={ap:applicationCache,shft:function(){info.innerText='',info.className=ch.l?ch.halt?'re':'end':''},init:function(){ch.ap.onprogress=function(e){if(e.total)info.innerText=((ch.l=e.loaded)/e.total*100).toFixed(0)},ch.ap.onupdate=function(){info.className='prg'},ch.ap.onupdateready=ch.ap.onnoupdate=ch.shft,ch.ap.onerror=function(e){ch.shft(ch.halt=1),ch.l&&confirm(ch.msg)?(ch.halt=0,info.className='prg',ch.ap.update()):console.clear()}}},ch.init()</script>
-    <title>casa3d.github.io</title>
+    <script>ch={ap:applicationCache,shft:function(){info.innerText='',info.className=ch.l?ch.halt?'re':(p.hidden=1,'end'):(p.hidden=1,'')},init:function(){ch.ap.onprogress=function(e){if(e.total)info.innerText=p.value=((ch.l=e.loaded)/e.total*100).toFixed(0)},ch.ap.onupdate=function(){info.className='prg'},ch.ap.onupdateready=ch.ap.onnoupdate=ch.shft,ch.ap.onerror=function(e){ch.shft(ch.halt=1),ch.l&&confirm(ch.msg)?(ch.halt=0,info.className='prg',ch.ap.update()):console.clear()}}},ch.init()</script>
+    <title>casa3d.hostzi.com</title>
     <meta charset=UTF-8></meta>
     <link rel=stylesheet href=css/index.css>
     <script src=js/index.js async></script></head>
   <body id=b style=margin:0;overflow:hidden>
+    <progress id=p max=100></progress>
     <span id=info class=prg></span>
     <fieldset id=fs class=subg>
       <legend id=lg class=su></legend>
@@ -29,8 +30,11 @@
         <a href=//threejs.org target=_new>
           <img src=Mr.doob.jpg title='Threejs rv61, Ricardo Cabello. Barcelona, Spain'></a></span>
       <span>
-        <a href=//stuk.github.io/jszip target=_new>
-          <img src=Stuk.jpg title='JSZip vr2.4.0, Stuart Knightley. Bay Area, CA'></a></span>
+        <a href=//stuk.github.io/zip.js target=_new>
+          <img src=gildas-lormeau.jpg title='zip.js, Gildas Lormeau. Rennes, France'></a></span>
       <span>
         <a href=//jquery.com target=_new>
-          <img src=jeresig.jpg title='jQuery v2.1.1, John Resig. Brooklyn, NY'></a></span></footer>
+          <img src=jQuery.jpg title='jQuery v2.1.1'></a></span>
+      <span>
+        <a href=//blender.org target=_new>
+          <img src=blender.jpg title='blender v2.72a'></a></span></footer>

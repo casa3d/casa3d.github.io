@@ -6,9 +6,9 @@ fl={//fill
     s=d.createElement(S)
     s.src=(
       n=='main'?
-        'js/full'
-        :'lbs')+
-      '/'+n+'.js'
+        'j'
+        :'lb')+
+      's/'+n+'.js'
     s.onload=function(){
       n==fl.end?(
         fl.i=0,
@@ -20,4 +20,4 @@ fl={//fill
     fl.js=js.split(' ')
     fl.end=fl.js[fl.js.length-1]
     fl.as()}}
-window.onload=function(){fl.init('idb jquery-2.x three vectrix t xhr main move drgNrsz ops jszip fnt')}
+fl.init('idb jquery-2.x three vectrix t xhr main move drgNrsz ops zip deflate inflate fnt')

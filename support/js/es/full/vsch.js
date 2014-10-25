@@ -126,11 +126,26 @@ vr=['1.0 1.5_'+
 '  favicon diseñado en rw-designer.com y subido a '+K,
 '2.8 9.21_'+
 '  support.'+K+' ha sido creada, probada, arreglada, mejorada y lanzada al publico'+l+
-'   es un sitio web multi proposito:'+l+
-'     "tu opinio es importante": tu como usuario ahora puedes reportar un error o sugerir una mejora'+l+
+'   es un sitio web multi proposito con 7 secciones:'+l+
+'     "tu opinion es importante": tu como usuario ahora puedes reportar un error o sugerir una mejora'+l+
 '     "FAQs" ahora puedes leer las preguntas comunes, como se hace?'+l+
 '     "manual del usuario" el abc acerca the teclas, atajos,  mouse'+l+
 '     "plan de prueba & entrenaminiento" con esta opcion aprenderas y afianzar tus habilidades en el momento de recrear tu casa'+l+
 '     "lista de requeremients" dentro de esa lista te daras cuenta cual es la mejor opcion para empezar a trabajar'+l+
 '     "info de desarrollo" puedes informarte acerca del registro de los cambios de '+K+l+
-'     "terminos & condicions de uso" tu como usuario necesitas conocer que beneficios y responsabilidades '+K+' tiene para ti']
+'     "terminos & condicions de uso" tu como usuario necesitas conocer que beneficios y responsabilidades '+K+' tiene para ti',
+'2.9 10.22_'+
+'  (Registro & Inicio de sesion) "conjunto de campos" ha sido agregado de primeras dentro de la pagina indice'+l+
+'  Cookies han sido retiradas y a cambio IndexedDB ha sido implementada'+l+
+'   Indexed database almacena informacion basica como:'+l+
+'     a) ultima posicion/rotacion de la camara'+l+
+'     b) ultima sesion (si el usuario ya se ha registrado o no)'+l+
+'     c) ultima seccion de apoyo (entre 7)'+l+
+'   En la opcion de exportacion, el protocolo dataURL ha sido cambiado por blob, es decir:'+l+
+'     a) el resultado de los datos seran privados'+l+
+'     b) el tiempo esperando para generar el archivo zip ha tenido una reduccion importante'+l+
+'     c) comparaciones:'+l+
+'       antes:'+l+
+'         si el archivo es menor de ~15kb entonces gastara ~10s, que tal 1mb... (debido a los datos del mismo)'+l+
+'       ahora:'+l+
+'         si el tamaño del archivo es ~1mb entonces gastara ~5s']

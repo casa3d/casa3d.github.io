@@ -1,3 +1,4 @@
+#visas_style_div.popup{display:none!important}
 #info{position:fixed;z-index:1}
 @font-face{font-family:awesome;src:url("fontawesome-webfont.woff")}
 section label{display:block}
@@ -17,6 +18,7 @@ input{font-size:.5em}
 #b{background:repeating-linear-gradient(45deg,#aaa,rgba(255,255,255,0.4),rgba(126,126,126,0.8) 10%),repeating-linear-gradient(-45deg,#aaa,#ddd,#7e7e7e 10%)}
 input{background:linear-gradient(rgba(0,0,0,0.5),transparent,rgba(0,0,0,0.5))}
 #ok{background:transparent;cursor:pointer}
+#cv{background:#888}
 #ok,#ft>div{font-size:1.5em}
 #fs *:not(a),#ok{color:#fff}
 a{color:#180;cursor:alias}

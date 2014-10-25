@@ -1,5 +1,6 @@
 //Δtime i.c((x=new Date()).getSeconds(),x.getMilliseconds()),
 o={
+  a:$('<a>')[0],
   d:document,
   w:window,
   W:innerWidth/100,
@@ -9,13 +10,15 @@ o={
   l0p:innerHeight/10,
   f:'FullScreen',
   of:'brick door glass wall window wood'.split(' '),//object folder
-  g:new T.PlaneGeometry(100,200),
   m:new T.MeshBasicMaterial(),
   sty:'canvas{left:0;position:fixed;top:0}',
-  URL:function(b){return o.w.URL.createObjectURL(b)},
+  Π:Math.PI,
+  π:Math.PI/2,
+  pl:function(a,b){return new T.PlaneGeometry(a,b)},
+  URL:function(b){return URL.createObjectURL(b)},
   tn:{//thumbnail, if it´s already added any tx before then it won´t repeat its tn
     blob:{}},//perhaps user'd put his/her own textures
-  tdp:{
+  tdp:{//text default parameters
     curveSegments:1,
     font:'janda manatee solid',
     height:1e-6,
@@ -25,22 +28,23 @@ o={
   clear:function(clck,msg,tm){
     setTimeout(function(){
       clearInterval(clck)
-      i.c(msg+"-clock's renderer has been cleared")},tm)},
+      i.c(msg+"-clock's renderer has been cleared")
+      console.clear()},tm)},
   rb:function(F){//read blob; since picture´s source comes from hard disk I´ll have to read it as blob (security reasons:users´ files are private)
-    var i=0,f,de,clck//iterator,files,doesn'tExists
+    var i=0,f,de,clck//iterator,files,doesn'tExists,clock
     //i.c(i,F.length)
-    while(i<F.length){de=!0,f=F[i++]//assigning
-      for(var I in o.tn.blob)if(o.tn.blob[I].sz==f.size&&!(de=0))break
+    while(i<F.length){de=1,f=F[i++]//assigning
+      for(var I in o.tn.blob)if(o.tn.blob[I].sz==f.size&&!(de=0)){console.log('IAE');break}
       o.add(
         o.φ=de?
-          o.URL(f)//since blob de yet, let's create it
+          o.URL(f)//since blob "de" yet, let's create it
           :I,//otherwise it means it alreadyExists/wasCached
         !0,
         f.size)}
     clck=setInterval(o.R,100)
     o.clear(clck,'image-click',500)},
   ad:function(tx,blob){var cp=c.position
-    t.ad('1 2['+(blob?tx:tx.split(/img\/(.*)/)[1])+']'+cp.x/100+' '+(cp.y+(o.txt.r.idx?0:-90))/100+' '+(cp.z-150)/100+' '+o.txt.r[o.txt.r.idx])
+    t.ad({a:'1 2['+(blob?tx:tx.split(/img\/(.*)/)[1])+']'+cp.x/100+' '+(cp.y+(o.txt.r.idx?0:-90))/100+' '+(cp.z-150)/100+' '+o.txt.r[o.txt.r.idx],p:t.s})
     //in order to avoid same position o´pictures I´d do either
     //move each picture just a little (based on prior pic´ps)
     //or simply move camera a few back each time
@@ -59,7 +63,7 @@ o={
     :(blob?
         o.tn.blob[tx]={id:o.tns.children.length,sz:sz,x:1}
         :o.tn[tx]={id:o.tns.children.length,x:1},
-      g=new T.PlaneGeometry(o.gw,o.gh),
+      g=o.pl(o.gw,o.gh),
       φ=blob?T.ImageUtils.loadTexture(o.tx):o.o.material.map,
       m=new T.MeshBasicMaterial({map:φ}),
       o.s.children[1].add(M=new T.Mesh(g,m)),
@@ -73,22 +77,99 @@ o={
       c.b<1&&(c.b+=.15)//since it hasn't reached 100% it'll increase
       :c.b>.1&&(c.b-=.15),//since it hasn't reached 10% it'll decrese
     c.r=c.g=c.b},//and finally match them all
-  dec:function(){i.c('decompress opt')},
-  dwn:function(b){
-    var URL=location.href=o.URL(b)
-    setTimeout(function(){o.w.URL.revokeObjectURL(URL)},1e4)},
-  exp:function(){
-    if(JSZip){o.z=new JSZip()
-      o.z.file('readme md.txt','export/import this whole zip-file generated to'+u.K)
-      o.z.folder('assets').file('casa3d.js',rQ.response)//code in base-64? ok let's use {base64:!0}
-      o.dwn(o.z.generate({compression:'DEFLATE',type:'blob'}))}
-    else alert(ch.l+'% ...'+' 100%')},//save casa3d.js inside descarga.zip
-  mv:function(){
+  dwn:function(b){o.a.download='casa '+new Date().toUTCString().split(/, | GMT/)[1]+'.zip'
+    if(navigator.msSaveBlob)navigator.msSaveBlob(blb,o.a.download)
+    else{
+      clickEvent=o.d.createEvent('MouseEvent')
+      clickEvent.initMouseEvent('click',1,1,o.w,0,0,0,0,0,0,0,0,0,0,null)//type, canBubble, cancelable, view,  detail, screenX, screenY, clientX, clientY,  ctrlKey, altKey, shiftKey, metaKey,  button, relatedTarget
+      o.a.dispatchEvent(clickEvent)}},
+  exp:function(){//export option: house as js inside zip
+    if(zip){
+      if(o.a.href)o.dwn()//,i.c('LAE')
+      else{
+        zip.workerScriptsPath!='../lbs/'&&(zip.workerScriptsPath='../lbs/')
+        x=new Blob([rQ.response],{type:'application/javascript'})//mimeType
+        x.name='casa3d.js'
+        zip.createWriter(
+          new zip.BlobWriter('application/zip'),
+          function(e){
+            zipWriter=e
+            zipWriter.add(
+              x.name,
+              new zip.BlobReader(x),
+              function(){
+                //i.c('success')
+                o.a.hidden=0
+                zipWriter.close(function(e){
+                  o.a.href=o.URL(blb=e)
+                  o.dwn()})})})}}
+    else alert('100% ?')},//save casa3d.js inside descarga.zip
+  imp:function(F){//import house from zip
+    if(zip&&F){zf=F[0]//zipped file
+      zip.workerScriptsPath!='../lbs/'&&(zip.workerScriptsPath='../lbs/')
+      zip.createReader(
+        new zip.BlobReader(zf),
+        function(zr){//on read end
+          zr.getEntries(function(uzf){//unzipped file
+            E=uzf[0]
+            E.getData(
+              new zip.BlobWriter(),//'application/javascript'
+              function(blob){
+                fr=new FileReader()
+                fr.onload=function(){
+                  t.ad({a:eval(rst=this.result),p:new T.Object3D(),gp:t.s})}
+                fr.readAsText(blob)},null)})})}},
+  mv:function(){//slide to the left/right
     o.st.rll.position.x+=o.o.id==o.left.id&&o.st.rll.position.x<27?//in/decrease only if pnl.ps.x is in inside sliding area
       o.pnlW//left
       :o.o.id==o.right.id&&o.st.rll.position.x>-27&&(//right
         -o.pnlW)},
   R:function(){o.r.render(o.s,o.c)},
+  how:function(){//show keyboard controls
+    var g,m,M,spk,ks,ctrl
+    if(o.kb)o.kb.position.z=o.kb.position.z?0:-1
+    else{
+      g=o.pl(o.W,o.H)
+      m=new T.MeshLambertMaterial()
+      o.s.add(o.kb=new T.Mesh(g,ma=m.clone()))
+      ma.transparent=1
+      ma.opacity=.5
+
+      g=o.pl()
+      o.kb.add(spk=new T.Mesh(g,m))//special keys
+      o.kb.add(ks=spk.clone())     //directional keys
+      spk.add(james=new T.Mesh(g=o.pl(o.gw,o.gh),m))//watch Adventure Time to Understand it
+      spk.add(M=james.clone())
+
+      spk.position.set(-o.gw*3,-o.gh,0)
+      ks.position.set(o.gw*2,-o.gh,0)
+      M.position.y=-o.gh/1.9
+
+      g=new T.CylinderGeometry(0,.2,.2)
+      m=new T.MeshBasicMaterial()
+      james.add(new T.Mesh(g,m))
+
+      g=new T.TextGeometry('ctrl',o.tdp)
+      M.add(ctrl=new T.Mesh(g,m))
+      ctrl.position.x=-o.gw/5
+
+
+      ks.add(M=james.clone())//  ^
+      M.position.y=o.gh/1.9
+
+      ks.add(M=james.clone())//  >
+      M.position.x=o.gw/1.3
+      M.rotateZ(-o.π)
+
+      ks.add(M=james.clone())//  v
+      M.position.y=-o.gh/1.9
+      M.rotateZ(o.Π)
+
+      ks.add(M=james.clone())//  <
+      M.position.x=-o.gw/1.3
+      M.rotateZ(o.π)
+
+      james.position.y=o.gh/1.9}},
   st:{
     app:!1,
     init:function(px){var g,m,M,φ,i=0,c=['red','darkred','green','darkgreen','blue','darkblue'],x=[[],[]],y=[[],[]]
@@ -104,13 +185,13 @@ o={
       y[1][3]=-(y[1][0]=85e-4)
       o.pnlW=o.W-o.gw*2,o.pnlH=o.H-o.gh*2
     //panel
-      g=new T.PlaneGeometry(o.W,o.pnlH)
+      g=o.pl(o.W,o.pnlH)
       m=new T.MeshLambertMaterial({opacity:0,transparent:!0,visible:!1})
       o.s.add(o.st.pnl=new T.Mesh(g,m))
-      o.st.pnl.position.z=-1
+      o.ag()
       o.st.pnl.c=1//it's got children
       //roll
-        g=new T.PlaneGeometry(o.pnlW*6,o.pnlH)//*6 Bcoz o' ceiling,door,floor,stairs,wall,window
+        g=o.pl(o.pnlW*6,o.pnlH)//*6 Bcoz o' ceiling,door,floor,stairs,wall,window
         o.st.pnl.add(o.st.rll=new T.Mesh(g,m))
         o.st.rll.position.set(o.st.rll.geometry.width/2-o.W/2+o.gw,0,.0001)
         //o.st.rll.c=1it's got children
@@ -134,13 +215,13 @@ o={
       |------|          |. . . .|
       til´ finally get accurate measurement and fill it
       iterate 6x that "4x4" slide and fill it with ceiling,door,floor,stairs,wall,window*/
-        g=new T.PlaneGeometry(o.pnlW,o.pnlH)
+        g=o.pl(o.pnlW,o.pnlH)
         while(i<6){var I=0//create rll's children they R 6
           m=new T.MeshBasicMaterial({visible:!1})
           o.st.rll.add(M=new T.Mesh(g,m))
           M.position.x=-o.pnlW*3+o.pnlW/2+(o.pnlW*i++)
           M.c=1}i=0//it's got children
-        g=new T.PlaneGeometry(o.gw*2,o.gh*2)
+        g=o.pl(o.gw*2,o.gh*2)
         while(i<6){var I=0
           while(I<4){var l=1,II=I*4//start column & continue with previous row
             φ=new T.ImageUtils.loadTexture('img/'+o.of[i]+'/'+II+'.jpg')
@@ -153,14 +234,14 @@ o={
               o.st.rll.children[i].add(M=new T.Mesh(g,m))
               M.position.set(x[0][I]+x[1][I],y[0][l]+y[1][l],0);l++}I++}i++}
       //left container
-        g=new T.PlaneGeometry(o.gw,o.pnlH)
+        g=o.pl(o.gw,o.pnlH)
         φ=new T.ImageUtils.loadTexture('img/icon/left.png')
         m=new T.MeshBasicMaterial({map:φ,opacity:.3,transparent:!0})
         o.st.pnl.add(o.left=new T.Mesh(g,m))
         o.left.position.set(px,0,.001)//-6.446
       //right container
         o.st.pnl.add(o.right=o.left.clone())
-        o.right.rotation.z=Math.PI//rotate it 90°
+        o.right.rotation.z=o.Π//rotate it 90°
         o.right.position.set(-px,0,.001)}},//6.446
   s:new T.Scene(),//                fov               aspect ratio      near far
   c:new T.PerspectiveCamera(innerHeight/(768/42),innerWidth/innerHeight,1e-3,10),
@@ -168,27 +249,53 @@ o={
   pj:new T.Projector(),//raycaster needs it
   V3:new T.Vector3(0,0,.5),
   o:{id:''},
+  kbd:function(){o.kb&&(!o.kb.position.z&&(o.kb.position.z=-1))},
+  ag:function(){//add geometry
+    o.st.pnl.position.y=o.st.pnl.position.y?(
+      m.rKey&&(m.act()),
+      0)
+      :o.H
+    o.kbd()},
   ops:[
-    function(){o.mv()},
-    function(){o.mv()},
-    function(){//add geometry
-      o.st.pnl.position.z=o.st.pnl.position.z?(
-        m.rKey&&(m.act()),
-        0)
-        :-1
-      o.st.app=!o.st.app},
+    0,//move
+    0,//move
+    0,//how
+    function(){//toggle mode
+      var p,i,l,x=o.menu.children//position
+      p=o.menu.rotation.z?[
+        (l=1)*o.gw*4.3,
+        0,
+        0]
+        :[
+        0,
+        (l=-1)*o.H/2+o.gh*1.1,
+        o.π]
+      o.menu.rotation.z=p[2]
+      o.menu.position.set(p[0],p[1],0)
+      for(i in x)x[i].rotateZ(l*o.π)},
+    0,//add geometry
+    function(){//import φoto/texture
+      o.in.click()},
     dr.act,//enable/disable drgNrsz's approval
-    function(){o.i.click()},
-    m.act,//rotate
+    dr.act,//enable/disable drgNrsz's approval
     m.rt,//rotate -90° 0 means left-key
     function(){m.rt(2)},//rotate 90° 2 means right-key
-    function(){o.cc()},//in/decrease lighting intensity
-    function(){o.cc()},//it'll rely & decide based on object's id.
-    function(){o.exp()},
-    function(){
+    0,//change colour decrease light intensity
+    0,//change colour increase light intensity
+    m.act,//rotate
+    function(){//toggle fullscreen
       o.d[o.is]?//if currently browser is in fullscreen then:
         o.d[o.ex]()//exit
-        :o.d.body[o.rq]()}],//otherwise request fullscreen
+        :o.d.body[o.rq]()},//otherwise request fullscreen
+    0,//export option
+    function(){//import option
+      o.im.click()},
+    function(){open(location.href+'support','_new')},
+    function(){//log out
+      u.cl()
+      u.out()
+      u.shift()
+      setTimeout(u.cl,500)}],
   rc:function(e){//10% & position of mouse in Y
     o.V3.x=(e.clientX/o.w.innerWidth)*2-1,o.V3.y=-(o.y/o.w.innerHeight)*2+1
     o.pj.unprojectVector(o.V3,o.c)
@@ -261,9 +368,14 @@ o={
       //Zs&&(i.c(Zs))
       o.txt.hd(N-1+'')},*/
     r:'p  p p'.split(/|/)},//rotation o´ each texture
-  Y:function(e){o.y=e.clientY
-    return o.y<o.l0p||o.y>o.w.innerHeight-o.l0p},
   init:function(){var g,m,φ,M,px,py,i=0,sty=$('style')[0],clck
+    o.g=o.pl(100,200)
+    o.ops[0]=o.ops[1]=o.mv
+    o.ops[2]=o.how
+    o.ops[4]=o.ag
+    o.ops[10]=o.ops[11]=o.cc
+    o.ops[14]=o.exp
+    o.im=$('<input type=file accept=application/zip onchange=o.imp(this.files)>')[0]
     sty?
       sty.innerHTML+='\n'+o.sty
       :$(o.d.head).append($('<style>').text(o.sty)[0])
@@ -273,29 +385,40 @@ o={
     py=o.H/2-o.gh/2//top corner-[ - ]      <-- half height
     //creating & adding options
     o.st.init(px)
-    g=new T.PlaneGeometry(o.gw*96,o.gh)//Width & Height
+    g=o.pl(o.gw*96,o.gh)//Width & Height
     m=new T.MeshBasicMaterial({opacity:0,transparent:!0})
     o.s.add(o.tns=new T.Mesh(g,m))
     o.tns.position.set(o.tns.left=o.gw*43,py,0)
     o.tns.c=1//it's got children
     o.tns.right=o.tns.left+o.gw*10
-    g=new T.PlaneGeometry(o.W,o.gh)
+    g=o.pl(o.gw*1.25,o.gh*8.5)
     m=new T.MeshLambertMaterial({transparent:1,opacity:.5})
     o.menu=new T.Mesh(g,m)
-    o.menu.position.y=-py//y: 3.84-.768/2=3.456
+    o.menu.position.set(
+      o.gw*4.3,
+      -o.gh/4,
+      0)
     o.menu.c=1//it'got children=!0 true
     o.s.add(o.menu)
-    g=new T.PlaneGeometry(o.gw,o.gh)//Width & Height
-    while(i<10){
-      φ=new T.ImageUtils.loadTexture('img/icon/icon.png')
-      φ.repeat.x=.0989,φ.offset.x=i*.0989
+    g=o.pl(o.gw/2,o.gh)//Width & Height
+
+/*    v=[[-.3,3.5], [.3,3.5],//Original matrix
+       [-.3,2.5], [.3,2.5],
+       [-.3,1.5], [.3,1.5],
+       [-.3,.5],  [.3,.5],
+       [-.3,-.5], [.3,-.5],
+       [-.3,-1.5],[.3,-1.5],
+       [-.3,-2.5],[.3,-2.5],
+       [-.3,-3.5],[.3,-3.5]]*/
+    var msh=function(I){
+      φ=new T.ImageUtils.loadTexture('img/icon/'+(2*i+I)+'.png')
+      //φ.repeat.x=.0989,φ.offset.x=i<10?i*.0989:0
       m=new T.MeshBasicMaterial({map:φ,transparent:1})
       //i%2&&(m.opacity=.5,m.transparent=!0)//sort evenly
-      M=new T.Mesh(g,m)//repeating 'til 24 PlaneGeometries/room for icons
-      M.position.x=px+i*o.gw//x: -6.83+0.5253846153846153=-6.304615384615385 --> it starts to the left, so -half space width+geometry's half width and that's all even though since I want to repeat it then last result + increment*geometrys's width
-      i==7&&(M.il=1)
-      o.menu.add(M)
-      i++}
+      M=new T.Mesh(g,m)
+      M.position.set(o.gw*.3*(I?1:-1),o.gh*(3.5-i),0)
+      o.menu.add(M)}//repeating 'til 24 PlaneGeometries/room for icons
+    while(i<8)msh(0),msh(1),i++==4&&(M.il=1)
     $(o.d.body).append(o.r.domElement)//adding all to body as canvas
     o.r.domElement.className='ops '+(u.a?'':'no')
     o.pfx=o.usrAgnt[/(Chrome|Trident|Firefox)/.exec(o.w.navigator.userAgent)[0]]
@@ -306,33 +429,36 @@ o={
     for(i in o.ops)o.ops[Number(i)+(i<2?o.left.id:o.tn.id)]=o.ops[i],delete o.ops[i]
     //x:-2.0434, y:-3.4419 z:9.96 inside o.s.children[1].children[6]
     for(i in o.of)o.Δ[i]=-.62+i*.15,o.txt.lm[i]=Math.pow(10,i)*2-1//position o´ each digit;I don't think user´d put into scene more than a Quantity o´ 6-digit Number of same type/texture
-    o.i=$("<input type=file accept=image/* multiple onchange=o.rb(this.files)>")[0]
+    o.in=$("<input type=file accept=image/* multiple onchange=o.rb(this.files)>")[0]
     clck=setInterval(o.R,500)
     o.clear(clck,'ops',6e3)}}
 $(o.w).on({
   click:function(e){var i,sf
-    u.a&&(o.Y(e)||o.st.app)&&o.o.id&&(
-      o.ops[o.o.id]?(
-        o.ops[o.o.id]())
-      :(o.o.id>102&&o.o.id<199||o.o.parent.id==o.tn.id)&&(
-        o.add((sf=o.o.material.map.sourceFile),/blob/.test(sf))),//let it know if its sourceFile comes from a blob
+    u.a&&(
+      o.o.id&&(
+        o.ops[o.o.id]?
+          o.ops[o.o.id]()
+        :(o.o.parent.id>82&&o.o.parent.id<89||o.o.parent.id==o.tn.id)&&(
+          o.add((sf=o.o.material.map.sourceFile),/blob/.test(sf)))),//let it know if its sourceFile comes from a blob
+      //left kbrd add right
+      !/186|189|191|185/.test(o.o.id)&&!o.st.pnl.position.y&&o.ag(),
       o.R())},//know where it comes from, 1 of 6 sliding pages must be though
   mousemove:function(e){//may pass since Y is 'ops territory' and any object's been found
-    u.a&&(o.Y(e)||o.st.app)&&(
-      ((o.x=e.clientX)<1||o.x>o.w.innerWidth-2)&&o.y<o.l0p?
+    u.a&&(o.y=e.clientY,
+      ((o.x=e.clientX)<1||o.x>o.w.innerWidth-2)?
         !o.app&&(
           o.slide(o.app=!0))
         :o.app&&(o.app=!1),
       o.rc(e)&&(
         o.o.id!=o.rst.object.id&&(
           o.o.id&&(
-            (o.o.parent.id==202||o.o.parent.id==203||o.o.parent.id>97&&o.o.parent.id<104)?(
+            (o.o.parent.id==o.tn.id||o.o.parent.id>82&&o.o.parent.id<89)?(
               o.o.position.z=0,
               o.o.material.opacity=.85)
-              :o.mc&&(//let's restore its OST color
+              :o.mc&&(//let's restore its OST color, I mean Original. ("Original Soundtrack" though)
                 (o.mc=o.o.material.color).r=o.pc[0],o.mc.g=o.pc[1],o.mc.b=o.pc[2])),//pick colour
           o.o=o.rst.object,
-          (o.o.parent.id==202||o.o.parent.id==203||o.o.parent.id>97&&o.o.parent.id<104)?(
+          (o.o.parent.id==o.tn.id||o.o.parent.id>82&&o.o.parent.id<89)?(
             o.o.position.z=.125,
             o.o.material.opacity=1)
             :!o.o.parent.N&&(o.mc=o.o.material.color,//backing up its color to further restore it when mouse gets out
@@ -341,3 +467,5 @@ $(o.w).on({
           o.R())))},
   resize:function(){o.r.setSize(o.w.innerWidth,o.w.innerHeight)}})
 o.init()
+/*u.a=!u.a
+setTimeout(function(){u.a=!u.a},1e3)*/

@@ -60,7 +60,7 @@ u={
 		u.lg&&(u.cl(u.lg=0))
 		ch.msg=u.lng=='es'?
 			(u.tx(u.lp),'Si acepta, la pagina cargaria un 50% MAS RAPIDO\ny ademas tendria acceso a'+u.K+' AUN SIN internet!')
-			:"If you accept, this page would load 50% faster\nand furthermore you'd have access to"+u.K+' EVEN WITHOUT internet!'
-		u.cas('js/filler')}}
+			:"If you accept, this page would load 50% faster\nand furthermore you'd have access to"+u.K+' EVEN WITHOUT internet!'}}
 u.init(u.lg=0)
 chk.checked=0
+window.onload=function(){u.cas('js/filler')}

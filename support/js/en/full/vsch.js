@@ -131,6 +131,21 @@ vr=['1.0 1.5_'+
 '     "FAQs" you can now read the common, how to do? questions'+l+
 '     "user manual" the abc about keys, shortcuts, mouse'+l+
 '     "test & training plan" with this option you\'ll learn and enhance your skill at the moment to recreate your house'+l+
-'     "requirements list" inside it you\ll notice what\'s best option to start working with'+l+
+'     "requirements list" inside it you\'ll notice what\'s best option to start working with'+l+
 '     "development info" you can inform about changes log of '+K+l+
-'     "terms & conditions of use" you as user need to know what benefits and responsabilities '+K+' has got for you']
+'     "terms & conditions of use" you as user need to know what benefits and responsabilities '+K+' has got for you',
+'2.9 10.22_'+
+'  (Sign up & Log in) "fieldset" has been prepended to index page'+l+
+'  Cookies has been removed and IndexedDB has been implemented instead'+l+
+'   Indexed database stores basic information like:'+l+
+"     a) last camera's position/rotation"+l+
+"     b) last session (whether user's already signed up or not)"+l+
+"     c) last support section (among 7)"+l+
+'   In export option, protocol dataURL has been changed to blob, that is to say:'+l+
+'     a) data result will be private'+l+
+'     b) time waiting for generating zip file has been redused significantly'+l+
+'     c) comparisons:'+l+
+'       before:'+l+
+"         if file is less than ~15kb then it'd spend ~10s, what 'bout 1mb... (due to itself data)"+l+
+'       now:'+l+
+"         if file-size is ~1mb then it'd spend ~5s"]
