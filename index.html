@@ -2,12 +2,12 @@
 <html manifest=offline.appcache>
   <head>
     <script>ch={ap:applicationCache,shft:function(){info.innerText='',info.className=ch.l?ch.halt?'re':(p.hidden=1,'end'):(p.hidden=1,'')},init:function(){ch.ap.onprogress=function(e){if(e.total)info.innerText=p.value=((ch.l=e.loaded)/e.total*100).toFixed(0)},ch.ap.onupdate=function(){info.className='prg'},ch.ap.onupdateready=ch.ap.onnoupdate=ch.shft,ch.ap.onerror=function(e){ch.shft(ch.halt=1),ch.l&&confirm(ch.msg)?(ch.halt=0,info.className='prg',ch.ap.update()):console.clear()}}},ch.init()</script>
-    <title>casa3d.hostzi.com</title>
+    <title>casa3d</title>
     <meta charset=UTF-8></meta>
     <link rel=stylesheet href=css/index.css>
     <script src=js/index.js async></script></head>
   <body id=b style=margin:0;overflow:hidden>
-    <progress id=p max=100></progress>
+    <progress id=p max=100></progress><br>
     <span id=info class=prg></span>
     <fieldset id=fs class=subg>
       <legend id=lg class=su></legend>
