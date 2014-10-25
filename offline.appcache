@@ -1,13 +1,14 @@
 CACHE MANIFEST
-#14.10.18 18:20
+#14.10.25 22:22
 CACHE:
 css/index.css
 js/index.js
 css/fontawesome-webfont.woff
 davegandy.jpg
-jeresig.jpg
 Mr.doob.jpg
-Stuk.jpg
+gildas-lormeau.jpg
+jQuery.jpg
+blender.jpg
 lbs/idb.js
 lbs/jquery-2.x.js
 js/filler.js
@@ -19,8 +20,10 @@ js/main.js
 js/assets.js
 lbs/move.js
 lbs/drgNrsz.js
-#lbs/full/ops.js
-lbs/jszip.js
+lbs/ops.js
+lbs/zip.js
+lbs/deflate.js
+lbs/inflate.js
 lbs/fnt.js
 cur/cr.cur
 cur/drg.cur
@@ -77,7 +80,22 @@ img/glass/12.jpg
 img/glass/13.jpg
 img/glass/14.jpg
 img/glass/15.jpg
-img/icon/icon.png
+img/icon/0.png
+img/icon/1.png
+img/icon/2.png
+img/icon/3.png
+img/icon/4.png
+img/icon/5.png
+img/icon/6.png
+img/icon/7.png
+img/icon/8.png
+img/icon/9.png
+img/icon/10.png
+img/icon/11.png
+img/icon/12.png
+img/icon/13.png
+img/icon/14.png
+img/icon/15.png
 img/icon/left.png
 img/icon/t.png
 img/icon/trgt.png
