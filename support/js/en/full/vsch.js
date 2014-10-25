@@ -1,4 +1,4 @@
-l='<br>',K='casa3d.hostzi.com'
+l='<br>',K='casa3d.github.io'
 //ⓘ version changes info
 vr=['1.0 1.5_'+
   "House volume's 500x1200"+l+

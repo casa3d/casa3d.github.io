@@ -1,4 +1,4 @@
-l='<br>',K='casa3d.hostzi.com'
+l='<br>',K='casa3d.github.io'
 //📜 terminos & condiciones de uso
 tc=['aviso de exoneracion_ESTE SOFTWARE SE LE HA SUMINISTRADO A UD "TAL CUAL" SIN NINGUNA GARANTIA DE NINGUN TIPO.'+l+'UD COMO USUARIO TIENE QUE ENTENDER QUE '+K+' TIENE QUE SER tratada o usada bajo ciertas reglas',
 'user_UD COMO USUARIO se supone que es mayor de edad por lo tanto de ser responsable de las cosas que Ud. hace o dice, de otra manera el dueño del aparato sera responsable de las acciones de Éste',

@@ -1,4 +1,4 @@
-l='<br>',K='casa3d.hostzi.com'
+l='<br>',K='casa3d.github.io'
 //📜 terms & conditions of use
 tc=['disclaimer_THIS SOFTWARE IS PROVIDED TO YOU "AS IS" WITHOUT ANY WARRANTY OF ANY NATURE.'+l+'YOU AS USER MUST UNDERSTAND THAT '+K+' HAS TO BE treated or used under certain rules',
 'user_YOU AS USER is suppost to be over age therefore to be responsible of things you do or say, otherwise owner of appliance will be responsible of user\'s actions',
