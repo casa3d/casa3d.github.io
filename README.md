@@ -5,12 +5,12 @@ website for recreating houses
 
 it uses third-party libraries like:
 
-Font Awesome v4.2.0 //fontawesome.io
+Font Awesome v4.2.0 http://fontawesome.io
 
-Three.js rv61 //threejs.org
+Three.js rv61 http://threejs.org
 
-zip.js //gildas-lormeau.github.io/zip.js
+zip.js http://gildas-lormeau.github.io/zip.js
 
-jQuery v2.1.1 //jquery.com
+jQuery v2.1.1 http://jquery.com
 
-blender v2.72a //blender.org
+blender v2.72a http://www.blender.org
