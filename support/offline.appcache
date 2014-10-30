@@ -1,18 +1,26 @@
 CACHE MANIFEST
-#14.9.2 12:44
+#14.10.30 15:42
 
 CACHE:
 css/index.css
-../lbs/xhr.js
+../js/lib/xhr.js
 js/index.js
 js/worker.js
 js/structure.js
+js/en/rp.js
 js/es/rp.js
+js/en/faq.js
 js/es/faq.js
+js/en/um.js
 js/es/um.js
+js/en/t&t_p.js
 js/es/t&t_p.js
+js/en/rqlist.js
 js/es/rqlist.js
+js/en/vsch.js
 js/es/vsch.js
+js/license.js
+js/en/t&c_u.js
 js/es/t&c_u.js
 img/0.png
 img/1.png
