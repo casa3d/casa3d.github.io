@@ -1,4 +1,4 @@
-d.rf+=((on=/es/.exec(d.lng))&&d.on?'es':'en')+'/'
+d.rf+=(on=/es/.exec(d.lng)?'es':'en')+'/'
 function sp(v){var i,l
   v=v.split(' ')
   for(i in v)(l=lngs[v[i]]).s=l.s.split(' ')}

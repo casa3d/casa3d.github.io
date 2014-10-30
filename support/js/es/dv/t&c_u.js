@@ -1,5 +1,6 @@
-l='<br>',K='casa3d.github.io'
+l='<br>',K='casa3d.hostzi.com'
 //📜 terminos & condiciones de uso
+importScripts(d.rf+'../license.js')
 tc=['aviso de exoneracion_ESTE SOFTWARE SE LE HA SUMINISTRADO A UD "TAL CUAL" SIN NINGUNA GARANTIA DE NINGUN TIPO.'+l+'UD COMO USUARIO TIENE QUE ENTENDER QUE '+K+' TIENE QUE SER tratada o usada bajo ciertas reglas',
 'user_UD COMO USUARIO se supone que es mayor de edad por lo tanto de ser responsable de las cosas que Ud. hace o dice, de otra manera el dueño del aparato sera responsable de las acciones de Éste',
 'derechos_si Ud. no esta completamente de acuerdo con estos "terminos & condicions de uso" & "lista de requerimients" entonces Ud. no CALIFICA para usar cualquier componente o cosa entera proveniente de '+K+' y NO INTENTE registrarse por ningun otro medio',
@@ -12,4 +13,5 @@ tc=['aviso de exoneracion_ESTE SOFTWARE SE LE HA SUMINISTRADO A UD "TAL CUAL" SI
 'dominios de 3ras personas_ '+K+' puede incluir vinculos o cualquier servicio promocional, asi que '+K+' no puede tomar control, no puede controlarlos o aun ser responsable debido a que el usuario entra en otro dominio',
 'indemnizacion_UD ESTA DE ACUERDO DE indemnizar, guardar y no culpar a toda la gente involucrada en '+K+' de cualquier daño, costo de cuotas y/o abogado(s) debido u originado por cualquier situacion inesperada, mala o aun cualquier otra',
 'clausura de su cuenta_Ud. puede cancelar su cuenta en cualquier momento, '+K+' tambien puede suspender o definitivamente cerrarla sin ni siquiera dar razon alguna',
-'general_por favor revise estos "terminos & conditions de uso" de vez en vez porque estos pueden cambiar en cualquier momento y sin ningun previo aviso asi que, solo el echo del continuo uso significa que Ud. esta totalmente actualizado y sabe a que se enfrenta']
+'general_por favor revise estos "terminos & conditions de uso" de vez en vez porque estos pueden cambiar en cualquier momento y sin ningun previo aviso asi que, solo el echo del continuo uso significa que Ud. esta totalmente actualizado y sabe a que se enfrenta',
+license]

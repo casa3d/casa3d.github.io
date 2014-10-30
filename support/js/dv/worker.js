@@ -3,7 +3,7 @@ b={//browser: IE,Chrome,Firefox & 2last
   fn:["roll.style.top='15%'",
   ";var ch=ops.children,i=0;while(ch[i])ch[i].innerHTML='<img src=img/'+(i++)+'.png>'",
   "setTimeout(function(){ops.className=ops.className.replace('in','out')},2e3)"],
-  brw:function(br){f=b.fn;var br,lg=';s.lng="'+lngs.es.t+'".split("_")'
+  brw:function(br){f=b.fn;var br,lg=';s.lng="'+lngs[on].t+'".split("_")'
     br=(/AppleWebKit|Firefox/i).test(br)?
       f[2]+((/AppleWebKit/i).test(br)?f[1]:'')
       :f[0]+lg
@@ -34,10 +34,10 @@ p={//parse
       else{//details|table
         for(j in p.v){var ts=/type|date|recipient/.test(j)
           p.x=p.v[j]
-          if(typeof p.x=='string')y=p.x.charAt(0)!=' ',s+=(y?p.LA+(on&&ts?p.i.s[p.e.s.indexOf(j)]:j)+p.la:'')+'<'+(y?'':j)+p.x+'>'+(y?'':'</'+j+'>')
+          if(typeof p.x=='string')y=p.x.charAt(0)!=' ',s+=(y?p.LA+(on=='es'&&ts?p.i.s[p.e.s.indexOf(j)]:j)+p.la:'')+'<'+(y?'':j)+p.x+'>'+(y?'':'</'+j+'>')
           else{
             s+=ts?
-              p.LA+(on?p.i.s[p.e.s.indexOf(j)]:j)+p.la+p.S
+              p.LA+(on=='es'?p.i.s[p.e.s.indexOf(j)]:j)+p.la+p.S
               :p.F
             for(k in p.x){
               if(j=='fieldset')s+=p.F+p.L+k+p.l+p.x[k]+p.f
@@ -49,15 +49,15 @@ p={//parse
       s+='</'+i+'>'}
     return s},
   rs:function(k){p.V=str[k]
-    s=p.H+(on?p.i.t[p.k.indexOf(k)]:k)+p.h+'<hr>'
+    s=p.H+(on=='es'?p.i.t[p.k.indexOf(k)]:k)+p.h+'<hr>'
     return b.i?p.fill(s,k):p.report(s)}}
 this.onmessage=function(e){d=e.data
   if(d.ua){//userAgent
     j='.js',d.rf+='js/'
-    importScripts(d.rf+'structure'+j)
+    importScripts(d.rf+'dv/structure'+j)
     b.end=(p.k=Object.keys(str)).length
     postMessage({fn:'s.d.head.innerHTML+="'+p.sty+'";'+b.brw(d.ua[0])})
-    on&&(p.i=lngs[on],p.i.t=p.i.t.split('_'),p.e=lngs.en)
+    on=='es'&&(p.i=lngs[on],p.i.t=p.i.t.split('_'),p.e=lngs.en)
     x=setInterval(function(){
       postMessage({i:b.i,cnt:p.rs(p.k[b.i]),t:p.k[b.i]})
       ++b.i==b.end&&(clearInterval(x),postMessage({fn:((/AppleWebKit/i).test(d.ua)?"s.d.head.lastChild.innerHTML+='@font-face{font-family:u2400;src:url(css/u2400.woff)}#roll>div>fieldset{font-family:u2400}',":'')+"console.log('attempting to terminate worker...',s.wk.terminate(),'worker terminated')"}))},50)}}

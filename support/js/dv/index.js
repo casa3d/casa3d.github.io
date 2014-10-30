@@ -1,14 +1,35 @@
 s={
   d:document,
-  c:'green blue darkcyan goldenrod saddlebrown red grey'.split(' '),
+  cl:'green blue darkcyan goldenrod saddlebrown red grey'.split(' '),
   l:ops.classList,
   w:window,
   nv:navigator,
-  wk:new Worker('js/full/worker.js'),
+  wk:new Worker('js/dv/worker.js'),
+  p:'zero one two three four five six'.split(' '),// -percent position
+  ae:function(x,fn,e){e=e||s.ch[x]
+    e.addEventListener('click',function(){fn(x)})},
+  bad:function(symptom){alert(' : (  '+symptom)},
+  ck:function(){
+    return s.p[/support=(.)/.exec(s.d.cookie)[1]]},
+  clear:function(){
+    clearInterval(s.clock)
+    send.disabled=!1,
+    send.innerText=s.txt,
+    send.title=s.tt,
+    send.innerText<2&&(s.bad('internet ?'))},
+  clss:function(p){
+    s.l.remove(s.l[1])
+    s.l.add(s.cl[p])},
+  send:function(){alert('pending to do')},
+  sld:function(p){
+    roll.className=s.p[p]
+    s.clss(p)},
+  sv:function(){
+    s.d.cookie='support='+s.p.indexOf(roll.className)},
   init:function(h){var i=0,em
     s.ch=ops.children
-    s.wk.postMessage({ua:(/Trident|AppleWebKit|Firefox/i).exec(s.nv.userAgent),on:s.nv.onLine,lng:s.nv.language,rf:location.href,w:s.w.innerWidth,x:4})
-    s.wk.onmessage=function(e){var d=e.data,x=new Date()
+    s.wk.postMessage({ua:(/Trident|AppleWebKit|Firefox/i).exec(s.nv.userAgent),lng:s.nv.language,rf:location.href,w:s.w.innerWidth,x:4})
+    s.wk.onmessage=function(e){var d=e.data,x
       d.fn?
         eval(d.fn)
         :(s.ae(d.i,s.sld),
@@ -17,6 +38,7 @@ s={
         em.innerHTML=d.cnt,
         roll.appendChild(em),
         d.i==0&&(f=send.parentElement.children,
+          x=new Date(),
           (/AppleWebKit/i).test(s.nv.userAgent)?
             dt.valueAsDate=x
             :dt.value=x.getFullYear()+'-'+x.getMonth()+'-'+x.getDate(),
@@ -34,31 +56,8 @@ s={
               else s.bad(f[3].placeholder+' 📅')}
             else s.bad('internet ?')},
           send.innerHTML='✔'))}
-    roll.style.left=s.ck()
+    roll.className=s.ck()
     s.l.add('green')
-    s.w.onbeforeunload=s.w.onblur=s.sv},
-  ae:function(x,fn,e){e=e||s.ch[x]
-    e.addEventListener('click',function(){fn(x)})},
-  bad:function(symptom){alert(' : (  '+symptom)},
-  ck:function(){
-    k=/support=(.)/.exec(s.d.cookie)
-    return k?-k[1]*100+'%':0},
-  clear:function(){
-    clearInterval(s.clock)
-    send.disabled=!1,
-    send.innerText=s.txt,
-    send.title=s.tt,
-    send.innerText<2&&(s.bad('internet ?'))},
-  clss:function(p){
-    s.l.remove(s.l[1])
-    s.l.add(s.c[p])},
-  send:function(){alert('pending to do')},
-  sld:function(p){
-    roll.style.left=p?
-      -p*100+'%'
-      :0
-    s.clss(p)},
-  sv:function(){var v=roll.style.left.charAt(1)
-    v!='%'&&(s.d.cookie='support='+v)}}
+    s.w.onbeforeunload=s.w.onblur=s.sv}}
 console.clear()
-s.init() 
+onload=s.init
