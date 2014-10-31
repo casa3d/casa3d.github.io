@@ -4,13 +4,14 @@ s={
   l:ops.classList,
   w:window,
   nv:navigator,
-  wk:new Worker('js/dv/worker.js'),
+  wk:new Worker('js/worker.js'),
   p:'zero one two three four five six'.split(' '),// -percent position
   ae:function(x,fn,e){e=e||s.ch[x]
     e.addEventListener('click',function(){fn(x)})},
   bad:function(symptom){alert(' : (  '+symptom)},
-  ck:function(){
-    return s.p[/support=(.)/.exec(s.d.cookie)[1]]},
+  ck:function(){var ck=
+    /support=(.)/.exec(s.d.cookie)
+    ck&&(roll.className=s.p[ck[1]])},
   clear:function(){
     clearInterval(s.clock)
     send.disabled=!1,
@@ -56,7 +57,7 @@ s={
               else s.bad(f[3].placeholder+' 📅')}
             else s.bad('internet ?')},
           send.innerHTML='✔'))}
-    roll.className=s.ck()
+    s.ck()//get cllassName from cookie (if exist)
     s.l.add('green')
     s.w.onbeforeunload=s.w.onblur=s.sv}}
 console.clear()
