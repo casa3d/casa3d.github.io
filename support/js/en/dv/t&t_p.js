@@ -20,7 +20,7 @@ tp=["acknowledge your status_IF you've gotten very, very basic computing-knowleg
 'disable exploration mode_'+s2+'disable it',
 'explore'+t+'left_'+c+'⟲ (rotate) or press shift+lef'+s3+'left',
 'explore'+t+'right_'+c+'⟳ (rotate) or press shift+righ'+s3+'right',
-'watch in fullscreen_watch screen wider clicking on 💢 (fullscreen) or F11'+l+'not to worry press ESC key to go back to normal screen mode',
+'watch in fullscreen_watch screen wider clicking on 🎦 (fullscreen) or F11'+l+'not to worry press ESC key to go back to normal screen mode',
 'automatic rotation_enable ⌖ (explore around)'+l+'move your mouse to left-border or right-border and see what happens'+l+'"it\'s better slowly but surely"'+l+"it's better to see it working in fullscreen mode",
 'reduce light_if you cannot stand so much light intensity or want to save battery then press 🌙 (moon'+s4+'feel comfortable',
 'increase light_'+c+'☀ (sun'+s4+'can see clear',

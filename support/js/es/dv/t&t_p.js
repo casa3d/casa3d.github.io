@@ -20,7 +20,7 @@ tp=['reconóce tu nivel_SI tienes un conocimiento muy, pero muy basico acerca co
 'deshabilitar modo exploracion_'+s2+'deshabilitarlo',
 'explora'+t+'izquierda_'+c+'⟲ (rotar) o presiona las teclas shift+izquierd'+s3+'izquierda',
 'explora'+t+'derecha_'+c+'⟳ (rotar) o presiona las teclas shift+derech'+s3+'derecha',
-'mira en pantalla completa_mira una pantalla mas grande dando clic sobre 💢 (pantalla completa) o F11'+l+'no te preocupes presiona la tecla ESC para regreser al modo pantalla normal',
+'mira en pantalla completa_mira una pantalla mas grande dando clic sobre 🎦 (pantalla completa) o F11'+l+'no te preocupes presiona la tecla ESC para regreser al modo pantalla normal',
 'rotacion automatica_habilita ⌖ (explorar alrededor)'+l+'mueve tu mouse hacia el borde-izquierdo or borde-derecho y mira lo que pasa'+l+'"es mejor poco a poco pero seguro"'+l+'es mas facil que funcione en modo pantalla completa',
 'reducir luz_si no soportas mucha luz o no quieres gastar tanta bateria entonces presiona 🌙 (luna'+s4+'te sientas comodo',
 'incrementar luz_'+c+'☀ (sol'+s4+'puedas ver claro',
