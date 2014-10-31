@@ -10,4 +10,4 @@ um=["➕ añadir_es un menu donde puedes añadir casas o diferentes tipos de tex
 '🌙 disminuir la luz_a medida que la precionas, se va reduciendo la luz en un 15%',
 '☀ incrementar la luz_la incrementa en un 15%, hasta como si estuvieras en pleno medio dia',
 '📥 descargar la casa_mira tu casa actual en otro computador con el archivo de compresion mas popular "estandar" (zip)',
-'💢 alternar pantalla completa_alterna entre el modo pantalla completa o normal']
+'🎦 alternar pantalla completa_alterna entre el modo pantalla completa o normal']

@@ -10,4 +10,4 @@ um=["➕ add_it's a menu where you can add houses or different kind of textures 
 "🌙 reduce light_every time you press, it'll reduce 15% of light",
 '☀ increase light_it puts light on like if you were at fully noon',
 '📥 download house_watch your current house on another computer with an "standard" most popular compression-file (zip)',
-'💢 toggle fullscreen_it toggles between full and normal screen-mode']
+'🎦 toggle fullscreen_it toggles between full and normal screen-mode']
