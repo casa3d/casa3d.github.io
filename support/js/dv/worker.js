@@ -1,13 +1,9 @@
 b={//browser: IE,Chrome,Firefox & 2last
   i:0,
   fn:["roll.style.top='15%'",
-  ";var ch=ops.children,i=0;while(ch[i])ch[i].innerHTML='<img src=img/'+(i++)+'.png>'",
   "setTimeout(function(){ops.className=ops.className.replace('in','out')},2e3)"],
-  brw:function(br){f=b.fn;var br,lg=';s.lng="'+lngs[on].t+'".split("_")'
-    br=(/AppleWebKit|Firefox/i).test(br)?
-      f[2]+((/AppleWebKit/i).test(br)?f[1]:'')
-      :f[0]+lg
-    return br+lg}}
+  brw:function(br){f=b.fn;var lg=';s.lng="'+lngs[on].t+'".split("_")'
+    return f[(/AppleWebKit|Firefox/i).test(br)?1:0]+lg}}
 p={//parse
   N:'⓪①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳'.split(''),
   sty:"<style>#roll>div fieldset{background:radial-gradient(rgba(0,0,0,0),white 16%,rgba(255,255,255,.5));border-radius:2em;border:4px groove threedface;border-top:0;border-right:0;box-shadow:black 2px 8px 11px;margin-bottom:.5em}fieldset:after{content:'.'}legend{background:linear-gradient(transparent,white,transparent);font-style:oblique;text-shadow:white 3px 0 2px}textarea{font-family:verdana;font-size:1em}fieldset>center>button{display:block}center>label:before{content:' '}center>label:after{content:':'}#roll>div:nth-child(6)>fieldset>legend:before{content:'vr '}#roll>div:nth-child(2)>fieldset>legend:after{content:'?'}legend>label:before{content:' (2014.'}legend>label:after{content:')'}</style>",
@@ -60,4 +56,4 @@ this.onmessage=function(e){d=e.data
     on=='es'&&(p.i=lngs[on],p.i.t=p.i.t.split('_'),p.e=lngs.en)
     x=setInterval(function(){
       postMessage({i:b.i,cnt:p.rs(p.k[b.i]),t:p.k[b.i]})
-      ++b.i==b.end&&(clearInterval(x),postMessage({fn:((/AppleWebKit/i).test(d.ua)?"s.d.head.lastChild.innerHTML+='@font-face{font-family:u2400;src:url(css/u2400.woff)}#roll>div>fieldset{font-family:u2400}',":'')+"console.log('attempting to terminate worker...',s.wk.terminate(),'worker terminated')"}))},50)}}
+      ++b.i==b.end&&(clearInterval(x),postMessage({fn:"console.log('attempting to terminate worker...',s.wk.terminate(),'worker terminated')"}))},50)}}
