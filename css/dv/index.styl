@@ -1,3 +1,5 @@
+#visas_style_div.popup
+  display none!important
 #info
   position fixed
   z-index 1
@@ -6,7 +8,7 @@
   src url(fontawesome-webfont.woff)
 section label
   display block
-#fs,#ft img
+#fs,#ft a
   transition 1s
 #fs,#info,#ok
   font-family awesome
@@ -14,7 +16,7 @@ section label
   font-size 2.2em
 input
   font-size .5em
-#fs,section *,#ft img
+#fs,section *,#ft a
   border-radius 1em
 #lg,#lg::after
   border-radius .1em
@@ -46,7 +48,7 @@ input
   cursor pointer
 #cv
   background linear-gradient(#FFF,#7D7DDF 90%,#1B186D)
-#ok,#ft>div
+#ok
   font-size 1.5em
 #fs *:not(a),#ok
   color #FFF
@@ -63,7 +65,7 @@ a
   color #F00
 .load
   background radial-gradient(transparent,#FFF,#000)
-.ok,#ft img
+.ok
   border darkgreen 2px dashed
 .bad
   border red 2px dashed
@@ -90,15 +92,24 @@ a
   text-align left
 #ft
   font-family verdana
-#ft>span
-  margin 0 32px
 #ft a
-  position absolute
-#ft img:hover
+  background-image url(3rd.jpg)
+  box-shadow 3px 3px 4px 5px #047
+  float right
   height 64px
+  margin 1.5em
   width 64px
-#ft img:hover
-  height 80px
+#ft a:nth-of-type(1)
+  background-position-x 0
+#ft a:nth-of-type(2)
+  background-position-x 128px
+#ft a:nth-of-type(3)
+  background-position-x -128px
+#ft a:nth-of-type(4)
+  background-position-x 64px
+#ft a:nth-of-type(5)
+  background-position-x -64px
+#ft a:hover
   -webkit-transform rotate3D(1,1,1,-360deg)
 
 .prg::after
