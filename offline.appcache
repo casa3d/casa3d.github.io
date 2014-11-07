@@ -1,21 +1,16 @@
 CACHE MANIFEST
-#14.10.31 11:55
+#14.11.7 14:50
 CACHE:
 css/index.css
 js/lib/index.js
 css/fontawesome-webfont.woff
-img/3rd/davegandy.jpg
-img/3rd/Mr.doob.jpg
-img/3rd/gildas-lormeau.jpg
-img/3rd/jQuery.jpg
-img/3rd/blender.jpg
+css/3rd.jpg
 js/lib/idb.js
 js/3rd/jquery-2.x.js
 js/lib/filler.js
 js/3rd/three.js
 js/lib/vectrix.js
 js/lib/t.js
-js/lib/xhr.js
 js/lib/house.js
 js/lib/move.js
 js/lib/drgNrsz.js
@@ -64,21 +59,6 @@ img/floor/5.jpg
 img/floor/9.jpg
 img/floor/10.jpg
 img/house/0.jpg
-img/house/1.jpg
-img/house/2.jpg
-img/house/3.jpg
-img/house/4.jpg
-img/house/5.jpg
-img/house/6.jpg
-img/house/7.jpg
-img/house/8.jpg
-img/house/9.jpg
-img/house/10.jpg
-img/house/11.jpg
-img/house/12.jpg
-img/house/13.jpg
-img/house/14.jpg
-img/house/15.jpg
 img/glass/0.jpg
 img/glass/1.jpg
 img/glass/2.jpg
@@ -95,24 +75,8 @@ img/glass/12.jpg
 img/glass/13.jpg
 img/glass/14.jpg
 img/glass/15.jpg
-img/icon/0.png
-img/icon/1.png
-img/icon/2.png
-img/icon/3.png
-img/icon/4.png
-img/icon/5.png
-img/icon/6.png
-img/icon/7.png
-img/icon/8.png
-img/icon/9.png
-img/icon/10.png
-img/icon/11.png
-img/icon/12.png
-img/icon/13.png
-img/icon/14.png
-img/icon/15.png
+img/icon/menu.png
 img/icon/left.png
-img/icon/t.png
 img/icon/trgt.png
 img/metal/0.jpg
 img/wall/0.jpg
@@ -164,5 +128,3 @@ img/wood/13.jpg
 img/wood/14.jpg
 img/wood/15.jpg
 js/hs/0.js
-NETWORK:
-*
