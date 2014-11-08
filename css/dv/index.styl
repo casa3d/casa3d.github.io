@@ -3,17 +3,14 @@
 #info
   position fixed
   z-index 1
-@font-face
-  font-family awesome
-  src url(fontawesome-webfont.woff)
 section label
   display block
 #fs,#ft a
   transition 1s
 #fs,#info,#ok
-  font-family awesome
+  font-family Segoe UI Symbol
 #fs,#info,label,#lg
-  font-size 2.2em
+  font-size 180%
 input
   font-size .5em
 #fs,section *,#ft a
@@ -29,16 +26,6 @@ input
   width 46%
 #lg::before,input
   transition .4s
-#lg::after
-  content '\f044\f015'
-#fs>section>label:nth-of-type(1)::before
-  content '\f007'
-#fs>section>label:nth-of-type(2)::before,#fs div>label:nth-of-type(1)::before
-  content '\f132'
-#ok::before
-  content '\f05d'
-#lnk::after
-  content ' \f14c'
 #b
   background repeating-linear-gradient(45deg,rgba(170,170,170,43),rgba(255,255,255,.4),rgba(126,126,126,.8)10%),repeating-linear-gradient(-45deg,#AAA,#DDD,#7E7E7E 10%)
 input
@@ -90,8 +77,6 @@ a
   left 43%
   position relative
   text-align left
-#ft
-  font-family verdana
 #ft a
   background-image url(3rd.jpg)
   box-shadow 3px 3px 4px 5px #047
@@ -100,21 +85,13 @@ a
   margin 1.5em
   width 64px
 #ft a:nth-of-type(1)
-  background-position-x 0
+  background-position 0
 #ft a:nth-of-type(2)
-  background-position-x 128px
+  background-position 64px
 #ft a:nth-of-type(3)
-  background-position-x -128px
+  background-position 128px
 #ft a:nth-of-type(4)
-  background-position-x 64px
-#ft a:nth-of-type(5)
-  background-position-x -64px
+  background-position 192px
 #ft a:hover
+  border-radius 2em
   -webkit-transform rotate3D(1,1,1,-360deg)
-
-.prg::after
-  content '% \f05a'
-.end::after
-  content '\f11e'
-.re::after
-  content '\f1da'
