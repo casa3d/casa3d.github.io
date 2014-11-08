@@ -1,31 +1,25 @@
 <!DOCTYPE html>
 <html manifest=offline.appcache>
   <head>
-    <script>ch={ap:applicationCache,shft:function(){info.innerText='',info.className=ch.l?ch.halt?'re':(p.hidden=1,'end'):(p.hidden=1,'')},init:function(){ch.ap.onprogress=function(e){if(e.total)info.innerText=p.value=((ch.l=e.loaded)/e.total*100).toFixed(0)},ch.ap.onupdate=function(){info.className='prg'},ch.ap.oncached=ch.ap.onupdateready=ch.ap.onnoupdate=ch.shft,ch.ap.onerror=function(e){ch.shft(ch.halt=1),ch.l&&confirm(ch.msg)?(ch.halt=0,info.className='prg',ch.ap.update()):console.clear()}}},ch.init()</script>
+    <script>ch={ap:applicationCache,shft:function(){info.innerText=ch.l?ch.halt?'🔃':(p.hidden=1,'🏁'):(p.hidden=1,'')},init:function(){ch.ap.onprogress=function(e){if(e.total&&!p.hidden)info.innerText=(p.value=((ch.l=e.loaded)/e.total*100).toFixed(0))+'%'},ch.ap.oncached=ch.ap.onupdateready=ch.ap.onnoupdate=ch.shft,ch.ap.onerror=function(e){ch.shft(ch.halt=1),ch.l&&confirm(ch.msg)?(ch.halt=0,ch.ap.update()):console.clear()}}},ch.init()</script>
     <title>casa3d</title>
     <meta charset=UTF-8></meta>
     <link rel=stylesheet href=css/index.css>
     <script src=js/lib/index.js async></script></head>
   <body id=b style=margin:0;overflow:hidden>
-    <div>
+    <div id=intro>
       <progress id=p max=100></progress><br>
       <span id=info class=prg></span>
       <fieldset id=fs class=subg>
         <legend id=lg class=su></legend>
         <section>
-          <label><input placeholder='a _ _ _ _'></label>
-          <label><input placeholder='* * * *' type=password></label>
+          👤🙋<label><input placeholder='a _ _ _ _'></label>
+          🔑<label><input placeholder='* * * *' type=password></label>
           <div>
-            <label><input placeholder='* * * *' type=password></label>
-            <input type=radio id=chk>
+            🔑<label><input placeholder='* * * *' type=password></label>
+            <span id=chk>⬛</span>
             <span>
               I Agree with these 
               <a id=lnk class=noread href=support target=_blank>Terms & Conditions of use</a></span></div>
-          <button id=ok></button></section></fieldset>
-      <footer id=ft>
-        <nav>
-          <a href=//www.blender.org target=_blank title='blender v2.72a'></a>
-          <a href=//jquery.com target=_blank title='jQuery v2.1.1'></a>
-          <a href=//gildas-lormeau.github.io/zip.js target=_blank title='zip.js, Gildas Lormeau. Rennes, France'></a>
-          <a href=//threejs.org target=_blank title='Threejs rv61, Ricardo Cabello. Barcelona, Spain'></a>
-          <a href=//fontawesome.io target=_blank title='Font Awesome v4.2.0, Dave Gandy. Cambridge, MA'></a></nav></footer>
+          <button id=ok>OK</button></section></fieldset>
+      <nav id=ft>

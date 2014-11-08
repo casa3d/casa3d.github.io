@@ -1,9 +1,8 @@
 CACHE MANIFEST
-#14.11.7 15:50
+#14.11.8 16:16
 CACHE:
 css/index.css
 js/lib/index.js
-css/fontawesome-webfont.woff
 css/3rd.jpg
 js/lib/idb.js
 js/3rd/jquery-2.x.js
