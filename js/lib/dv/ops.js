@@ -342,10 +342,8 @@ o={
       o.im.click()},
     function(){open(location.href+'support','_new')},
     function(){//log out
-      u.cl()
-      u.out()
       u.shift()
-      setTimeout(u.cl,500)}],
+      setTimeout(u.out,100)}],
   rc:function(e){//10% & position of mouse in Y
     o.V3.x=(e.clientX/o.w.innerWidth)*2-1,o.V3.y=-(o.y/o.w.innerHeight)*2+1
     o.pj.unprojectVector(o.V3,o.c)
@@ -432,7 +430,7 @@ o={
     o.ops[14]=o.exp
     h.ga.add(o.added=o.ob3.clone())
     o.im=$('<input type=file accept='+o.ap+'zip onchange=o.imp(this.files)>')[0]
-    o.fi=u.lng=='es'?'con el fin de descargar una casa, 1ro debes añadir o subir alguna':'in order to download house, first you must add one or upload your own'
+    o.fi=u.lng=='es'?'con el fin de exportar una casa, 1ro debes añadir o importar alguna':'in order to export house, first you must add one or import your own'
     o.pfx=o.usrAgnt[/(Chrome|Trident|Firefox)/.exec(o.w.navigator.userAgent)[0]]
     o.sty+='-'+o.pfx+'-user-select:none}'
     sty?
