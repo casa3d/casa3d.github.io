@@ -12,5 +12,4 @@ tc=['disclaimer_THIS SOFTWARE IS PROVIDED TO YOU "AS IS" WITHOUT ANY WARRANTY OF
 '3rd party domains_ '+K+' may include links or any promotional service, so '+K+' cannot take over them, cannot control them or even be responsible due to user gets into another domain',
 'indemnity_YOU AGREE TO indemnify, save and do not blame all people envolved in '+K+' from any damage, cost of fees and/or attorney(s) due to or arised from any unspected, wrong situation or even any other',
 'closure of your account_you may cancel your account at any time, '+K+' may suspend or definitively close it too without even given any reason why',
-'general_please review these "terms & conditions of use" at time to time because these may change at any time and without prior notice so, just fact of continued used means you are fully updated and know what you are facing up',
-license]
+'general_please review these "terms & conditions of use" at time to time because these may change at any time and without prior notice so, just fact of continued used means you are fully updated and know what you are facing up']
