@@ -161,4 +161,4 @@ vr=['1.0 1.5_'+
 '     c) el tiempo esperando para generar el archivo zip ha tenido una reduccion importante'+l+
 '     d) casa# dependera de la casa mas cercana a la posicion actual de la camara'+l+
 '   En la opcion de importacion:'+l+
-'     cuando una nueva casa llega, la camara se mueve enfrente de ella y un numero es mostrado encima']
+'     cuando una nueva casa llega, la camara se mueve enfrente de ella y un numero es mostrado encima','3.0 11.13_'+'filler.js ha sido mejorado (usando zip.js):'+l+'ahora va a añadir dentro de head casi todos los scripts necesarios extraidos de "lbs.zip"'+l+'esto significa que:'+l+'el tamaño de la pagina se ha reducido 33.33%'+l+'antes: ~1.2MB'+l+'ahora: ~800kb']

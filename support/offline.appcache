@@ -1,9 +1,9 @@
 CACHE MANIFEST
-#14.11.6 17:38
+#14.11.13 17:38
 
 CACHE:
 css/index.css
-../js/lib/xhr.js
+js/xhr.js
 js/index.js
 js/worker.js
 js/structure.js

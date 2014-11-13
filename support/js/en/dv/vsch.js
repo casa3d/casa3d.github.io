@@ -161,4 +161,11 @@ vr=['1.0 1.5_'+
 '     c) time awaiting while generating zip file has been redused significantly'+l+
 '     d) casa# will depend on nearest house to camera position'+l+
 '   In import option:'+l+
-'     when new house comes, camera moves infront of it and a number is displayed above it']
+'     when new house comes, camera moves infront of it and a number is displayed above it',
+'3.0 11.13_'+
+'filler.js has been upgraded (using zip.js):'+l+
+'now it\'s going to append to head almost all scripts needed extracted from "lbs.zip"'+l+
+'this means that:'+l+
+'webpage size has been decreased 33.33%'+l+
+'before: ~1.2MB'+l+
+'now: ~800kb']
