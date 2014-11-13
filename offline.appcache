@@ -1,23 +1,13 @@
 CACHE MANIFEST
-#14.11.8 16:54
+#14.11.12 13:28
 CACHE:
 css/index.css
-js/lib/index.js
+js/index.js
 css/3rd.jpg
-js/lib/idb.js
-js/3rd/jquery-2.x.js
-js/lib/filler.js
-js/3rd/three.js
-js/lib/vectrix.js
-js/lib/t.js
-js/lib/house.js
-js/lib/move.js
-js/lib/drgNrsz.js
-js/lib/ops.js
-js/3rd/zip.js
-js/3rd/deflate.js
-js/3rd/inflate.js
-js/3rd/fnt.js
+js/idb.js
+js/filler.js
+js/zip.js
+js/lbs.zip
 cur/cr.cur
 cur/drg.cur
 cur/drgn.cur
@@ -126,4 +116,3 @@ img/wood/12.jpg
 img/wood/13.jpg
 img/wood/14.jpg
 img/wood/15.jpg
-js/hs/0.js

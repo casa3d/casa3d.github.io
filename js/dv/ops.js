@@ -98,7 +98,7 @@ o={
       clickEvent.initMouseEvent('click',1,1,o.w,0,0,0,0,0,0,0,0,0,0,null)//type, canBubble, cancelable, view,  detail, screenX, screenY, clientX, clientY,  ctrlKey, altKey, shiftKey, metaKey,  button, relatedTarget
       o.a.dispatchEvent(clickEvent)}},
   zip:function(){
-    if(zip&&zip.useWebWorkers){
+    if(zip&&zip.method&&zip.method.deflate){
       var c=o.o.material.color
       c.r=c.g=c.b=1
       o.o=o.menu
@@ -123,7 +123,7 @@ o={
           and therefore user'd do two things:
             1) now in which house is. "currently, I mean"
             2) export file like so: casa# dateInfo.zip */
-        x=new Blob([o.house[p-1]]/*[#-1] 'cuz it'd never be 0*/,{type:o.ap+'javascript'})//house,mimeType
+        x=new Blob([o.house[p-1]]/*[#-1] 'cuz it'd never be 0*/,{type:o.ap+'JavaScript'})//house,mimeType
         x.name='casa3d.js'
         zip.createWriter(
           new zip.BlobWriter(o.ap+'zip'),
@@ -280,7 +280,7 @@ o={
               φ=new T.ImageUtils.loadTexture('img/'+f+'/'+(f=='house'?0:l+II)+'.jpg')
               m=new T.MeshBasicMaterial({map:φ,opacity:.85,transparent:!0})
               r.children[i].add(M=new T.Mesh(g,m))
-              M.position.set(x[0][I]+x[1][I],y[0][l]+y[1][l],0);l++}I++}}
+              M.position.set(x[0][I]+x[1][I],y[0][l]+y[1][l],0),l++}I++}}
       //left container
         g=o.pl(o.gw,o.pnlH)
         φ=new T.ImageUtils.loadTexture('img/icon/left.png')
@@ -499,6 +499,8 @@ o={
     o.clear(clck,'ops',6e3)
     o.re=new RegExp(o.left.id+'|'+o.menu.children[0].id+'|'+o.menu.children[2].id+'|'+o.right.id)}}
 $(o.w).on({
+  contextMenu:function(){
+    alert('remove, change texture')},
   click:function(e){var i,sf
     u.a&&(
       o.o.id&&(
@@ -506,11 +508,9 @@ $(o.w).on({
           o.ops[o.o.id]()
           :o.at()&&(//let it proceed since it comes from add-menu or thumbnails
             o.o.parent.id==o.f?//first rll´s child means "import-house section"
-              o.ntH&&o.zip()&&(
-                $.get(
-                  'js/hs/0.js',
-                  function(r){
-                    o.ntH(t.s.children.length-1,r)}))
+              o.zip()&&o.ntH&&o.ntH(
+                t.s.children.length-1,
+                o.asset)
               :(sf=o.o.material.map.sourceFile)&&(o.add(sf,/blob/.test(sf))))),//let it know if its sourceFile comes from a blob
       //left kbrd add right
       !o.st.pnl.position.y&&!o.re.test(o.o.id)&&o.shwm(),

@@ -50,10 +50,12 @@ u={
 		chk.onclick!=u.chk&&(
 			chk.onclick=u.lp.onclick=u.chk,
 			chk.onkeypress=chk.click)},
-	cas:function(s){//create&append script
-		fl=u.c('script')
-		fl.src=s+'.js'
-		u.d.head.appendChild(fl)},
+	cas:function(s,i){//create&append script
+    s=s.split(' ')
+    for(i in s){
+  		fl=u.c('script')
+  		fl.src='js/'+s[i]+'.js'
+  		u.d.head.appendChild(fl)}},
 	init:function(){//initialize or initiate
     lg.innerHTML='&nbsp;📝 🏠 '
     var p,a,l=0,x=[
@@ -84,4 +86,5 @@ u={
       ft.appendChild(a)}}}
 u.init(u.lg=0)
 chk.checked=0
-window.onload=function(){u.cas('js/lib/filler')}
+onload=function(){
+  u.cas('idb filler')}
