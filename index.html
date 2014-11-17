@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html manifest=offline.appcache>
   <head id=H>
-    <script>ch={ap:applicationCache,shft:function(){info.innerText=ch.l?ch.halt?'🔃':(p.hidden=1,'🏁'):(p.hidden=1,'')},init:function(){ch.ap.onprogress=function(e){if(e.total&&!p.hidden)info.innerText=(p.value=((ch.l=e.loaded)/e.total*100).toFixed(0))+'%'},ch.ap.oncached=ch.ap.onupdateready=ch.ap.onnoupdate=ch.shft,ch.ap.onerror=function(e){ch.shft(ch.halt=1),ch.l&&confirm(ch.msg)?(ch.halt=0,ch.ap.update()):console.clear()}}},ch.init()</script>
+    <script>ch={ap:applicationCache,shft:function(){ch.l&&(info.innerText=ch.halt?'🔃':(p.hidden=1,'▶'))},init:function(){ch.ap.onprogress=function(e){if(e.total)info.innerText=p.value=100-((ch.l=e.loaded)/e.total*100).toFixed(0)},ch.ap.oncached=ch.ap.onupdateready=ch.shft,ch.ap.onerror=function(e){ch.shft(ch.halt=1),ch.l&&confirm(ch.msg)?(ch.halt=0,ch.ap.update()):console.clear()}}},ch.init()</script>
     <title>casa3d</title>
     <meta charset=UTF-8></meta>
     <link rel=stylesheet href=css/index.css>
-    <script src=js/index2.js async></script></head>
+    <script src=js/index.js async></script></head>
   <body id=b style=margin:0;overflow:hidden>
-    <progress id=p max=100></progress>
-    <label id=info class=prg></label>
     <center id=hd>
       <button class=active>🏠</button>
       <button>👤</button>
@@ -17,19 +15,19 @@
       <button id=prev>🔙</button>
       <button id=next>🔜</button>
       <div id=intro>
-        <button>▶</button>
-        <img>
-        <h1>casa3d</h1>
+        <button id=info class=z>▶</button>
+        <canvas height=1366 width=768 class=out></canvas>
         <label>
-          with casa3d you will recreate house based on preloaded sample</label></div>
+          with casa3d you will recreate house based on preloaded sample</label>
+        <progress id=p max=100 hidden></progress></div>
       <div id=fs>
-        <button>📝</button>
+        <button class=lgsu>📝</button>
         <button>🏠</button>
         <label>👤<input></label>
-        <label>🔒<input type=password></label>
+        <label>🔑<input type=password></label>
         <div>
-          <label>🔒<input type=password></label>
-          <span id=chk>☑</span>
+          <label>🔑<input type=password></label>
+          <button id=chk>⬛</button>
           <span>
              I Agree with these 
             <a id=lnk class=noread href=support target=_blank>Terms & Conditions of use</a></span></div>
@@ -45,8 +43,7 @@
           <button>📩</button></div>
         <div>
           <button>☑</button></div></div></center>
-    <div id=cnt>
+    <div id=cnt class=no>
       <div>
-        <button>🔙</button>
-        <label>💻 requirements list</label></div>
-      <div></div></div>
+        <button id=back>🔙</button>
+        <label id=title>

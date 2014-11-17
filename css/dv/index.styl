@@ -1,6 +1,6 @@
 #visas_style_div.popup
   display none!important
-span,label,button,h1,input
+span,label,button,input,a
   color #FFF
 #b *
   font-family Segoe UI Symbol,verdana
@@ -9,7 +9,6 @@ span,label,button,h1,input
   background linear-gradient(rgba(0, 0, 0, 0.2),rgba(121, 0, 2, 0.2)),repeating-linear-gradient(27deg,rgba(0, 0, 0, 0),rgba(0, 121, 171, 0.2) 5%),#004D91
   #roll
     height 700px
-    position relative
     width 300%
     >button,#intro button
       border 1px ridge white
@@ -83,13 +82,12 @@ span,label,button,h1,input
             &:after
               content 'Terms & Conditions'
   #cnt
-    background lightgrey
-    display none
     height 768px
     left 0
     position fixed
     top 0
     width 100%
+    z-index 2
     div:nth-child(1)
       background rgba(0, 0, 0, 0.5)
       width 100%
@@ -97,6 +95,7 @@ span,label,button,h1,input
       label
         float right
     div:nth-child(2)
+      background lightgrey
       height 682px
       overflow-y auto
       fieldset
@@ -119,22 +118,11 @@ input,fieldset,legend
 #hd
   width 100%
 #intro
-  h1,label
-    position absolute
   button
-    text-shadow rgb(0, 223, 255) 2px 0 10px
     left 24%
     padding-right 0
-    position relative
+    text-shadow rgb(0, 223, 255) 2px 0 10px
     top -30%
-  img
-    height 60%
-    margin-right 30%
-    width 36.5%
-  h1
-    left 7.6%
-    top 50%
-    background rgba(42, 255, 0, .5)
   label
     border solid
     padding 6px
@@ -146,24 +134,25 @@ input,fieldset,legend
       font-size 2em
       height 50px
       width 50px
-      position absolute
       left -39px
-      top 20%
+      top 15%
+button:not(#chk)
+  font-size 2.1em
 button
   background transparent
-  font-size 2.1em
 button:focus
   text-shadow #000 -5px 5px 9px
 button:hover
   background rgba(0, 178, 255, 0.51)
-#ok
-  font-size 1.5em
+#ok,#chk
+  font-size 1em
 button
   border 0
 #ok:focus
   border #09F 4px double
 #cv
   background linear-gradient(#FFF,#7D7DDF 90%,#1B186D)
+  z-index 1
 a
   cursor alias
 button,#chk
@@ -171,26 +160,33 @@ button,#chk
   text-shadow black 2px 2px 3px
 .noread
   color #D2DB00
-.load
-  background radial-gradient(transparent,#FFF,#000)
-.load:after
-  content '%'
 .ok
   border darkgreen 2px dashed
 .bad
   border red 2px dashed
 .no
   display none
-.su
-  background linear-gradient(90deg,rgba(0,173,180,.5)45%,transparent 65%)
 .false
   border red 3px groove
-.active
+.active,.lgsu
   background #00b2ff
   text-shadow black -5px 5px 9px
-.behind
-  color rgba(132, 132, 132, 0.2)
-  text-shadow rgba(0, 0, 0, 0.2) 1px 1px 3px
+#roll,#intro button,.out
+  position relative
+#intro label,#intro label:before,#p
+  position absolute
+.out
+  border solid white
+  height 60%
+  margin-right 30%
+  width 36.5%
+#p
+  left 11%
+  top 20%
+.z
+  z-index 2
+.back
+  background url(../img/pre.jpg)0/cover
 .one
   left 0
 .two

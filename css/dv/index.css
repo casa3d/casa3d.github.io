@@ -1,71 +1,70 @@
-#visas_style_div.popup{display:none !important}
-span,label,button,h1,input{color:#fff}
+span,label,button,input,a{color:#fff}
 #b *{font-family:Segoe UI Symbol,verdana;transition:.4s}
-#b{background:linear-gradient(rgba(0,0,0,0.2),rgba(121,0,2,0.2)),repeating-linear-gradient(27deg,rgba(0,0,0,0),rgba(0,121,171,0.2) 5%),#004d91;}
-#b #roll{height:700px;position:relative;width:300%;}
-#b #roll >button,#b #roll #intro button{border:1px ridge #fff;border-radius:5em;height:100px;margin:.5em;outline:0;width:100px}
-#b #roll >button{position:fixed}
-#b #roll #prev{left:0}
-#b #roll #next{right:0}
-#b #roll >div{float:left;height:100%;padding-top:1em;width:33.3333%;}
-#b #roll >div:nth-of-type(3){padding-top:4em;}
-#b #roll >div:nth-of-type(3)>*{margin:7px;float:left;font-size:2.5em;}
-#b #roll >div:nth-of-type(3)>* >*:after{display:block;font-size:20px}
-#b #roll >div:nth-of-type(3)>*:nth-child(1){height:53%;margin-left:4em;width:36%;}
-#b #roll >div:nth-of-type(3)>*:nth-child(1) button{margin-bottom:10px;width:46%}
-#b #roll >div:nth-of-type(3)>*:nth-child(1)>*:nth-child(1){background:linear-gradient(90deg,#006f6f,#008b8b);}
-#b #roll >div:nth-of-type(3)>*:nth-child(1)>*:nth-child(1):after{content:'Requirements'}
-#b #roll >div:nth-of-type(3)>*:nth-child(1)>*:nth-child(2){background:linear-gradient(90deg,#4b4090,#6456b2);}
-#b #roll >div:nth-of-type(3)>*:nth-child(1)>*:nth-child(2):after{content:'FAQs'}
-#b #roll >div:nth-of-type(3)>*:nth-child(1)>*:nth-child(3){background:linear-gradient(90deg,#dd5600,#ff7400);}
-#b #roll >div:nth-of-type(3)>*:nth-child(1)>*:nth-child(3):after{content:'User Manual'}
-#b #roll >div:nth-of-type(3)>*:nth-child(1)>*:nth-child(4){background:linear-gradient(90deg,#007c00,#009d00);}
-#b #roll >div:nth-of-type(3)>*:nth-child(1)>*:nth-child(4):after{content:'Training Plan'}
-#b #roll >div:nth-of-type(3)>*:nth-child(2){height:48%;width:9.1%;}
-#b #roll >div:nth-of-type(3)>*:nth-child(2)>*{margin-bottom:8%;height:50%;width:100%}
-#b #roll >div:nth-of-type(3)>*:nth-child(2)>*:nth-child(1){background:linear-gradient(90deg,#007af0,#1e90ff);}
-#b #roll >div:nth-of-type(3)>*:nth-child(2)>*:nth-child(1):after{content:'Keyboard'}
-#b #roll >div:nth-of-type(3)>*:nth-child(2)>*:nth-child(2){background:linear-gradient(90deg,#832583,#a323a3);}
-#b #roll >div:nth-of-type(3)>*:nth-child(2)>*:nth-child(2):after{content:'Contact'}
-#b #roll >div:nth-of-type(3)>*:nth-child(3){font-size:5.65em;}
-#b #roll >div:nth-of-type(3)>*:nth-child(3)>*{background:linear-gradient(90deg,#b54823,#cd5932);}
-#b #roll >div:nth-of-type(3)>*:nth-child(3)>*:after{content:'Terms & Conditions'}
-#b #cnt{background:#d3d3d3;display:none;height:768px;left:0;position:fixed;top:0;width:100%;}
-#b #cnt div:nth-child(1){background:rgba(0,0,0,0.5);width:100%;font-size:1.5em;}
-#b #cnt div:nth-child(1) label{float:right}
-#b #cnt div:nth-child(2){height:682px;overflow-y:auto;}
-#b #cnt div:nth-child(2) fieldset{background:linear-gradient(#e1e0e0,#f5f5f5);box-shadow:#000 -4px 4px 10px;}
-#b #cnt div:nth-child(2) fieldset legend{background:linear-gradient(transparent,#fff,transparent);font-style:oblique;text-shadow:#fff 3px 0 2px}
+#b{background:linear-gradient(rgba(0,0,0,.2),rgba(121,0,2,.2)),repeating-linear-gradient(27deg,rgba(0,0,0,0),rgba(0,121,171,.2)5%),#004d91}
+#b #roll{height:700px;width:300%}
+#roll>button,#intro button{border:1px ridge #fff;border-radius:5em;height:100px;margin:.5em;outline:0;width:100px}
+#roll>button{position:fixed}
+#prev{left:0}
+#next{right:0}
+#roll>div{float:left;height:100%;padding-top:1em;width:33.3333%}
+#roll>div:nth-of-type(3){padding-top:4em}
+#roll>div:nth-of-type(3)>*{margin:7px;float:left;font-size:2.5em}
+#roll>div:nth-of-type(3)>*>*:after{display:block;font-size:20px}
+#roll>div:nth-of-type(3)>*:nth-child(1){height:53%;margin-left:4em;width:36%}
+#roll>div:nth-of-type(3)>*:nth-child(1) button{margin-bottom:10px;width:46%}
+#roll>div:nth-of-type(3)>*:nth-child(1)>*:nth-child(1){background:linear-gradient(90deg,#006f6f,#008b8b)}
+#roll>div:nth-of-type(3)>*:nth-child(1)>*:nth-child(1):after{content:'Requirements'}
+#roll>div:nth-of-type(3)>*:nth-child(1)>*:nth-child(2){background:linear-gradient(90deg,#4b4090,#6456b2)}
+#roll>div:nth-of-type(3)>*:nth-child(1)>*:nth-child(2):after{content:'FAQs'}
+#roll>div:nth-of-type(3)>*:nth-child(1)>*:nth-child(3){background:linear-gradient(90deg,#dd5600,#ff7400)}
+#roll>div:nth-of-type(3)>*:nth-child(1)>*:nth-child(3):after{content:'User Manual'}
+#roll>div:nth-of-type(3)>*:nth-child(1)>*:nth-child(4){background:linear-gradient(90deg,#007c00,#009d00)}
+#roll>div:nth-of-type(3)>*:nth-child(1)>*:nth-child(4):after{content:'Training Plan'}
+#roll>div:nth-of-type(3)>*:nth-child(2){height:48%;width:9.1%}
+#roll>div:nth-of-type(3)>*:nth-child(2)>*{margin-bottom:8%;height:50%;width:100%}
+#roll>div:nth-of-type(3)>*:nth-child(2)>*:nth-child(1){background:linear-gradient(90deg,#007af0,#1e90ff)}
+#roll>div:nth-of-type(3)>*:nth-child(2)>*:nth-child(1):after{content:'Keyboard'}
+#roll>div:nth-of-type(3)>*:nth-child(2)>*:nth-child(2){background:linear-gradient(90deg,#832583,#a323a3)}
+#roll>div:nth-of-type(3)>*:nth-child(2)>*:nth-child(2):after{content:'Contact'}
+#roll>div:nth-of-type(3)>*:nth-child(3){font-size:5.65em}
+#roll>div:nth-of-type(3)>*:nth-child(3)>*{background:linear-gradient(90deg,#b54823,#cd5932)}
+#roll>div:nth-of-type(3)>*:nth-child(3)>*:after{content:'Terms & Conditions'}
+#cnt{height:768px;left:0;position:fixed;top:0;width:100%;z-index:2}
+#cnt div:nth-child(1){background:rgba(0,0,0,.5);width:100%;font-size:1.5em}
+#cnt div:nth-child(1) label{float:right}
+#cnt div:nth-child(2){background:#d3d3d3;height:682px;overflow-y:auto}
+#cnt div:nth-child(2) fieldset{background:linear-gradient(#e1e0e0,#f5f5f5);box-shadow:#000 -4px 4px 10px}
+#cnt div:nth-child(2) fieldset legend{background:linear-gradient(transparent,#fff,transparent);font-style:oblique;text-shadow:#fff 3px 0 2px}
 label,a{display:block}
 #fs,#info,label,#hd{font-size:160%}
-input{background:linear-gradient(rgba(0,0,0,0.5),transparent,rgba(0,0,0,0.5));font-size:.5em;text-align:center}
+input{background:linear-gradient(rgba(0,0,0,.5),transparent,rgba(0,0,0,.5));font-size:.5em;text-align:center}
 input,fieldset,legend{border-radius:7px}
 #hd{width:100%}
-#intro h1,#intro label{position:absolute}
-#intro button{text-shadow:#00dfff 2px 0 10px;left:24%;padding-right:0;position:relative;top:-30%}
-#intro img{height:60%;margin-right:30%;width:36.5%}
-#intro h1{left:7.6%;top:50%;background:rgba(42,255,0,0.5)}
-#intro label{border:solid;padding:6px;left:20.5%;top:19%;width:10%;}
-#intro label:before{content:'<';font-size:2em;height:50px;width:50px;position:absolute;left:-39px;top:20%}
-button{background:transparent;font-size:2.1em}
+#intro button{left:24%;padding-right:0;text-shadow:#00dfff 2px 0 10px;top:-30%}
+#intro label{border:solid;padding:6px;left:20.5%;top:19%;width:10%}
+#intro label:before{content:'<';font-size:2em;height:50px;width:50px;left:-39px;top:15%}
+button:not(#chk){font-size:2.1em}
+button{background:transparent}
 button:focus{text-shadow:#000 -5px 5px 9px}
-button:hover{background:rgba(0,178,255,0.51)}
-#ok{font-size:1.5em}
+button:hover{background:rgba(0,178,255,.51)}
+#ok,#chk{font-size:1em}
 button{border:0}
 #ok:focus{border:#09f 4px double}
-#cv{background:linear-gradient(#fff,#7d7ddf 90%,#1b186d)}
+#cv{background:linear-gradient(#fff,#7d7ddf 90%,#1b186d);z-index:1}
 a{cursor:alias}
 button,#chk{cursor:pointer;text-shadow:#000 2px 2px 3px}
 .noread{color:#d2db00}
-.load{background:radial-gradient(transparent,#fff,#000)}
-.load:after{content:'%'}
 .ok{border:#006400 2px dashed}
 .bad{border:#f00 2px dashed}
 .no{display:none}
-.su{background:linear-gradient(90deg,rgba(0,173,180,0.5) 45%,transparent 65%)}
 .false{border:#f00 3px groove}
-.active{background:#00b2ff;text-shadow:#000 -5px 5px 9px}
-.behind{color:rgba(132,132,132,0.2);text-shadow:rgba(0,0,0,0.2) 1px 1px 3px}
+.active,.lgsu{background:#00b2ff;text-shadow:#000 -5px 5px 9px}
+#roll,#intro button,.out{position:relative}
+#intro label,#intro label:before,#p{position:absolute}
+.out{border:solid #fff;height:60%;margin-right:30%;width:36.5%}
+#p{left:11%;top:20%}
+.z{z-index:2}
+.back{background:url(../img/pre.jpg)0/cover}
 .one{left:0}
 .two{left:-100%}
 .three{left:-200%}
