@@ -1,54 +1,180 @@
-#info
-  position fixed
-  z-index 1
-section label
-  display block
-#fs,#ft a
-  transition 1s
-#fs,#info,#ok
-  font-family Segoe UI Symbol
-#fs,#info,label,#lg
-  font-size 180%
-input
-  font-size .5em
-#fs,section *,#ft a
-  border-radius 1em
-#lg,#lg::after
-  border-radius .1em
-#lg::before
-  bottom 0
-  content ' '
-  background linear-gradient(black,#00F5FF,black)
-  height 10%
-  position absolute
-  width 46%
-#lg::before,input
+#visas_style_div.popup
+  display none!important
+span,label,button,h1,input
+  color #FFF
+#b *
+  font-family Segoe UI Symbol,verdana
   transition .4s
 #b
-  background repeating-linear-gradient(45deg,rgba(170,170,170,43),rgba(255,255,255,.4),rgba(126,126,126,.8)10%),repeating-linear-gradient(-45deg,#AAA,#DDD,#7E7E7E 10%)
+  background linear-gradient(rgba(0, 0, 0, 0.2),rgba(121, 0, 2, 0.2)),repeating-linear-gradient(27deg,rgba(0, 0, 0, 0),rgba(0, 121, 171, 0.2) 5%),#004D91
+  #roll
+    height 700px
+    position relative
+    width 300%
+    >button,#intro button
+      border 1px ridge white
+      border-radius 5em
+      height 100px
+      margin .5em
+      outline 0
+      width 100px
+    >button
+      position fixed
+    #prev
+      left 0
+    #next
+      right 0
+    >div
+      float left
+      height 100%
+      padding-top 1em
+      width 33.3333%
+      &:nth-of-type(3)
+        padding-top 4em
+        &>*
+          margin 7px
+          float left
+          font-size 2.5em
+          >*:after
+            display block
+            font-size 20px
+        &>*:nth-child(1)
+          height 53%
+          margin-left 4em
+          width 36%
+          button
+            margin-bottom 10px
+            width 46%
+          &>*:nth-child(1)
+            background linear-gradient(90deg,rgb(0, 111, 111),darkcyan)
+            &:after
+              content 'Requirements'
+          &>*:nth-child(2)
+            background linear-gradient(90deg,#4B4090,#6456B2)
+            &:after
+              content 'FAQs'
+          &>*:nth-child(3)
+            background linear-gradient(90deg,#DD5600,#FF7400)
+            &:after
+              content 'User Manual'
+          &>*:nth-child(4)
+            background linear-gradient(90deg,#007C00,#009D00)
+            &:after
+              content 'Training Plan'
+        &>*:nth-child(2)
+          height 48%
+          width 9.1%
+          &>*
+            margin-bottom 8%
+            height 50%
+            width 100%
+          &>*:nth-child(1)
+            background linear-gradient(90deg,#007AF0,#1e90ff)
+            &:after
+              content 'Keyboard'
+          &>*:nth-child(2)
+            background linear-gradient(90deg,#832583,#A323A3)
+            &:after
+              content 'Contact'
+        &>*:nth-child(3)
+          font-size 5.65em
+          &>*
+            background linear-gradient(90deg,#B54823,#CD5932)
+            &:after
+              content 'Terms & Conditions'
+  #cnt
+    background lightgrey
+    display none
+    height 768px
+    left 0
+    position fixed
+    top 0
+    width 100%
+    div:nth-child(1)
+      background rgba(0, 0, 0, 0.5)
+      width 100%
+      font-size 1.5em
+      label
+        float right
+    div:nth-child(2)
+      height 682px
+      overflow-y auto
+      fieldset
+        background linear-gradient(rgb(225, 224, 224),whitesmoke)
+        box-shadow black -4px 4px 10px
+        legend
+          background linear-gradient(transparent, white, transparent)
+          font-style oblique
+          text-shadow white 3px 0px 2px
+label,a
+  display block
+#fs,#info,label,#hd
+  font-size 160%
 input
   background linear-gradient(rgba(0,0,0,.5),transparent,rgba(0,0,0,.5))
-#ok
+  font-size .5em
+  text-align center
+input,fieldset,legend
+  border-radius 7px
+#hd
+  width 100%
+#intro
+  h1,label
+    position absolute
+  button
+    text-shadow rgb(0, 223, 255) 2px 0 10px
+    left 24%
+    padding-right 0
+    position relative
+    top -30%
+  img
+    height 60%
+    margin-right 30%
+    width 36.5%
+  h1
+    left 7.6%
+    top 50%
+    background rgba(42, 255, 0, .5)
+  label
+    border solid
+    padding 6px
+    left 20.5%
+    top 19%
+    width 10%
+    &:before
+      content '<'
+      font-size 2em
+      height 50px
+      width 50px
+      position absolute
+      left -39px
+      top 20%
+button
   background transparent
-#cv
-  background linear-gradient(#FFF,#7D7DDF 90%,#1B186D)
+  font-size 2.1em
+button:focus
+  text-shadow #000 -5px 5px 9px
+button:hover
+  background rgba(0, 178, 255, 0.51)
 #ok
   font-size 1.5em
-#fs *:not(a),#ok
-  color #FFF
-a
-  color #180
-  cursor alias
-#fs *:focus
+button
+  border 0
+#ok:focus
   border #09F 4px double
-#fs *
-  outline-color transparent
-#chk
-  outline-color #000
+#cv
+  background linear-gradient(#FFF,#7D7DDF 90%,#1B186D)
+a
+  cursor alias
+button,#chk
+  cursor pointer
+  text-shadow black 2px 2px 3px
 .noread
-  color #F00
+  color #D2DB00
 .load
   background radial-gradient(transparent,#FFF,#000)
+.load:after
+  content '%'
 .ok
   border darkgreen 2px dashed
 .bad
@@ -57,39 +183,17 @@ a
   display none
 .su
   background linear-gradient(90deg,rgba(0,173,180,.5)45%,transparent 65%)
-.lg
-  background linear-gradient(90deg,transparent 45%,rgba(0,162,168,.5)65%)
-.lg::before
-  left 52%
-.subg
-  background linear-gradient(45deg,rgba(214,255,0,.3),rgba(0,0,0,.5))
-.lgbg
-  background linear-gradient(45deg,rgba(255,0,0,.15),rgba(0,255,0,.15),rgba(0,0,255,.3)),rgba(0,0,0,.5)
-#fs,input,#ft
-  text-align center
-#fs
-  padding .5em
-#lg,#ok,#chk
-  cursor pointer
-#lg
-  left 43%
-  position relative
-  text-align left
-#ft a
-  background-image url(3rd.jpg)
-  box-shadow 3px 3px 4px 5px #047
-  float right
-  height 64px
-  margin 1.5em
-  width 64px
-#ft a:nth-of-type(1)
-  background-position 0
-#ft a:nth-of-type(2)
-  background-position 64px
-#ft a:nth-of-type(3)
-  background-position 128px
-#ft a:nth-of-type(4)
-  background-position 192px
-#ft a:hover
-  border-radius 2em
-  -webkit-transform rotate3D(1,1,1,-360deg)
+.false
+  border red 3px groove
+.active
+  background #00b2ff
+  text-shadow black -5px 5px 9px
+.behind
+  color rgba(132, 132, 132, 0.2)
+  text-shadow rgba(0, 0, 0, 0.2) 1px 1px 3px
+.one
+  left 0
+.two
+  left -100%
+.three
+  left -200%

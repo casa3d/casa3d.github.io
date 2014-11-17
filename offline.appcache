@@ -1,9 +1,9 @@
 CACHE MANIFEST
-#14.11.12 13:28
+#14.11.15 13:24
 CACHE:
 css/index.css
-js/index.js
-css/3rd.jpg
+js/index2.js
+img/pre.jpg
 js/idb.js
 js/filler.js
 js/zip.js
