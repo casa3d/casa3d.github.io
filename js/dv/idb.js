@@ -40,23 +40,29 @@ i={
   get:function(){
     i.rsp.onsuccess=function(){var e=i.rsp.result
       u.a=0
-      'users'==i.tbl?
-        u.lg?
-          e?
-            e.user.pass==i.val&&(u.a=!1)
-            :i.bad()
-          :(u.a=1,u.h=e.house)
+      i.tbl=='users'?//(
+        i.session?
+          (u.a=1,
+            u.h=e.house,
+            i.session=0)
+          :e&&e.user.pass==i.val?
+            u.a=!1
+            :i.bad()/*,
+        console.log(1,u.a,u.h,e.user.pass))*/
         :e&&e.user&&(
-          i.key=e.user,i.tr('get'))}},
+          i.key=e.user,
+          i.tr('get'),
+          i.session=1/*,
+          console.log(0,i.key)*/)}},
   bad:function(){
-    alert(' : ( ')},
-  tr:function(e,t){
+    alert(u[(u.lg?'lg':'su')+'Err'])},
+  tr:function(me,t){//method,table
     i.t=i.db.transaction(i.tbl=t||'users','readwrite')
     i.t.onerror=i.bad
     !t&&(i.t.oncomplete=i.cmp)
     i.ob=i.t.objectStore(i.tbl)
-    'add'!=e&&(i.rsp=i.ob.get(t?'current':i.key))
-    i[e]()},
+    me!='add'&&(i.rsp=i.ob.get(t?'current':i.key))
+    i[me]()},
   rst:function(e){
     i.db=e.target.result},
   init:function(){

@@ -82,12 +82,10 @@ span,label,button,input,a
             &:after
               content 'Terms & Conditions'
   #cnt
-    height 768px
     left 0
     position fixed
     top 0
     width 100%
-    z-index 2
     div:nth-child(1)
       background rgba(0, 0, 0, 0.5)
       width 100%
@@ -96,7 +94,7 @@ span,label,button,input,a
         float right
     div:nth-child(2)
       background lightgrey
-      height 682px
+      height 100%
       overflow-y auto
       fieldset
         background linear-gradient(rgb(225, 224, 224),whitesmoke)
@@ -137,7 +135,7 @@ input,fieldset,legend
       left -39px
       top 15%
 button:not(#chk)
-  font-size 2.1em
+  font-size 2.5em
 button
   background transparent
 button:focus
@@ -150,9 +148,8 @@ button
   border 0
 #ok:focus
   border #09F 4px double
-#cv
+#cv,.full
   background linear-gradient(#FFF,#7D7DDF 90%,#1B186D)
-  z-index 1
 a
   cursor alias
 button,#chk
@@ -171,20 +168,19 @@ button,#chk
 .active,.lgsu
   background #00b2ff
   text-shadow black -5px 5px 9px
-#roll,#intro button,.out
+#roll,#intro button,.embed
   position relative
-#intro label,#intro label:before,#p
+#intro label,#intro label:before
   position absolute
-.out
+.embed
   border solid white
   height 60%
   margin-right 30%
   width 36.5%
-#p
-  left 11%
-  top 20%
+.full
+  width 100%
 .z
-  z-index 2
+  z-index 1
 .back
   background url(../img/pre.jpg)0/cover
 .one

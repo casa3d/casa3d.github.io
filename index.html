@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html manifest=offline.appcache>
   <head id=H>
-    <script>ch={ap:applicationCache,shft:function(){ch.l&&(info.innerText=ch.halt?'🔃':(p.hidden=1,'▶'))},init:function(){ch.ap.onprogress=function(e){if(e.total)info.innerText=p.value=100-((ch.l=e.loaded)/e.total*100).toFixed(0)},ch.ap.oncached=ch.ap.onupdateready=ch.shft,ch.ap.onerror=function(e){ch.shft(ch.halt=1),ch.l&&confirm(ch.msg)?(ch.halt=0,ch.ap.update()):console.clear()}}},ch.init()</script>
+    <script>ch={ap:applicationCache,shft:function(){ch.l&&(info.innerHTML=ch.halt?'🔃':'⏳&nbsp')},init:function(){ch.ap.onprogress=function(e){if(e.total)info.innerText=100-((ch.l=e.loaded)/e.total*100).toFixed(0)},ch.ap.oncached=ch.ap.onupdateready=ch.shft,ch.ap.onerror=function(e){ch.shft(ch.halt=1),ch.l&&confirm(ch.msg)?(ch.halt=0,ch.ap.update()):console.clear()}}},ch.init()</script>
     <title>casa3d</title>
     <meta charset=UTF-8></meta>
     <link rel=stylesheet href=css/index.css>
@@ -15,11 +15,10 @@
       <button id=prev>🔙</button>
       <button id=next>🔜</button>
       <div id=intro>
-        <button id=info class=z>▶</button>
-        <canvas height=1366 width=768 class=out></canvas>
+        <button id=info class=z> </button>
         <label>
           with casa3d you will recreate house based on preloaded sample</label>
-        <progress id=p max=100 hidden></progress></div>
+        <canvas height=768 width=1366 id=dm class=embed></canvas></div>
       <div id=fs>
         <button class=lgsu>📝</button>
         <button>🏠</button>
@@ -46,4 +45,5 @@
     <div id=cnt class=no>
       <div>
         <button id=back>🔙</button>
-        <label id=title>
+        <label id=title></div>
+      <div class=no></div>

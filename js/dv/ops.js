@@ -1,11 +1,10 @@
 //Δtime i.c((x=new Date()).getSeconds(),x.getMilliseconds()),
 o={
   a:$('<a>')[0],
-  d:document,
-  w:window,
   W:innerWidth/100,
   l0p:innerHeight/10,
   ap:'application/',
+  asset:asset,
   fs:'FullScreen',
   house:[],
   of:'house brick door glass wall window wood'.split(' '),//object folder
@@ -94,7 +93,7 @@ o={
     o.a.download='casa#'+n+' ('+new Date().toUTCString().split(/, | GMT/)[1]+').zip'
     if(navigator.msSaveBlob)navigator.msSaveBlob(blb,o.a.download)
     else{
-      clickEvent=o.d.createEvent('MouseEvent')
+      clickEvent=m.d.createEvent('MouseEvent')
       clickEvent.initMouseEvent('click',1,1,o.w,0,0,0,0,0,0,0,0,0,0,null)//type, canBubble, cancelable, view,  detail, screenX, screenY, clientX, clientY,  ctrlKey, altKey, shiftKey, metaKey,  button, relatedTarget
       o.a.dispatchEvent(clickEvent)}},
   zip:function(){
@@ -141,8 +140,10 @@ o={
       else o.ld(o.fi)}//in order to download house, first add one or upload your own.
     else o.ld()},
   cl:function(n){return o.menu.children[n].material.color},
-  ntH:function(l,ch){var s=o.S*l,p,n//space between each house h.ntH (its container) has got -40 in x axis, though
-    t.ad({a:eval(ch),p:p=o.ob3.clone(),gp:t.s})
+  ntH:function(l,ch){
+        //510
+    var s=o.S*l,p,n//space between each house h.ntH (its container) has got -40 in x axis, though
+    t.ad({a:t.eval(ch),p:p=o.ob3.clone(),gp:t.s})
     c.position.set(p.position.x=s,1e3,1700)//1700 so that camera can display almost all houses&numbers
     c.rotation.set(0,0,0)//make me sure that camera is infront of them
     h.ntH.add(n=new T.Mesh(new T.TextGeometry(l+1,o.tdp(1,100)),o.m))//number
@@ -336,7 +337,7 @@ o={
     function(){//toggle fullscreen
       o.d[o.is]?//if currently browser is in fullscreen then:
         o.d[o.ex]()//exit
-        :o.d.body[o.rq]()},//otherwise request fullscreen
+        :b[o.rq]()},//otherwise request fullscreen
     0,//export option
     function(){//import option
       o.im.click()},
@@ -345,7 +346,7 @@ o={
       u.shift()
       setTimeout(u.out,100)}],
   rc:function(e){//10% & position of mouse in Y
-    o.V3.x=(e.clientX/o.w.innerWidth)*2-1,o.V3.y=-(o.y/o.w.innerHeight)*2+1
+    o.V3.x=(e.clientX/innerWidth)*2-1,o.V3.y=-(o.y/innerHeight)*2+1
     o.pj.unprojectVector(o.V3,o.c)
     o.rC=new T.Raycaster(o.c.position,o.V3.sub(o.c.position).normalize())
     o.rst=o.rC.intersectObjects(o.s.children,true)
@@ -431,11 +432,11 @@ o={
     h.ga.add(o.added=o.ob3.clone())
     o.im=$('<input type=file accept='+o.ap+'zip onchange=o.imp(this.files)>')[0]
     o.fi=u.lng=='es'?'con el fin de exportar una casa, 1ro debes añadir o importar alguna':'in order to export house, first you must add one or import your own'
-    o.pfx=o.usrAgnt[/(Chrome|Trident|Firefox)/.exec(o.w.navigator.userAgent)[0]]
+    o.pfx=o.usrAgnt[/(Chrome|Trident|Firefox)/.exec(navigator.userAgent)[0]]
     o.sty+='-'+o.pfx+'-user-select:none}'
     sty?
       sty.innerHTML+='\n'+o.sty
-      :$(o.d.head).append($('<style>').text(o.sty)[0])
+      :$(H).append($('<style>').text(o.sty)[0])
     o.r.setSize(innerWidth,innerHeight)//setting width & height
     o.c.position.z=10
     px=-o.W/2+o.gw/2//left corner-[ | ]    <-- half width
@@ -485,8 +486,9 @@ o={
       M.position.set(o.gw*.3*(I?1:-1),o.gh*(3.5-i),0)
       o.menu.add(M)}//repeating 'til 24 PlaneGeometries/room for icons
     while(i<8)msh(0),msh(1),i++==4&&(M.il=1)//increase light
-    $(o.d.body).append(o.r.domElement)//adding all to body as canvas
-    o.r.domElement.className='ops '+(u.a?'':'no')
+    $(b).append(o.r.domElement)//adding all to body as canvas
+    o.r.domElement.id='ops'
+    !u.a&&(o.r.domElement.className='no')
     o.is=o.pfx+(o.pfx=='webkit'?'Is':'')+o.fs
     o.ex=o.pfx+'Cancel'+o.fs
     o.rq=o.pfx+'Request'+o.fs
@@ -498,11 +500,10 @@ o={
     clck=setInterval(o.R,500)
     o.clear(clck,'ops',6e3)
     o.re=new RegExp(o.left.id+'|'+o.menu.children[0].id+'|'+o.menu.children[2].id+'|'+o.right.id)}}
-$(o.w).on({
-  contextMenu:function(){
-    alert('remove, change texture')},
+o.init()
+$(o.w=window).on({
   click:function(e){var i,sf
-    u.a&&(
+    u.a&&cnt.className=='no'&&(
       o.o.id&&(
         o.ops[o.o.id]?
           o.ops[o.o.id]()
@@ -516,8 +517,8 @@ $(o.w).on({
       !o.st.pnl.position.y&&!o.re.test(o.o.id)&&o.shwm(),
       o.R())},//know where it comes from, 1 of 6 sliding pages must be though
   mousemove:function(e){//may pass since Y is 'ops territory' and any object's been found
-    u.a&&(o.y=e.clientY,
-      ((o.x=e.clientX)<1||o.x>o.w.innerWidth-2)?
+    u.a&&cnt.className=='no'&&(o.y=e.clientY,
+      ((o.x=e.clientX)<1||o.x>innerWidth-2)?
         !o.app&&o.slide(o.app=1)
         :o.app&&(o.app=0),
       o.rc(e)&&(
@@ -536,7 +537,4 @@ $(o.w).on({
               o.pc=[o.mc.r,o.mc.g,o.mc.b],
               o.mc.r=o.mc.g=o.mc.b=0),
           o.R())))},
-  resize:function(){o.r.setSize(o.w.innerWidth,o.w.innerHeight)}})
-o.init()
-/*u.a=!u.a
-setTimeout(function(){u.a=!u.a},1e3)*/
+  resize:function(){o.r.setSize(innerWidth,innerHeight)}})

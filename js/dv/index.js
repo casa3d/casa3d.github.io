@@ -3,7 +3,6 @@ u={
   d:document,
   hch:hd.children,//head children
   nv:navigator,
-  ich:intro.children,
   p:chk.parentNode,
   sp:lnk.parentNode,
   c:function(tg){
@@ -17,6 +16,8 @@ u={
       //console.log('removing...'),
       act.className='')
     e.className=cl},
+  tt:function(t){
+    title.innerHTML!=t+'&nbsp'&&(title.innerHTML=t+'&nbsp')},
   tx:function(e){var t=e.innerHTML.split(/[<>]/)//text
     e.innerHTML='Estoy de acuerdo con estos <'+t[1]+'>Terminos & Condiciones de uso</a>'},
   t:function(n){//test
@@ -33,8 +34,17 @@ u={
         :this
       //console.log('next:',i)
       u.gc(i)}},
+  cmr:function(){//shifting camera
+    dm&&(//only if he/she hasn't an active session
+      c=u.a?(//you R gettin' out so, save c1 as camera, and let c2 as main camera
+        c1=c.clone(),
+        c2)
+        :(//gettin' in so, restore suitable camera
+        c2=c.clone(),
+        c1))},
   shift:function(){//i.c('called shift fn')
-    $('canvas').toggleClass('no')
+    ops.className=cv.className=cv.className?'':'no'
+    u.cmr()
     h.R(u.a=!u.a)},
   ss:function(v){//set session:value
     i.Δ.user=v||0
@@ -70,37 +80,36 @@ u={
     chk.onclick!=u.chk&&(
     chk.onclick=u.sp.onclick=u.chk)},
   cas:function(f){//create&append script
-    u.ich[1].classList.add('back')
+    dm.classList.add('back')
     u.a=0
     var i,s='idb filler'.split(' ')
     for(i in s){
       fl=u.c('script')
       fl.src='js/'+s[i]+'.js'
       u.d.head.appendChild(fl)}},
-  render:function(){
-    if(o&&){
-      !t.s.children.length-1&&o.ntH(0,o.asset)
-      !u.a&&(u.a=1,h.R())
-      cv.style.height=cv.style.width=''
-      cnt.className=''
-      !title.innerHTML&&(title.innerHTML='🏠 house ')
-      back.onclick=function(){
-        cv.className='out back'
-        cnt.className='no'
-        u.a=0
-        info.className='z'}}},
   init:function(){var i//initialize or initiate
+    info.innerHTML='⏳&nbsp'
     u.hch[0].className='active'
-    u.ich[0].onclick=function(){
-      this.className=cv.className=''
-      u.ich[1]!=cv&&intro.replaceChild(cv,u.ich[1])
-      u.render()}
+    cnt.style.height=innerHeight-innerHeight*.115140+'px'//what I mean is 100%-13% cnt=screen-cnthd
+    info.onclick=function(){
+      dm.R&&(
+        !u.a&&dm.R(m.rKey=u.a=1),
+        cnt.className=this.className='',
+        dm.className='full',
+        u.tt('🏠 house'),
+        u.tsk=function(){
+          dm.className='embed back'
+          info.className='z'
+          m.rKey=u.a=0})}
     for(i in u.hch)u.hch[i].idx=i,u.hch[i].onclick=u.shCl
     prev.lim='one',  prev.l=-1
     next.lim='three',next.l=1
     prev.onclick=next.onclick=function(){
       //console.log(this.lim,this.l),
       u.shCl(u.cl.indexOf(roll.className)+this.l,this.lim)}
+    back.onclick=function(){
+      cnt.className='no'
+      u.tsk&&(u.tsk())}
     u.fch=[fs.children[0],fs.children[1]]
     for(i in u.fch)u.fch[i].idx=i,u.fch[i].onclick=function(){
       !this.className&&(
