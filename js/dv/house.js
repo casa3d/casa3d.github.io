@@ -35,5 +35,5 @@ h={i:0,             //increase
         h.R()
         :r.domElement.className='no'
     //xhr('js/assets.js','u.a&&(u.shift(u.a=0)),t.ad({a:eval(this.response),p:new T.Object3D(),gp:t.s})')//load default assets and add them to scene
-    h.w.onresize=function(){r.setSize(h.w.innerWidth,h.w.innerHeight)}}}//when user resizes his page then it'll auto-fit
+    onresize=function(){r.setSize(innerWidth,innerHeight)}}}//when user resizes his page then it'll auto-fit
 h.init()

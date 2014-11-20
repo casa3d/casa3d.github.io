@@ -94,7 +94,7 @@ o={
     if(navigator.msSaveBlob)navigator.msSaveBlob(blb,o.a.download)
     else{
       clickEvent=m.d.createEvent('MouseEvent')
-      clickEvent.initMouseEvent('click',1,1,o.w,0,0,0,0,0,0,0,0,0,0,null)//type, canBubble, cancelable, view,  detail, screenX, screenY, clientX, clientY,  ctrlKey, altKey, shiftKey, metaKey,  button, relatedTarget
+      clickEvent.initMouseEvent('click',1,1,h.w,0,0,0,0,0,0,0,0,0,0,null)//type, canBubble, cancelable, view,  detail, screenX, screenY, clientX, clientY,  ctrlKey, altKey, shiftKey, metaKey,  button, relatedTarget
       o.a.dispatchEvent(clickEvent)}},
   zip:function(){
     if(zip&&zip.method&&zip.method.deflate){
@@ -501,7 +501,7 @@ o={
     o.clear(clck,'ops',6e3)
     o.re=new RegExp(o.left.id+'|'+o.menu.children[0].id+'|'+o.menu.children[2].id+'|'+o.right.id)}}
 o.init()
-$(o.w=window).on({
+$(h.w).on({
   click:function(e){var i,sf
     u.a&&cnt.className=='no'&&(
       o.o.id&&(

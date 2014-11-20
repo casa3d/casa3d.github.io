@@ -1,130 +1,152 @@
-#visas_style_div.popup
+.bModal, .__bPopup1, #visas_style_div
   display none!important
-span,label,button,input,a
+span,#b>*>div>label,#fs>div>label,button,input:not([type=email]),a,h4
   color #FFF
 #b *
   font-family Segoe UI Symbol,verdana
-  transition .4s
-#b
+  transition .6s
+#b,.menu
   background linear-gradient(rgba(0, 0, 0, 0.2),rgba(121, 0, 2, 0.2)),repeating-linear-gradient(27deg,rgba(0, 0, 0, 0),rgba(0, 121, 171, 0.2) 5%),#004D91
-  #roll
-    height 700px
-    width 300%
-    >button,#intro button
-      border 1px ridge white
-      border-radius 5em
-      height 100px
-      margin .5em
-      outline 0
-      width 100px
-    >button
-      position fixed
-    #prev
-      left 0
-    #next
-      right 0
-    >div
+#roll
+  height 700px
+  width 300%
+  >button,#intro button
+    border 1px ridge white
+    border-radius 5em
+    height 100px
+    margin .5em
+    outline 0
+    width 100px
+  >button
+    position fixed
+  #prev
+    left 0
+  #next
+    right 0
+  >div
+    float left
+    height 100%
+    padding-top 1em
+    width 33.3333%
+#info
+  padding-top 4em
+  &>*
+    margin 7px
+    float left
+    font-size 2.5em
+    >*:after
+      display block
+      font-size 20px
+  &>*:nth-child(1)
+    height 53%
+    margin-left 4em
+    width 36%
+    button
+      margin-bottom 10px
+      width 46%
+    &>*:nth-child(1)
+      background linear-gradient(90deg,rgb(0, 111, 111),darkcyan)
+      &:after
+        content 'Requirements'
+    &>*:nth-child(2)
+      background linear-gradient(90deg,#4B4090,#6456B2)
+      &:after
+        content 'FAQs'
+    &>*:nth-child(3)
+      background linear-gradient(90deg,#DD5600,#FF7400)
+      &:after
+        content 'User Manual'
+    &>*:nth-child(4)
+      background linear-gradient(90deg,#007C00,#009D00)
+      &:after
+        content 'Training Plan'
+  &>*:nth-child(2)
+    height 48%
+    width 9.1%
+    &>*
+      margin-bottom 8%
+      height 50%
+      width 100%
+    &>*:nth-child(1)
+      background linear-gradient(90deg,#007AF0,#1e90ff)
+      &:after
+        content 'Changes'
+    &>*:nth-child(2)
+      background linear-gradient(90deg,#832583,#A323A3)
+      &:after
+        content 'Contact'
+  &>*:nth-child(3)
+    font-size 5.65em
+    &>*
+      background linear-gradient(90deg,#B54823,#CD5932)
+      &:after
+        content 'Terms & Conditions'
+#cnt
+  height 100%
+  position fixed
+  top 0
+  width 100%
+  >*:nth-child(1)
+    background rgba(0, 0, 0, 0.5)
+    height 13.25%
+    width 100%
+    label,>*:nth-child(2)
+      float right
+  >*:nth-child(2)
+    background lightgrey
+    height 87%
+    position relative
+    width 700%
+    >*:nth-child(1)
+      background linear-gradient(rgba(185, 185, 185, 0.48),rgba(46, 46, 46, 0.5)),linear-gradient(90deg, #006f6f, #008b8b)
+    >*:nth-child(2)
+      background linear-gradient(rgba(185, 185, 185, 0.48),rgba(46, 46, 46, 0.5)),linear-gradient(90deg, #4B4090,#6456B2)
+    >*:nth-child(3)
+      background linear-gradient(rgba(185, 185, 185, 0.48),rgba(46, 46, 46, 0.5)),linear-gradient(90deg, #DD5600,#FF7400)
+    >*:nth-child(4)
+      background linear-gradient(rgba(185, 185, 185, 0.48),rgba(46, 46, 46, 0.5)),linear-gradient(90deg, #007C00,#009D00)
+    >*:nth-child(5)
+      background linear-gradient(rgba(185, 185, 185, 0.48),rgba(46, 46, 46, 0.5)),linear-gradient(90deg, #007AF0,#1e90ff)
+      legend:before
+        content 'vr'
+      label:before
+        content '2014.'
+    >*:nth-child(6)
+      background linear-gradient(rgba(185, 185, 185, 0.48),rgba(46, 46, 46, 0.5)),linear-gradient(90deg, #832583,#A323A3)
+    >*:nth-child(7)
+      background linear-gradient(rgba(185, 185, 185, 0.48),rgba(46, 46, 46, 0.5)),linear-gradient(90deg, #B54823,#CD5932)
+    div
       float left
       height 100%
-      padding-top 1em
-      width 33.3333%
-      &:nth-of-type(3)
-        padding-top 4em
-        &>*
-          margin 7px
-          float left
-          font-size 2.5em
-          >*:after
-            display block
-            font-size 20px
-        &>*:nth-child(1)
-          height 53%
-          margin-left 4em
-          width 36%
-          button
-            margin-bottom 10px
-            width 46%
-          &>*:nth-child(1)
-            background linear-gradient(90deg,rgb(0, 111, 111),darkcyan)
-            &:after
-              content 'Requirements'
-          &>*:nth-child(2)
-            background linear-gradient(90deg,#4B4090,#6456B2)
-            &:after
-              content 'FAQs'
-          &>*:nth-child(3)
-            background linear-gradient(90deg,#DD5600,#FF7400)
-            &:after
-              content 'User Manual'
-          &>*:nth-child(4)
-            background linear-gradient(90deg,#007C00,#009D00)
-            &:after
-              content 'Training Plan'
-        &>*:nth-child(2)
-          height 48%
-          width 9.1%
-          &>*
-            margin-bottom 8%
-            height 50%
-            width 100%
-          &>*:nth-child(1)
-            background linear-gradient(90deg,#007AF0,#1e90ff)
-            &:after
-              content 'Keyboard'
-          &>*:nth-child(2)
-            background linear-gradient(90deg,#832583,#A323A3)
-            &:after
-              content 'Contact'
-        &>*:nth-child(3)
-          font-size 5.65em
-          &>*
-            background linear-gradient(90deg,#B54823,#CD5932)
-            &:after
-              content 'Terms & Conditions'
-  #cnt
-    left 0
-    position fixed
-    top 0
-    width 100%
-    div:nth-child(1)
-      background rgba(0, 0, 0, 0.5)
-      width 100%
-      font-size 1.5em
-      label
-        float right
-    div:nth-child(2)
-      background lightgrey
-      height 100%
       overflow-y auto
-      fieldset
-        background linear-gradient(rgb(225, 224, 224),whitesmoke)
-        box-shadow black -4px 4px 10px
-        legend
-          background linear-gradient(transparent, white, transparent)
-          font-style oblique
-          text-shadow white 3px 0px 2px
-label,a
+      width 14.2858%
+    fieldset
+      background linear-gradient(rgb(225, 224, 224),whitesmoke)
+      box-shadow black -4px 4px 10px
+      margin 1em
+      legend
+        background rgb(213, 213, 255)
+        font-style oblique
+        text-shadow white 3px 0px 2px
+#send,#fs label,legend>label,a
   display block
-#fs,#info,label,#hd
+#fs,#play,label,#hd,textarea
   font-size 160%
-input
+input:not([type=email])
   background linear-gradient(rgba(0,0,0,.5),transparent,rgba(0,0,0,.5))
   font-size .5em
   text-align center
+#cnt>*:nth-child(1),h4
+  font-size 1.5em
 input,fieldset,legend
   border-radius 7px
 #hd
   width 100%
 #intro
-  button
-    left 24%
-    padding-right 0
-    text-shadow rgb(0, 223, 255) 2px 0 10px
-    top -30%
   label
     border solid
     padding 6px
-    left 20.5%
+    left 22%
     top 19%
     width 10%
     &:before
@@ -134,6 +156,10 @@ input,fieldset,legend
       width 50px
       left -39px
       top 15%
+  button
+    left -23.5%
+    text-shadow rgb(0, 223, 255) 2px 0 10px
+    top -30%
 button:not(#chk)
   font-size 2.5em
 button
@@ -148,7 +174,7 @@ button
   border 0
 #ok:focus
   border #09F 4px double
-#cv,.full
+#cv,#dm
   background linear-gradient(#FFF,#7D7DDF 90%,#1B186D)
 a
   cursor alias
@@ -175,17 +201,29 @@ button,#chk
 .embed
   border solid white
   height 60%
-  margin-right 30%
   width 36.5%
 .full
   width 100%
-.z
-  z-index 1
 .back
-  background url(../img/pre.jpg)0/cover
+  background url(../img/pre.jpg)0/cover!important
+.pr
+  padding-right 0
+.menu
+  left 0
+  position fixed
+  width 100%!important
+  z-index 1
 .one
   left 0
 .two
   left -100%
 .three
   left -200%
+.four
+  left -300%
+.five
+  left -400%
+.six
+  left -500%
+.seven
+  left -600%
