@@ -18,7 +18,8 @@ a={//API
       cv+'{background:#015}\n'+
       shi+','+bt+'{color:#FFF;display:table;font-family:Segoe UI Symbol;font-size:2em}\n'+
       man+','+cv+'{height:100%;width:100%}\n'+
-      man+'{left:0;position:fixed;top:0}\n'+
+      man+'{left:0;top:0}\n'+
+      man+','+bt+'{position:fixed}\n'+
       wuxing+'{display:none}'
     return sty},
   url:function(b){//url from blob protocol
