@@ -11,14 +11,15 @@ a={//API
       console.log(a.d.readyState),
       onload=a.init)},
   sty:function(shi){//set: division,unique id
-    var id=(shi='.'+shi).slice(2),sty=a.new('style'),kj=a.kj,bt=shi+'>button',cv=shi+'>canvas'
+    var id=(shi='.'+shi).slice(2),sty=a.new('style'),man='.'+a.kj.man+id,wuxing='.'+a.kj.wuxing+id,bt=shi+'>button',cv=shi+'>canvas'
     sty.innerHTML=
-      shi+'{background:#180;z-index:999999}\n'+
-      bt+'{background:#015;border-radius:5px}\n'+
-      cv+'{background:#057E9C}\n'+
-      shi+','+bt+'{color:#FFF;display:table;font-family:Segoe UI Symbol;font-size:2em;position:fixed}\n'+
-      '.'+kj.man+id+','+cv+'{height:100%;width:100%}\n'+
-      '.'+kj.wuxing+id+'{display:none}'
+      shi+'{background:#F00;z-index:999999}\n'+
+      bt+'{background:#180;border-radius:5px}\n'+
+      cv+'{background:#015}\n'+
+      shi+','+bt+'{color:#FFF;display:table;font-family:Segoe UI Symbol;font-size:2em}\n'+
+      man+','+cv+'{height:100%;width:100%}\n'+
+      man+'{left:0;position:fixed;top:0}\n'+
+      wuxing+'{display:none}'
     return sty},
   url:function(b){//url from blob protocol
     return URL.createObjectURL(new Blob(['']))},
