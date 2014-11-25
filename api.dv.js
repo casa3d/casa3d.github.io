@@ -38,10 +38,10 @@ a={//API
       man:v[3]}
     p.innerHTML=''
 
-    a.a(p,'body')
-    a.a(c,p)//append canvas to div
+    a.a(p,'body')//append button&canvas to div
     a.a(b,p)
-    c.className=a.cn.inv+u
+    a.a(c,p)
+    c.className=a.cn.wuxing+u
     a.a(a.sty(p.className=v[0]+u),'head')//appending 绝 后 style to head
     a.bt.onclick=function(){
       console.log('end')}}}
