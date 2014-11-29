@@ -13,8 +13,9 @@ a={//API
   sty:function(shi){//set: division,unique id
     var id=(shi='.'+shi).slice(2),sty=a.new('style'),man='.'+a.kj.man+id,wuxing='.'+a.kj.wuxing+id,bt=shi+'>button',cv=shi+'>canvas'
     sty.innerHTML=
-      shi+'{background:#F00;z-index:999999}\n'+
-      bt+'{background:#180;border-radius:5px}\n'+
+      shi+'{background:url(?.jpg)no-repeat,#F00;border:5px white groove;border-radius:1em;height:225px;width:225px;z-index:999999}\n'+
+      bt+'{background:#180;border-radius:6em;cursor:pointer;left:38%;padding:0 10px 5px 10px;position:relative;top:32%;transition:.6s}\n'+
+      bt+':hover{background:rgba(0,178,255,0.51)}\n'+
       cv+'{background:#015}\n'+
       shi+','+bt+'{color:#FFF;display:table;font-family:Segoe UI Symbol;font-size:2em}\n'+
       man+','+cv+'{height:100%;width:100%}\n'+
