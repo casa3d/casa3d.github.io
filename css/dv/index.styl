@@ -1,12 +1,18 @@
 .bModal, .__bPopup1, #visas_style_div
   display none!important
-span,#b>*>div>label,#fs>div>label,button,input:not([type=email]),a,h4
+body
+  margin:0
+  overflow:hidden
+span,body>*>div>label,#fs>div>label,button,input:not([type=email]),a,h4
   color #FFF
-#b *
+button,a,span,label,code,fieldset
   font-family Segoe UI Symbol,verdana
+body *
   transition .6s
-#b,.menu
+body,.menu
   background linear-gradient(rgba(0, 0, 0, 0.2),rgba(121, 0, 2, 0.2)),repeating-linear-gradient(27deg,rgba(0, 0, 0, 0),rgba(0, 121, 171, 0.2) 5%),#004D91
+#hd,#roll
+  text-align center
 #roll
   height 700px
   width 300%
@@ -114,13 +120,13 @@ span,#b>*>div>label,#fs>div>label,button,input:not([type=email]),a,h4
         text-shadow white 3px 0px 2px
 #send,#fs label,legend>label,a
   display block
-#fs,#play,label,#hd,textarea
-  font-size 160%
+#fs,#fs label,#play,#hd,textarea
+  font-size 1.6em
 input:not([type=email])
   background linear-gradient(rgba(0,0,0,.5),transparent,rgba(0,0,0,.5))
-  font-size .5em
+  font-size .7em
   text-align center
-#cnt>*:nth-child(1),h4
+#cnt>*:nth-child(1),h4,#intro>label
   font-size 1.5em
 input,fieldset,legend
   border-radius 7px
@@ -129,21 +135,29 @@ input,fieldset,legend
 #intro
   label
     border solid
-    padding 6px
-    left 22%
-    top 19%
-    width 10%
+    height 23%
+    left 6.7%
+    top 38%
+    width 21%
     &:before
-      content '<'
+      content '🔼'
       font-size 2em
       height 50px
       width 50px
-      left -39px
-      top 15%
+      left 47%
+      top -28.5%
+    code
+      background radial-gradient(rgba(255,255,255,.2)80%,transparent)
+      border-radius 10px
+      color #D3B746
+    ol
+      margin 0
+    ol,a
+      display inline-block
   button
-    left -23.5%
+    left -18%
     text-shadow rgb(0, 223, 255) 2px 0 10px
-    top -30%
+    top -15%
 button:not(#chk)
   font-size 2.5em
 button
@@ -158,7 +172,7 @@ button
   border 0
 #ok:focus
   border #09F 4px double
-#cv,#dm
+#cv,#dm:not(.back)
   background linear-gradient(#FFF,#7D7DDF 90%,#1B186D)
 a
   cursor alias
@@ -177,14 +191,13 @@ button,#chk
   border red 3px groove
 .active,.lgsu
   background #00b2ff
-  text-shadow black -5px 5px 9px
 #roll,#intro button,.embed
   position relative
 #intro label,#intro label:before
   position absolute
 .embed
   border solid white
-  height 60%
+  left 6%
   width 36.5%
 .full
   width 100%
@@ -192,6 +205,9 @@ button,#chk
   background url(../img/pre.jpg)0/cover!important
 .pr
   padding-right 0
+.hidden
+  height 1%!important
+  overflow hidden
 .menu
   left 0
   position fixed
