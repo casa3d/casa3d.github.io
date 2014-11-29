@@ -4,19 +4,17 @@
     <script>ch={ap:applicationCache,shft:function(){ch.l&&(play.innerHTML=ch.halt?'🔃':'⏳')},init:function(){ch.ap.onprogress=function(e){if(e.total)play.innerText=100-((ch.l=e.loaded)/e.total*100).toFixed(0)},ch.ap.oncached=ch.ap.onupdateready=ch.shft,ch.ap.onerror=function(e){ch.shft(ch.halt=1),ch.l&&confirm(ch.msg)?(ch.halt=0,ch.ap.update()):console.clear()}}},ch.init()</script>
     <title>casa3d</title>
     <meta charset=UTF-8></meta>
-    <link rel=stylesheet href=css/index.css>
     <script src=js/index.js async></script></head>
-  <body id=b style=margin:0;overflow:hidden>
-    <center id=hd>
+  <body id=b>
+    <div id=hd>
       <button class=active>🏠</button>
       <button>👤</button>
-      <button>ⓘ</button></center>
-    <center id=roll class=one>
-      <button id=prev>🔙</button>
-      <button id=next>🔜</button>
+      <button>ⓘ</button></div>
+    <div id=roll class=one>
+      <button id=prev>⬅</button>
+      <button id=next>➡</button>
       <div id=intro>
-        <label>
-          with casa3d you will recreate house based on preloaded sample</label>
+        <label class=hidden></label>
         <canvas height=768 width=1366 id=dm class=embed></canvas>
         <button id=play> </button></div>
       <div id=fs>
@@ -33,15 +31,15 @@
         <button id=ok>OK</button></div>
       <div id=info>
         <div>
-          <button>💻</button>
-          <button>❔</button>
-          <button>📖</button>
-          <button>💪</button></div>
+          <button class=req>💻</button>
+          <button class=faq>❔</button>
+          <button class=usm>📖</button>
+          <button class=ttp>💪</button></div>
         <div>
-          <button>📅</button>
-          <button>📩</button></div>
+          <button class=chg>📅</button>
+          <button class=cnt>📩</button></div>
         <div>
-          <button>☑</button></div></div></center>
+          <button class=tcu>☑</button></div></div></div>
     <div id=cnt class=no>
       <div>
         <button id=back>🔙</button>

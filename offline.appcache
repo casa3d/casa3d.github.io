@@ -1,16 +1,16 @@
 CACHE MANIFEST
-#14.11.22 10:37
+#14.11.29 14:09
 CACHE:
-css/index.css
 js/index.js
 img/pre.jpg
 js/idb.js
 js/filler.js
 js/zip.js
 js/lbs.zip
-cur/cr.cur
-cur/drg.cur
-cur/drgn.cur
+js/lbs2.zip
+css/cr.cur
+css/drg.cur
+css/drgn.cur
 img/brick/0.jpg
 img/brick/1.jpg
 img/brick/2.jpg
@@ -116,3 +116,5 @@ img/wood/12.jpg
 img/wood/13.jpg
 img/wood/14.jpg
 img/wood/15.jpg
+NETWORK:
+*
