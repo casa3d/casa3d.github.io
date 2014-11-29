@@ -17,7 +17,7 @@ u={//user's API
   loadAsset:function(o){//object={sample:mypage.com/file.js,pic:mypage.com/file.png}
     if(o&&/js/.test(o)){
       var A=(o=o.split(' '))[0],cv=A.split('/'),ut=u.task,s=u.new('script'),x
-      ut.sample=/repo/.test(A)?(
+      ut.sample=/casa/.test(A)?(
         ut.pic=u.repo+cv[1].split('.')[0]+'.jpg',
         u.repo+cv[1])
         //console.log('asset comes from 3rd-party website:'+A),
@@ -69,7 +69,7 @@ u={//user's API
     tg=u.d.createElement(tg)
     for(var i in at)tg[i]=at[i]//,console.log('called new fn')
     return tg},
-  path:'../public/',//'http://casa3d.hostzi.com/',
+  path:'http://casa3d.hostzi.com/',//'../public/',
   play:'&#9654;',//▶
   readAtt:function(s){var i,l,ATS,at,ut=u.task,m
     for(var i in s){
@@ -84,7 +84,7 @@ u={//user's API
         if(at.name=='load')/*console.log('found:',*/ut.load=at.value/*)*/}}},
   set:function(){//stablish trigger, whether now or wait 'till load
     var x=u.new('a',{innerHTML:'&#9888;'})//⚠
-    u.repo=u.path+'repo/'
+    u.repo=u.path+'casa/'
     f={bs:u.path}
     u.js=u.path+'js/lbs.js'//'filler'
     u.alert=x.innerHTML
