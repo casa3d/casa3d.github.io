@@ -5,8 +5,11 @@ u={
   nv:navigator,
   p:chk.parentNode,
   sp:lnk.parentNode,
-  c:function(tg){
-    return u.d.createElement(tg)},
+  c:function(m){console.log(m)},
+  new:function(tg,p){
+    tg=u.d.createElement(tg)
+    for(var i in p)tg[i]=p[i]
+    return tg},
   g:function(n){
     return u.d.getElementsByTagName(n)},
   gc:function(e,cl,act){cl=cl||'active',act=
@@ -39,13 +42,17 @@ u={
     menu.className!=''&&(menu.className='')
     cnt.children[1].className=u.cl[i]},
   cmr:function(){//shifting camera
-    dm&&(//only if he/she hasn't an active session
-      c=u.a?(//you R gettin' out so, save c1 as camera, and let c2 as main camera
-        c1=c.clone(),
-        c2)
-        :(//gettin' in so, restore suitable camera
-        c2=c.clone(),
-        c1))},
+    //only if he/she hasn't an active session
+    u.a?(//you R gettin' out so, save c1 as camera, and let's shift to c2 (as main camera)
+      c1={p:c.position,r:c.rotation},
+      typeof c2!='undefined'&&(
+        c.position=c2.p,
+        c.rotation=c2.r))
+      :(//gettin' in so, restore suitable camera
+      c2={p:c.position,r:c.rotation},
+      typeof c1!='undefined'&&(
+        c.position=c1.p,
+        c.rotation=c1.r))},
   shift:function(){//i.c('called shift fn')
     ops.className=cv.className=cv.className?'':'no'
     u.cmr()
@@ -85,14 +92,22 @@ u={
     chk.onclick!=u.chk&&(
     chk.onclick=u.sp.onclick=u.chk)},
   cas:function(f){//create&append script
+    u.b=u.d.body,u.H=u.d.head
+    u.sty("body{margin:0;overflow:hidden_span,body>*>div>label,#fs>div>label,button,input:not([type=email]),a,h4{color:#fff_button,a,span,label,code,fieldset{font-family:Segoe UI Symbol,verdana_body *{transition:.6s_body,.menu{background:linear-gradient(rgba(0,0,0,.2),rgba(121,0,2,.2)),repeating-linear-gradient(27deg,#000,rgba(0,121,171,.2)5%),#004d91_#hd,#roll{text-align:center_#roll{height:700px;width:300%_#roll>button,#intro button{border:1pxsridge #fff;border-radius:5em;height:100px;margin:.5em;outline:0;width:100px_#roll>button{position:fixed_#prev{left:0_#next{right:0_#roll>div{float:left;height:100%;width:33.3333%;padding-top:1em_#info{padding-top:4em_#info>*{margin:7px;float:left;font-size:2.5em_#info>*>*:after{display:block;font-size:20px_#info>*:nth-child(1){height:53%;margin-left:4em;width:36%_#info>*:nth-child(1) button{margin-bottom:10px;width:46%_#info>*:nth-child(1)>*:nth-child(1){background:linear-gradient(90deg,#006f6f,#008b8b)_#info>*:nth-child(1)>*:nth-child(2){background:linear-gradient(90deg,#4b4090,#6456b2)_#info>*:nth-child(1)>*:nth-child(3){background:linear-gradient(90deg,#dd5600,#ff7400)_#info>*:nth-child(1)>*:nth-child(4){background:linear-gradient(90deg,#007c00,#009d00)_#info>*:nth-child(2){width:11.5%_#info>*:nth-child(2)>*{margin-bottom:8%;width:100%_#info>*:nth-child(2)>*:nth-child(1){background:linear-gradient(90deg,#007af0,#1e90ff)_#info>*:nth-child(2)>*:nth-child(2){background:linear-gradient(90deg,#832583,#a323a3)_#info>*:nth-child(3){font-size:5.65em_#info>*:nth-child(3)>*{background:linear-gradient(90deg,#b54823,#cd5932)_#cnt{height:100%;position:fixed;top:0;width:100%_#cnt>*:nth-child(1){background:rgba(0,0,0,.5);height:13.25%;width:100%_#cnt>*:nth-child(1) label,#cnt>*:nth-child(1)>*:nth-child(2){float:right_#cnt>*:nth-child(2){background:#d3d3d3;height:87%;position:relative;width:700%_#cnt>*:nth-child(2)>*:nth-child(1){background:linear-gradient(rgba(185,185,185,.48),rgba(46,46,46,.5)),linear-gradient(90deg,#006f6f,#008b8b)_#cnt>*:nth-child(2)>*:nth-child(2){background:linear-gradient(rgba(185,185,185,.48),rgba(46,46,46,.5)),linear-gradient(90deg,#4b4090,#6456b2)_#cnt>*:nth-child(2)>*:nth-child(3){background:linear-gradient(rgba(185,185,185,.48),rgba(46,46,46,.5)),linear-gradient(90deg,#dd5600,#ff7400)_#cnt>*:nth-child(2)>*:nth-child(4){background:linear-gradient(rgba(185,185,185,.48),rgba(46,46,46,.5)),linear-gradient(90deg,#007c00,#009d00)_#cnt>*:nth-child(2)>*:nth-child(5){background:linear-gradient(rgba(185,185,185,.48),rgba(46,46,46,.5)),linear-gradient(90deg,#007af0,#1e90ff)_#cnt>*:nth-child(2)>*:nth-child(5) legend:before{content:'vr'_#cnt>*:nth-child(2)>*:nth-child(5) label:before{content:'2014.'_#cnt>*:nth-child(2)>*:nth-child(6){background:linear-gradient(rgba(185,185,185,.48),rgba(46,46,46,.5)),linear-gradient(90deg,#832583,#a323a3)_#cnt>*:nth-child(2)>*:nth-child(7){background:linear-gradient(rgba(185,185,185,.48),rgba(46,46,46,.5)),linear-gradient(90deg,#b54823,#cd5932)_#cnt>*:nth-child(2) div{float:left;height:100%;overflow-y:auto;width:14.2858%_#cnt>*:nth-child(2) fieldset{background:linear-gradient(#e1e0e0,#f5f5f5);box-shadow:#000 -4px 4px 10px;margin:1em_#cnt>*:nth-child(2) fieldset legend{background:#d5d5ff;font-style:oblique;text-shadow:#fff 3px 0 2px_#send,#fs label,legend>label,a{display:block_#fs,#fs label,#play,#hd,textarea{font-size:1.6em_input:not([type=email]){background:linear-gradient(rgba(0,0,0,.5),transparent,rgba(0,0,0,.5));font-size:.7em;text-align:center_#cnt>*:nth-child(1),h4,#intro>label{font-size:1.5em_input,fieldset,legend{border-radius:7px_#hd{width:100%_#intro label{border:solid;height:23%;left:6.7%;top:38%;width:21%_#intro label:before{content:'🔼';font-size:2em;height:50px;width:50px;left:47%;top:-28.5%_#intro label code{background:radial-gradient(rgba(255,255,255,.2)80%,transparent);border-radius:10px;color:#d3b746_#intro label ol{margin:0_#intro label ol,#intro label a{display:inline-block_#intro button{left:-18%;text-shadow:#00dfff 2px 0 10px;top:-15%_button:not(#chk){font-size:2.5em_button{background:transparent_button:focus{text-shadow:#000 -5px 5px 9px_button:hover{background:rgba(0,178,255,.51)_#ok,#chk{font-size:1em_button:not(#prev):not(#play):not(#next){border:0_#ok:focus{border:#09f 4px double_#cv,#dm:not(.back){background:linear-gradient(#fff,#7d7ddf 90%,#1b186d)_a{cursor:alias_button,#chk{cursor:pointer;text-shadow:#000 2px 2px 3px_.noread{color:#d2db00_.ok{border:#006400 2px dashed_.bad{border:#f00 2px dashed_.bModal,.no{display:none_.false{border:#f00 3px groove_.active,.lgsu{background:#00b2ff_#roll,#intro button,.embed{position:relative_#intro label,#intro label:before{position:absolute_.embed{border:solid #fff;left:6%;width:36.5%_.full{width:100%_.back{background:url(../img/pre.jpg)0/cover_.pr{padding-right:0_.hidden{height:1%!important;overflow:hidden_.menu{left:0;position:fixed;width:100%!important;z-index:1_.one{left:0_.two{left:-100%_.three{left:-200%_.four{left:-300%_.five{left:-400%_.six{left:-500%_.seven{left:-600%");
+    (/chrome/i).test(u.nv.userAgent)&&(u.sty('.embed{height:55%_#intro>label{top:61%_#intro>button{top:-26%'))
     dm.classList.add('back')
     u.a=0
     var i,s='idb filler'.split(' ')
-    for(i in s){
-      fl=u.c('script')
-      fl.src='js/'+s[i]+'.js'
-      u.d.head.appendChild(fl)}},
-  init:function(){var i=info.children,i0=i[0].children,i1=i[1].children//initialize or initiate
+    for(i in s)u.ap(u.new('script',{src:'js/'+s[i]+'.js'}),'head')},
+  ap:function(c,e){//append: content,element
+    (u.d[e]||e).appendChild(c)},
+  sty:function(s){var e,i//style element, style content, iterator
+    s=s.split('_')
+    e=u.d.styleSheets[0]||u.H.appendChild(u.new('style')).sheet
+    //console.log(u.el=e,u.s=s,i)
+    for(i in s)e.insertRule(s[i]+'!important}',e.cssRules.length)},
+  init:function(){//let's initiate
+    var ich,i=info.children,i0=i[0].children,i1=i[1].children//initialize or initiate
     play.innerHTML='⏳'
     u.hch[0].className='active'
     play.onclick=function(){
@@ -143,19 +158,24 @@ u={
         if(!u.lg)th.className=th.idx?
           (u.i[2].value&&(u.i[th.idx>1?1:2].className=u.match()))&&u.t(th.idx)
           :u.t(th.idx)})}
-    ch.msg=(u.lng=/(es||en)/.exec(u.nv.language)[0])=='es'?(
+    ich=intro.children[0]
+    ch.msg=/es/.test(u.nv.language)=='es'?(
+      ich.innerHTML="la API de casa3d es facil de incrustar en tu sitio web<br><code>&lt;script src=<a>//casa3d.hostzi.com/api.js</a> load=<a>casa/1.js</a>&lt;/script&gt;</code><ol><li>no te preocupes, auto-asincronizacion</li><li>su CSS es un 99.9% unico e irrepetible</li><li>su mision: coexistir dentro de la página</li></ol>",
       u.tx(u.sp),
       u.lgErr='Usuario o Contraseña incorrecta',
       u.suErr='Este usuario ya existe',
       u.fill='Por Favor verifique que usted:\n1: NO use carácteres especiales\n2: llene el nombre minimo 3\n3: llene y coincida la contraseña minimo 4',
       chk.msg=u.fill+'\n4: Acepte ☑ los T&Cs',
-      'Si acepta, la pagina cargaria un 50% MAS RAPIDO\ny ademas tendria acceso a esta pagina AUN SIN internet!')
+      'Si acepta, la pagina cargaria un 50% MAS RAPIDO\ny ademas tendria acceso a esta pagina AUN SIN internet!',
+      u.lng='es')
     :(
+      ich.innerHTML="casa3d API is easy to embed into your website<br><code>&lt;script src=<a>//casa3d.hostzi.com/api.js</a> load=<a>casa/1.js</a>&lt;/script&gt;</code><ol><li>don't worry it's asynchronized</li><li>its CSS is 99.9% unrepeatable</li><li>It'll co-exist while being there</li></ol>",
       u.lgErr='Incorrect Username or Password',
       u.suErr='This username already exists',
       u.fill='Please check that you:\n1: DO NOT use special characters\n2: Fill name at least 3\n3: Fill and match password at least 4',
       chk.msg=u.fill+'\n4: Accepted T&Cs',
-      'If you accept, this page would load 50% faster\nand furthermore you would have access to this website EVEN WITHOUT internet!')}}
+      'If you accept, this page would load 50% faster\nand furthermore you would have access to this website EVEN WITHOUT internet!',
+      u.lng='en')
+    setTimeout(function(){ich.removeAttribute('class')})}}
 u.init()
-console.clear()
 onload=u.cas
