@@ -1,13 +1,13 @@
-//Δtime i.c((x=new Date()).getSeconds(),x.getMilliseconds()),
+//Δtime u.c((x=new Date()).getSeconds(),x.getMilliseconds()),
 o={
-  a:$('<a>')[0],
+  a:u.new('a'),
   W:innerWidth/100,
   l0p:innerHeight/10,
   ap:'application/',
   asset:asset,
   fs:'FullScreen',
   house:[],
-  of:'house brick door glass wall window wood'.split(' '),//object folder
+  of:'ho br do gl wa wi wo'.split(' '),//object folder: house,brick,door,glass, wall,window,wood
   m:new T.MeshBasicMaterial,
   ob3:new T.Object3D,
   sty:'canvas{left:0;position:fixed;top:0;',
@@ -29,13 +29,13 @@ o={
   clear:function(clck,msg,tm){
     setTimeout(function(){
       clearInterval(clck)
-      i.c(msg+"-clock's renderer has been cleared")
+      u.c(msg+"-renderer clock has been cleared")
       console.clear()},tm)},
   rb:function(F){//read blob; since picture´s source comes from hard disk I´ll have to read it as blob (security reasons:users´ files are private)
     var i=0,f,de,clck//iterator,files,doesn'tExists,clock
-    //i.c(i,F.length)
+    //u.c(i,F.length)
     while(i<F.length){de=1,f=F[i++]//assigning
-      for(var I in o.tn.blob)if(o.tn.blob[I].sz==f.size&&!(de=0))break//{i.c('IAE');break}
+      for(var I in o.tn.blob)if(o.tn.blob[I].sz==f.size&&!(de=0))break//{u.c('IAE');break}
       o.add(
         o.φ=de?
           o.URL(f)//since blob "de" yet, let's create it
@@ -91,9 +91,9 @@ o={
   ld:function(e){alert(e||'100% ?')},
   dwn:function(n){//save casa3d.js inside casa# Universal Time C.zip
     o.a.download='casa#'+n+' ('+new Date().toUTCString().split(/, | GMT/)[1]+').zip'
-    if(navigator.msSaveBlob)navigator.msSaveBlob(blb,o.a.download)
+    if(h.nv.msSaveBlob)h.nv.msSaveBlob(blb,o.a.download)
     else{
-      clickEvent=m.d.createEvent('MouseEvent')
+      clickEvent=u.d.createEvent('MouseEvent')
       clickEvent.initMouseEvent('click',1,1,h.w,0,0,0,0,0,0,0,0,0,0,null)//type, canBubble, cancelable, view,  detail, screenX, screenY, clientX, clientY,  ctrlKey, altKey, shiftKey, metaKey,  button, relatedTarget
       o.a.dispatchEvent(clickEvent)}},
   zip:function(){
@@ -132,7 +132,7 @@ o={
               x.name,
               new zip.BlobReader(x),
               function(){
-                //i.c('success')
+                //u.c('success')
                 o.a.hidden=0
                 zipWriter.close(function(e){
                   o.a.href=o.URL(blb=e)
@@ -273,18 +273,18 @@ o={
         g=o.pl(o.gw*2,o.gh*2)
         for(i in o.of){var I=0
           while(I<4){var l=1,II=I*4,f=o.of[i]//start column & continue with previous row
-            φ=new T.ImageUtils.loadTexture('img/'+f+'/'+(f=='house'?0:II)+'.jpg')
+            φ=new T.ImageUtils.loadTexture(t.bs+f+(f=='ho'?0:II)+'.jpg')
             m=new T.MeshBasicMaterial({map:φ,opacity:.85,transparent:!0})
             r.children[i].add(M=new T.Mesh(g,m))
             M.position.set(x[0][I]+x[1][I],y[0][0]+y[1][0],0)
             while(l<4){//finish column: vertically add three more
-              φ=new T.ImageUtils.loadTexture('img/'+f+'/'+(f=='house'?0:l+II)+'.jpg')
+              φ=new T.ImageUtils.loadTexture(t.bs+f+(f=='ho'?0:l+II)+'.jpg')
               m=new T.MeshBasicMaterial({map:φ,opacity:.85,transparent:!0})
               r.children[i].add(M=new T.Mesh(g,m))
               M.position.set(x[0][I]+x[1][I],y[0][l]+y[1][l],0),l++}I++}}
       //left container
         g=o.pl(o.gw,o.pnlH)
-        φ=new T.ImageUtils.loadTexture('img/icon/left.png')
+        φ=new T.ImageUtils.loadTexture(t.bs+'icon/left.png')
         m=new T.MeshBasicMaterial({map:φ,opacity:.3,transparent:!0,blending:0,color:'lightgrey'})
         o.st.pnl.add(o.left=new T.Mesh(g,m))
         o.left.position.set(px,0,.001)//-6.446
@@ -417,10 +417,10 @@ o={
                       N[l-3]==0&&(
                         //Zs='x00000',
                         o.txt.mv(N,5))))))))))
-      //Zs&&(i.c(Zs))
+      //Zs&&(u.c(Zs))
       o.txt.hd(N-1+'')},*/
     r:'p  p p'.split(/|/)},//rotation o´ each texture
-  init:function(){var g,m,φ,M,px,py,i=0,sty=$('style')[0],clck,msh
+  init:function(){var g,m,φ,M,px,py,i=0,clck,msh
     o.gh=(o.H=o.l0p/10)/10
     o.gw=o.W/10
     o.g=o.pl(100,200)
@@ -432,11 +432,8 @@ o={
     h.ga.add(o.added=o.ob3.clone())
     o.im=$('<input type=file accept='+o.ap+'zip onchange=o.imp(this.files)>')[0]
     o.fi=u.lng=='es'?'con el fin de exportar una casa, 1ro debes añadir o importar alguna':'in order to export house, first you must add one or import your own'
-    o.pfx=o.usrAgnt[/(Chrome|Trident|Firefox)/.exec(navigator.userAgent)[0]]
-    o.sty+='-'+o.pfx+'-user-select:none}'
-    sty?
-      sty.innerHTML+='\n'+o.sty
-      :$(H).append($('<style>').text(o.sty)[0])
+    o.pfx=o.usrAgnt[/(Chrome|Trident|Firefox)/.exec(h.nv.userAgent)[0]]
+    u.sty(o.sty+='-'+o.pfx+'-user-select:none')
     o.r.setSize(innerWidth,innerHeight)//setting width & height
     o.c.position.z=10
     px=-o.W/2+o.gw/2//left corner-[ | ]    <-- half width
@@ -469,7 +466,7 @@ o={
        [-.3,-2.5],[.3,-2.5],
        [-.3,-3.5],[.3,-3.5]]*/
     function msh(I){
-      φ=new T.ImageUtils.loadTexture('img/icon/menu.png')
+      φ=new T.ImageUtils.loadTexture(t.bs+'icon/menu.png')
       φ.repeat.y=.0625,φ.offset.y=(i*2+I)*.0625
       /*     Δ=.0625
       ⌨ 0      📌.0625
@@ -486,7 +483,7 @@ o={
       M.position.set(o.gw*.3*(I?1:-1),o.gh*(3.5-i),0)
       o.menu.add(M)}//repeating 'til 24 PlaneGeometries/room for icons
     while(i<8)msh(0),msh(1),i++==4&&(M.il=1)//increase light
-    $(b).append(o.r.domElement)//adding all to body as canvas
+    u.b.appendChild(o.r.domElement)//adding all to body as canvas
     o.r.domElement.id='ops'
     !u.a&&(o.r.domElement.className='no')
     o.is=o.pfx+(o.pfx=='webkit'?'Is':'')+o.fs
