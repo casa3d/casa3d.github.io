@@ -3,10 +3,10 @@ u={//user's API
     (u.d[e]||e).appendChild(c)},
   c:function(m){console.log(m)},
   back:'&#11013;',//⬅
-  bad:function(s){//symptom
+  bad:function(s,m){//symptom,message
     u.bt.innerHTML=u.alert
-    u.bt.classList.add(u.hz.jinbao+u.uid,u.hz.cuowu+s+'_'+u.uid)
-    u.bt.onclick=function(){alert(u.e[s])}},
+    u.bt.classList.add(u.hz.jinbao+u.uid,u.hz.cuowu+s+u.uid)
+    u.bt.onclick=function(){alert(u.e[s]+(m?'\n'+m:''))}},
   chrome:(/chrome/i).test(navigator.userAgent),
   d:document,
   e:{//error list
@@ -14,22 +14,15 @@ u={//user's API
     //415 Unsupported Media Type
     499:"sample was not supplied and it's is required"},//"el modelo no fue suministrado y es requerido",
   load:'&#9203;',//⏳
-  loadAsset:function(o){//object={sample:mypage.com/file.js,pic:mypage.com/file.png}
+  loadAsset:function(o){//object={load:mypage.com/file.js,pic:mypage.com/file.png}jpg,ico,webp...
     if(o&&/js/.test(o)){
       var A=(o=o.split(' '))[0],cv=A.split('/'),ut=u.task,s=u.new('script'),x
-      ut.sample=/casa/.test(A)?(
-        ut.pic=u.repo+cv[1].split('.')[0]+'.jpg',
-        u.repo+cv[1])
-        //console.log('asset comes from 3rd-party website:'+A),
-        :(
-        ut.pic=o[1],
-        A)
-      //console.log('task=load:',ut.sample,ut.pic)
+      //console.log('sample:',ut.load,'\npic',ut.pic)
       x=u.xhr({//let's get house-asset using XMLHttpRequest (it's first cuz its size ~2kb)
-        fl:u.task.sample,
+        fl:u.task.load,
         ld:function(){//console.log(this)
           if(this.status==200){
-            /*console.log(*/u.task.sample=this.response//)
+            /*console.log(*/u.task.load=this.response//)
             x=u.xhr({//let's get big construct-assets (its size is ~500kb)
               prg:function(d){//progress
                 /*console.log(d,*/u.bt.innerHTML=100-(d.loaded/d.total*100).toFixed(0)/*)*/},
@@ -40,14 +33,14 @@ u={//user's API
                 s.onload=function(){
                   c.position.set(135,450,-50)
                   t.ad({//add sample to canvas
-                    a:t.eval(u.task.sample),
+                    a:t.eval(u.task.load),
                     p:new T.Object3D,//container as its parent
                     gp:t.s})//and that container has t.scene as "grandpa"
                   setTimeout(function(){
                     u.cv.removeAttribute('style')
                     u.p.classList.remove(u.hz.tupian+u.uid)
                     r.render(t.s,c)},500)
-                  u.task.sample=u.url(u.task.sample)
+                  u.task.load=u.url(u.task.load)
                   u.bt.innerHTML=u.play//▶
                   u.task.isDone=!0
                   u.bt.onclick=function(){//⚠
@@ -62,8 +55,8 @@ u={//user's API
                         this.innerHTML=u.play,//▶
                         this.className=u.hz.wan+u.uid,
                         u.a=0)}}}}})}
-        else u.bad(404)}})
-      /*return {load:u.load,sample:u.sample,cover:u.pic}*/}
+        else u.bad(404,ut.load)}})
+      /*console.log({load:u.load,cover:u.pic})*/}
     else u.bad(499)},
   new:function(tg,at){
     tg=u.d.createElement(tg)
@@ -71,17 +64,27 @@ u={//user's API
     return tg},
   path:'http://casa3d.hostzi.com/',//'../public/',
   play:'&#9654;',//▶
-  readAtt:function(s){var i,l,ATS,at,ut=u.task,m
-    for(var i in s){
-      if(isNaN(i))return
-      //console.log('script',i,':',s[i])
-      ATS=/*u.ats=*/s[i].attributes
-      for(l in ATS){
-        if(isNaN(l))return
-        //console.log('attribute',l,':',ATS[l])
-        at=ATS[l]
-        if(at.name=='size')return /*console.log(*/m=/%|pc|px|em/.exec(at.value),at=at.value.split(' '),u.size.w=at[0]+(m=m?'':'px'),u.size.h=(at[1]||at[0])+m//)
-        if(at.name=='load')/*console.log('found:',*/ut.load=at.value/*)*/}}},
+  readAtt:function(s){var ut=u.task,i,a,e,l,a0,a2
+    u.size.w=ut.isDone=!1
+    for(i in s){if(isNaN(i))return
+      if((a=s[i].dataset)&&a.set){
+        //console.log('dataset',i,':',s[i].dataset,'from:',s[i].src)
+        a=a.set.split(' ')
+        ut.load=(e=/\/\/casa(\d{1}|\d{2}).js/.exec(a0=a[0]))?
+          u.repo+e[ut.fromHome=1]+'.js'
+          :/\.js/.test(a0)&&(a0)
+        //console.log(a)
+        a2=a[2],a=a[1]
+        u.size.set((
+          ut.img(a)||a==void 0?
+            u.z.split('p')[0]//it's an image, so let it be default-size
+            :a).split('x'),
+          u.size)
+        //console.log(a)
+        ut.pic=ut.fromHome?
+          u.repo+e[1]+'.jpg'
+          :a2//let pic be a at position 2 (if it's set up)
+          ||ut.img(a)}}},//,console.log('after sent: a.split(x)=',a.split('x'),'u.size=',u.size)
   set:function(){//stablish trigger, whether now or wait 'till load
     var x=u.new('a',{innerHTML:'&#9888;'})//⚠
     u.repo=u.path+'casa/'
@@ -89,10 +92,19 @@ u={//user's API
     u.js=u.path+'js/lbs.js'//'filler'
     u.alert=x.innerHTML
     u.readAtt(u.d.scripts)
-    u.d.readyState=='complete'?
-      u.init()
-      :onload=u.init},
-  size:{},
+    //console.log(u.task,'\n',u.size)
+    u.d.readyState=='complete'?u.init():onload=u.init},
+  size:{
+    w:0,
+    h:0,
+    set:function(a,z,i){//read & return attribute
+      //console.log('before:',a)
+      !a[1]&&(a[1]=a[0])
+      //console.log('after:',a)
+      for(i in a)u.size[z.w?'h':'w']=/px|pc|pt|%|em/.test(a[i])?(
+        a[i])
+        :a[i]+'px'
+      /*console.log(u.size.w,u.size.h)*/}},
   sty:function(s){var e,i//style element, style content, iterator
     s=s.split('_')
     e=u.d.styleSheets[0]||u.H.appendChild(u.new('style')).sheet
@@ -109,24 +121,26 @@ u={//user's API
         tupian='.'+u.hz.tupian+id,
         cuowu404='.'+u.hz.cuowu+404+id,
         cuowu499='.'+u.hz.cuowu+499+id,
-        w=u.size.w||'256px',
-        h=u.size.h||w
+        s=u.size
     u.sty(
-      shi+'{background:linear-gradient(#fff,#7d7ddf 90%,#1b186d);box-shadow:rgba(0,0,0,.5) 5px 5px 1em 4px;display:inline-block;height:'+h+';text-align:center;width:'+w+';z-index:999999_'+
+      shi+'{background:linear-gradient(#fff,#7d7ddf 90%,#1b186d);box-shadow:rgba(0,0,0,.5) 5px 5px 1em 4px;display:inline-block;height:'+s.h+';text-align:center;width:'+s.w+';z-index:999999_'+
       bt+'{background:transparent;border:1px ridge #FFF;border-radius:1em;cursor:pointer;font-size:'+(u.chrome?(2.55,3.2):3.2)+'em;outline:0;text-shadow:#00dfff 2px 0 10px;transition:.6s;width:70px_'+
-      bt+':hover{background:rgba(0,178,255,0.51)_'+
+      bt+':hover:not('+jinbao+'){background:rgba(0,178,255,0.51)_'+
       shi+','+bt+'{color:#FFF;font-family:Segoe UI Symbol_'+
       man+','+cv+'{height:100%;width:100%_'+
-      man+'{left:0;position:fixed;top:0_'+
+      man+','+huibao+'{left:0;position:fixed;top:0_'+
       wan+'{padding-right:0;top:-50%;'+(u.chrome?'-webkit-':'')+'transform:translateY(-50%)_'+
-      huibao+'{padding-top:0;position:fixed;left:0;top:0_'+
+      huibao+'{padding-top:0_'+
       jinbao+'{border:0_'+
       jinbao+':hover{background:0!important;color:#FFE525_'+
-      tupian+'{background:url('+u.task.pic+')0/cover,#097780!important_'+
+      tupian+'{'+(u.task.pic?'background:url('+u.task.pic+')0/cover,':'')+'#097780!important_'+
       cuowu404+':after{content:"404"_'+
       cuowu499+':after{content:"499"_'+
       wan+','+cuowu404+':after,'+cuowu499+':after{display:table-cell;position:relative')},
-  task:{},
+  task:{
+    fromHome:0,
+    img:function(a){//is it an image? (i.e. jpeg, jpg, ttif, gif, ico, webp)
+      return /(g|f|o|p)$/.test(a)&&(a)}},
   url:function(cnt){//url from blob protocol
     return URL.createObjectURL(new Blob([cnt||''],{type:'application/JavaScript'}))},
   xhr:function(o){//object
@@ -135,6 +149,7 @@ u={//user's API
     x.onprogress=o.prg
     x.onload=o.ld
     x.send()},
+  z:'128px',
   init:function(s){//initiate
     u.b=u.d.body
     u.H=u.d.head
