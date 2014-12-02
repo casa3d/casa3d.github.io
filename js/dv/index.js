@@ -161,7 +161,7 @@ u={
           :u.t(th.idx)})}
     ich=intro.children[0]
     ch.msg=/es/.test(u.nv.language)=='es'?(
-      ich.innerHTML="Explora la casa dentro de tu propia pagina web<br><code>&lt;meta charset=UTF-8&gt;<br>&lt;script src=<a>//casa3d.hostzi.com/api.js</a> data-load=<a>//casa/1.js</a>&lt;/script&gt;</code><li>no te preocupes, auto-asincronizacion</li><li>su mision: coexistir dentro de la página</li>",
+      ich.innerHTML="Explora la casa dentro de tu propia pagina web<br><code>&lt;meta charset=UTF-8&gt;<br>&lt;script src=<a>//casa3d.hostzi.com/api.js</a> data-set=<a>'//casa1.js 300x200'</a>&lt;/script&gt;</code><li>no te preocupes, auto-asincronizacion</li><li>su mision: coexistir dentro de la página</li>",
       u.tx(u.sp),
       u.lgErr='Usuario o Contraseña incorrecta',
       u.suErr='Este usuario ya existe',
@@ -170,7 +170,7 @@ u={
       u.lng='es',
       'Si acepta, la pagina cargaria un 50% MAS RAPIDO\ny ademas tendria acceso a esta pagina AUN SIN internet!')
     :(
-      ich.innerHTML="Explore house inside your own website<br><code>&lt;meta charset=UTF-8&gt;<br>&lt;script src=<a>//casa3d.hostzi.com/api.js</a> data-load=<a>//casa/1.js</a>&lt;/script&gt;</code><li>don't worry it's asynchronized</li><li>It'll co-exist while being there</li>",
+      ich.innerHTML="Explore house inside your own website<br><code>&lt;meta charset=UTF-8&gt;<br>&lt;script src=<a>//casa3d.hostzi.com/api.js</a> data-set=<a>'//casa1.js 300x200'</a>&lt;/script&gt;</code><li>don't worry it's asynchronized</li><li>It'll co-exist while being there</li>",
       u.lgErr='Incorrect Username or Password',
       u.suErr='This username already exists',
       u.fill='Please check that you:\n1: DO NOT use special characters\n2: Fill name at least 3\n3: Fill and match password at least 4',
