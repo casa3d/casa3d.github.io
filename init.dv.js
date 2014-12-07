@@ -13,7 +13,6 @@ u={//user's API
     404:'sample was not found',
     //415 Unsupported Media Type
     499:"sample was not supplied and it's is required"},//"el modelo no fue suministrado y es requerido",
-  load:'&#9203;',//⏳
   loadAsset:function(o){//object={load:mypage.com/file.js,pic:mypage.com/file.png}jpg,ico,webp...
     if(o&&/js/.test(o)){
       var A=(o=o.split(' '))[0],cv=A.split('/'),ut=u.task,s=u.new('script'),x
@@ -27,7 +26,7 @@ u={//user's API
               prg:function(d){//progress
                 /*console.log(d,*/u.bt.innerHTML=100-(d.loaded/d.total*100).toFixed(0)/*)*/},
               ld:function(){//load
-                u.bt.innerHTML=u.load
+                u.bt.innerHTML=u.wait
                 s.src=u.url(this.response)
                 u.ap(s,'head')//appending filler.js to head
                 s.onload=function(){
@@ -37,6 +36,9 @@ u={//user's API
                     p:new T.Object3D,//container as its parent
                     gp:t.s})//and that container has t.scene as "grandpa"
                   setTimeout(function(){
+                    setTimeout(function(){
+                      m.rKey=!0
+                      r.render(t.s,c)},500)
                     u.cv.removeAttribute('style')
                     u.p.classList.remove(u.hz.tupian+u.uid)
                     r.render(t.s,c)},500)
@@ -56,7 +58,7 @@ u={//user's API
                         this.className=u.hz.wan+u.uid,
                         u.a=0)}}}}})}
         else u.bad(404,ut.load)}})
-      /*console.log({load:u.load,cover:u.pic})*/}
+      /*console.log({load:u.wait,cover:u.pic})*/}
     else u.bad(499)},
   new:function(tg,at){
     tg=u.d.createElement(tg)
@@ -143,6 +145,7 @@ u={//user's API
       return /(g|f|o|p)$/.test(a)&&(a)}},
   url:function(cnt){//url from blob protocol
     return URL.createObjectURL(new Blob([cnt||''],{type:'application/JavaScript'}))},
+  wait:'&#9203;',//⏳
   xhr:function(o){//object
     var x=new XMLHttpRequest()
     x.open('GET',o.fl||u.js)//async-defacto
