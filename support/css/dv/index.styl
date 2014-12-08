@@ -1,11 +1,13 @@
 body
+  font-family Segoe UI Symbol
   margin 0
   overflow hidden
   #ops button,fieldset
     font-family Segoe UI Symbol
   div
+    transition .6s ease
+  div
     font-weight bold
-    transition .5s ease
     &#ops:hover
       top 0
     &#ops
@@ -23,62 +25,58 @@ body
         min-width 100px
         opacity .9
         padding 0
+        transition .4s
         width 10%
+        &:hover
+          text-shadow -5px 5px 9px #000
         &:nth-of-type(1)
-          background linear-gradient(45deg,black,green,black)
+          background linear-gradient(45deg,#004C4C,#00C9C9)
         &:nth-of-type(2)
-          background linear-gradient(45deg,black,blue,black)
+          background linear-gradient(45deg,#070032,#917CFF)
         &:nth-of-type(3)
-          background linear-gradient(45deg,black,darkcyan,black)
+          background linear-gradient(45deg,#D9671F,#FFA100)
         &:nth-of-type(4)
-          background linear-gradient(45deg,black,goldenrod,black)
+          background linear-gradient(45deg,#004A00,#00E500)
         &:nth-of-type(5)
-          background linear-gradient(45deg,black,saddlebrown,black)
+          background linear-gradient(45deg,#003971,#68C2FF)
         &:nth-of-type(6)
-          background linear-gradient(45deg,black,red,black)
+          background linear-gradient(45deg,#62005D,#F84CF8)
         &:nth-of-type(7)
-          background linear-gradient(45deg,black,grey,black)
+          background linear-gradient(45deg,#691B00,#FF6F3E)
     &#roll
-      background linear-gradient(90deg,green,blue,darkcyan,goldenrod,saddlebrown,red,grey,black 110%)
       height 100%
       position absolute
       width 700%
       >div
-        background linear-gradient(20deg,white,rgba(255, 255, 255, 0.25),white)
         height 100%
         float left
         font-size 1.15em
         overflow auto
         width 14.2857%
+        >h1
+          text-transform capitalize
 .in
   top 0
 .out
   top -13.5%
-.green
-  background repeating-radial-gradient(rgba(0,255,0,.6),rgba(0,0,0,.6)4%),repeating-linear-gradient(0deg,black,green 20%)
-.blue
-  background repeating-radial-gradient(rgba(0,0,255,.6),rgba(0,0,0,.6)4%),repeating-linear-gradient(30deg,black,blue 3%)
-.darkcyan
-  background repeating-radial-gradient(rgba(0,139,139,.6),rgba(0,0,0,.6)4%),repeating-linear-gradient(90deg,black,darkcyan 2%)
-.goldenrod
-  background repeating-radial-gradient(rgba(218,165,32,.6),rgba(0,0,0,.6)4%),repeating-linear-gradient(150deg,black,goldenrod 3%)
-.saddlebrown
-  background repeating-radial-gradient(rgba(139,69,19,.6),rgba(0,0,0,.6)4%),repeating-linear-gradient(180deg,black,saddlebrown 20%)
-.red
-  background repeating-radial-gradient(rgba(255,0,0,.6),rgba(0,0,0,.6)4%),repeating-linear-gradient(210deg,black,red 3%)
-.grey
-  background repeating-radial-gradient(rgba(128,128,128,.6),rgba(0,0,0,.6)4%),repeating-linear-gradient(270deg,black,grey 3%)
 .zero
-  left:0%
+  background #54A095
+  left 0%
 .one
-  left:-100%
+  background #9189C0
+  left -100%
 .two
-  left:-200%
+  background #D3894D
+  left -200%
 .three
-  left:-300%
+  background #469E4A
+  left -300%
 .four
-  left:-400%
+  background #4E99D5
+  left -400%
 .five
-  left:-500%
+  background #B268B9
+  left -500%
 .six
-  left:-600%
+  background #D38266
+  left -600%

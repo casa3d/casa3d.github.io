@@ -1,8 +1,6 @@
 CACHE MANIFEST
-#14.11.13 17:38
-
+#14.11.13 17:36
 CACHE:
-css/index.css
 js/xhr.js
 js/index.js
 js/worker.js
@@ -21,6 +19,5 @@ js/en/vsch.js
 js/es/vsch.js
 js/en/t&c_u.js
 js/es/t&c_u.js
-
 NETWORK:
-php/mailer.php
+mail.php

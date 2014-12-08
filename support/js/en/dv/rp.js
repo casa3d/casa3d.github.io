@@ -9,8 +9,7 @@ rp={//🙋 your opinion is important
       preventive:'in order to don\'t let affect page, plan possible unspected/future cases. (e.g. updates of page dependencies, availability of either server or resources)'}},
   fieldset:{
     type:'adaptive perfective corrective preventive another'.split(' '),
-    date:'input id=dt type=date placeholder=YYYY-MM-DD',
     '@':"input type=email placeholder='type your E-mail' spellcheck=false",
-    recipient:'bugs support designer developer administrator'.split(' '),
+    recipient:'bugs support designer'.split(' '),
     textarea:" style=height:250px;width:92% placeholder='tell us all details'",
     button:" title='Send it Now?' id=send"}}

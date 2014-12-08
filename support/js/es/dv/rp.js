@@ -9,8 +9,7 @@ rp={//🙋 su opinion es importante
       preventive:'planificar posibles situaciones inesperadas/futuras con el fin de que la página no se vea afectada. (e.g. actualizaciones de las dependencias de la página, la disponibilidad del servidor o de los recursos)'}},
   fieldset:{
     type:'adaptivo perfectivo correctivo preventivo otro'.split(' '),
-    date:'input id=dt type=date placeholder=YYYY-MM-DD',
     '@':"input type=email placeholder='escriba su E-mail' spellcheck=false",
-    recipient:'bugs support designer developer administrator'.split(' '),
+    recipient:'bugs support designer'.split(' '),
     textarea:" style=height:250px;width:92% placeholder='cuentanos todos los detalles'",
     button:" title='Enviarlo Ahora?' id=send"}}
