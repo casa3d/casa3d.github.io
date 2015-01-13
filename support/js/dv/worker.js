@@ -6,7 +6,7 @@ b={//browser: IE,Chrome,Firefox & 2last
     return f[(/AppleWebKit|Firefox/i).test(br)?1:0]+lg}}
 p={//parse
   N:'⓪①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳'.split(''),
-  sty:"#roll>div fieldset{background:linear-gradient(#FFF,#F5F5F5);border-radius:1em;border:4px groove threedface;border-top:0;border-right:0;box-shadow:black 2px 8px 11px;margin-bottom:.5em_fieldset:after{content:'.'_legend{background:linear-gradient(transparent,white,transparent);font-style:oblique;text-shadow:white 3px 0 2px_center>*{font:1em verdana_fieldset>center>button{display:block_center>label:before{content:' '_center>label:after{content:':'_#roll>div:nth-child(6)>fieldset>legend:before{content:'vr '_#roll>div:nth-child(2)>fieldset>legend:after{content:'?'_legend>label:before{content:' (2014.'_legend>label:after{content:')'",
+  sty:"#roll>div fieldset{background:linear-gradient(#FFF,#F5F5F5);border-radius:1em;border:4px groove threedface;border-top:0;border-right:0;box-shadow:black 2px 8px 11px;margin-bottom:.5em_fieldset:after{content:'.'_legend{background:linear-gradient(transparent,white,transparent);font-style:oblique;text-shadow:white 3px 0 2px_center>*{font:1em verdana_fieldset>center>button{display:block_center>label:before{content:' '_center>label:after{content:':'_#roll>div:nth-child(6)>fieldset>legend:before{content:'vr '_#roll>div:nth-child(2)>fieldset>legend:after{content:'?'_fieldset:nth-child(-n+23) label:before{content:' (2014.'_fieldset:nth-child(n+24) label:before{content:' (2015.'_legend>label:after{content:')'_#视频{border-radius:1em;box-shadow:#000 0 0 3em;left:25%;opacity:.95;position:fixed;top:20%_#玩{background:transparent;color:#FFF;cursor:pointer;border:0;font-size:3.1em;left:10%;outline:0;text-shadow:#000 0 0 6px_#玩:hover{color:#000;text-shadow:#FFF 0 0 9px",
   C:'<center>',c:'</center>',
   D:'<div>',d:'</div>',
   H:'<h1>',h:'</h1>',
@@ -50,10 +50,10 @@ p={//parse
 this.onmessage=function(e){d=e.data
   if(d.ua){//userAgent
     j='.js',d.rf+='js/'
-    importScripts(d.rf+'dv/structure'+j)
+    importScripts(d.rf+'structure'+j)
     b.end=(p.k=Object.keys(str)).length
     postMessage({fn:'s.sty("'+p.sty+'"),'+b.brw(d.ua[0])})
     on=='es'&&(p.i=lngs[on],p.i.t=p.i.t.split('_'),p.e=lngs.en)
     x=setInterval(function(){
       postMessage({i:b.i,cnt:p.rs(p.k[b.i]),t:p.k[b.i]})
-      ++b.i==b.end&&(clearInterval(x),postMessage({fn:"console.log('attempting to terminate worker...',s.wk.terminate(),'worker terminated')"}))},50)}}
+      ++b.i==b.end&&(clearInterval(x),postMessage({fn:"roll.children[3].innerHTML='<button id=玩>▶</button><video id=视频 controls hidden></video>'+roll.children[3].innerHTML,console.log('attempting to terminate worker...',s.wk.terminate(),'worker terminated')"}))},50)}}

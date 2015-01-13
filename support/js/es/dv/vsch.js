@@ -111,7 +111,7 @@ vr=['1.0 1.5_'+
 '  apache ha sido reemplazado por el servidor de node.js, trabajando ahora sobre localhost:3000'+l+
 '  y ha sido creada una aplicacion con express'+l+
 '    jade como html'+l+
-'    stylus como css',
+'    stylus como CSS',
 '2.4 7.18_'+
 '  conflicto detectado con bibl ck, toda las cookies terminaban en NaN porque se suponia que debe haber solo cookies con el order 1-6 almacenadas allí adentro pero desde ahora co-existira buscandolas primero y recogiendolas dentro de un arreglo o vector de 6 posiciones.'+l+
 '  Actualizado el cursor de la bibl rsz',
@@ -161,4 +161,20 @@ vr=['1.0 1.5_'+
 '     c) el tiempo esperando para generar el archivo zip ha tenido una reduccion importante'+l+
 '     d) casa# dependera de la casa mas cercana a la posicion actual de la camara'+l+
 '   En la opcion de importacion:'+l+
-'     cuando una nueva casa llega, la camara se mueve enfrente de ella y un numero es mostrado encima','3.0 11.13_'+'filler.js ha sido mejorado (usando zip.js):'+l+'ahora va a añadir dentro de head casi todos los scripts necesarios extraidos de "lbs.zip"'+l+'esto significa que:'+l+'el tamaño de la pagina se ha reducido 33.33%'+l+'antes: ~1.2MB'+l+'ahora: ~800kb']
+'     cuando una nueva casa llega, la camara se mueve enfrente de ella y un numero es mostrado encima','3.0 11.13_'+'filler.js ha sido mejorado (usando zip.js):'+l+'ahora va a añadir dentro de head casi todos los scripts necesarios extraidos de "lbs.zip"'+l+'esto significa que:'+l+'el tamaño de la pagina se ha reducido un 33.33%'+l+'antes: ~1.2MB'+l+'ahora: ~800kb',
+'3.1 11.29_'+
+'  Metro-Style ha sido sido implementado.'+l+
+'  ahora hay 3 secciones (API, Cuenta, Apoyo)'+l+
+'  API:'+l+
+'  Usted sera capaz de integrar casa3d a su sitio web (mire la seccion de API para saber como)'+l+
+'  Cuenta:'+l+
+'  hay dos secciones comunes: iniciar sesion & registrarse'+l+
+'  Apoyo:'+l+
+'  las 7 secciones de la pagina de apoyo externa'+l+l+
+'  CSS extra'+l+
+'  Estoy orgulloso de anunciar que, todos los CSS extras seran adheridos literalmente al primer document.styleSheets o al elemento por defecto "new style tag" usando insertRule',
+'3.2 1.8_'+
+'  Context Menu (clic derecho) añadido a canvas, tiene 6 opciones:'+l+
+'  cambiar foto, borrar objeto, rotar objeto hacia: arriba, izquierda, derecha, abajo'+l+
+'  Video tutoriales han sido incluidos a la seccion "Plan de Entrenamiento".'+l+
+'  Ha sido establecida la font-family "emoji" de CSS para los navegadores que se ejecuten en la plataforma Linux']

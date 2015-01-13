@@ -111,7 +111,7 @@ vr=['1.0 1.5_'+
 "  apache's been replaced to node.js' server, now working on localhost:3000"+l+
 "  and an application's been created with express"+l+
 '    jade as html'+l+
-'    stylus as css',
+'    stylus as CSS',
 '2.4 7.18_'+
 "  detected conflict with ck lib, all cookies ended up to NaN because it's suppost to only be cookies with 1-6 order stored therein but since now it'll (co-exist) look for them first and gathered them into vector of 6 positions."+l+
 "  updated rsz lib's cursor",
@@ -168,4 +168,20 @@ vr=['1.0 1.5_'+
 'this means that:'+l+
 'webpage size has been decreased 33.33%'+l+
 'before: ~1.2MB'+l+
-'now: ~800kb']
+'now: ~800kb',
+'3.1 11.29_'+
+'  Metro-Style has been implemented.'+l+
+'  there are 3 sections now (API, Account, Support)'+l+
+'  API:'+l+
+"  You'll be able to integrate casa3d to your website (see API section to know how to)"+l+
+'  Account:'+l+
+'  there are two regular sections: log in & sign up'+l+
+'  Support:'+l+
+'  those 7 sections moved from previous external support page'+l+l+
+'  extra CSS'+l+
+'  I\'m proud to anounce that, all extra CSS will be literally appended to first document.styleSheets or defacto element "new style tag" using insertRule',
+'3.2 1.8_'+
+'  Context Menu (right click) added to canvas it has got 6 options:'+l+
+'  change picture, remove object, rotate object to: up, left, right, down'+l+
+'  Video tutorials have been included to section "Training Plan".'+l+
+'  CSS font-family "emoji" has been set to browsers running onto Linux platform']

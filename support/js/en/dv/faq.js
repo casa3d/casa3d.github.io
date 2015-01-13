@@ -5,5 +5,5 @@ faq=['how to add window to house_press option ➕ and look for it, (remember cur
   "how to watch around_option ⌖ means position indicator, it enables rotation so, if you'd like to do it with your mouse then make sure that this option is enabled & then just move mouse, otherwise ⟲ & ⟳ are useful since they rotate 90° to their own side",
   "how to disable rotation_press option ⌖ , it enables or disables that",
   'there is too much light so, how or when it gets darker_regarding to light intensity... option 🌙 (moon) decreases it whilst ☀ does opposite',
-  "I'd like download this house and make it mine, can I_off course you can just press option 📥 (download), take a look at terms & conditions though",
+  "I'd like download this house and make it mine, can I_off course you can just press option 📤 (export), take a look at terms & conditions though",
   'is there any fullscreen option_ahah, option 🎦 (theatre mode)']
