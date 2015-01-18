@@ -133,6 +133,39 @@ o={
       clickEvent=u.d.createEvent('MouseEvent')
       clickEvent.initMouseEvent('click',1,1,h.w,0,0,0,0,0,0,0,0,0,0,null)//type, canBubble, cancelable, view,  detail, screenX, screenY, clientX, clientY,  ctrlKey, altKey, shiftKey, metaKey,  button, relatedTarget
       o.a.dispatchEvent(clickEvent)}},
+  str:function(P){//spawn string
+    var x,g,s='',m,M,f,r,p,rt,i,v//object x, geometry, string, Material, folder, position, rotation/repeat, iterator, vertices
+    x=t.s.children[1].children[P]
+    p=x.position
+    r=x.rotation
+    if(g=x.geometry)s=g.width/100+' '+g.height/100
+    else{s=''
+      v=(x=x.children[0]).geometry.vertices
+      for(i in v)s+=Number((v[i].x/100).toFixed(6))+','+Number((v[i].y/100).toFixed(6))+' '
+      s=s.slice(0,-1)}
+      //  1.7 |2.5R|3,|
+      // 0,3 2.5,3 2.5,2.5 1.7,2.5 1.7,0 0,0
+
+      //0,0 170,0 170,250 250,250 250,300 0,300
+    m=(M=x.material).map//double side by default so, dot means 1
+    f=/img\/(.*)\./.exec(m.sourceFile)[1]
+    rp=(rp=m.repeat.x)!=1?' '+rp:''
+    s+='['+f+rp+']'//folder & repeat
+    function d(l,a){
+      if(l||a)l=(a==1?'':' ')+Number((l/100).toFixed(6))
+      return l||''}
+    p=(p.x||p.y)?d(p.x,1)+d(p.y,2)+d(p.z):''
+    s+=p
+    function rt(l,y){// αχισ аксыс
+      if(l){var i=l<0?'-':''
+        l=' '+i+(/1.57/.test(l)?
+          'p'
+          :'P')+(y||'')}
+      return l||''}
+    χ=rt(r.x)//rotation x
+    γ=rt(r.y,'y')//rotation y
+    s+=χ+γ+(M.side==2?'':'.')+'_'
+    rz+=s},
   zip:function(){
     if(zip&&zip.method&&zip.method.deflate){
       var c=o.o.material.color
@@ -142,11 +175,11 @@ o={
   exp:function(){//export option: house as js inside zip
     if(o.zip()){
       if(o.house.length){
-        var x,p=((c.position.x+o.S/2)/o.S+1+'')[0]
+        var p=((c.position.x+o.S/2)/o.S+1+'')[0]//position
         p=p>0?p:1
         /*cpx=camera.position.x, o.S=510
         why offset=cpx+255?
-        [ . ] I'd say that "dot" is .5 or 50% but actually it's... 0 "just like vertices work"
+        [ . ] I'd say such "dot" is .5 or 50% but actually it's... 0 "just like vertices work" center
               but I wanted it to be like [   ] "dot starts in left square-bracket"
               so, I set as offset its half which actually is 255 "see: o.S"
         Y offset/510?
@@ -157,9 +190,13 @@ o={
           strings may be treated as vector whilst number not
           that way I'll get very first number #
           and therefore user'd do two things:
-            1) now in which house is. "currently, I mean"
+            1) now in which current house he/she is
             2) export file like so: casa# dateInfo.zip */
-        x=new Blob([o.house[p-1]]/*[#-1] 'cuz it'd never be 0*/,{type:o.ap+'JavaScript'})//house,mimeType
+        //o.str(p)//spawn string providing its position
+        rz=''
+        for(var i in t.s.children[p].children)o.str(i)
+        s=o.house[p-1]//final string
+        x=new Blob([rz.slice(0,-1)]/*[#-1] 'cuz it'd never be 0*/,{type:o.ap+'JavaScript'})//house,mimeType
         x.name='casa3d.js'
         zip.createWriter(
           new zip.BlobWriter(o.ap+'zip'),
@@ -169,7 +206,7 @@ o={
               x.name,
               new zip.BlobReader(x),
               function(){
-                //u.c('success')
+                //u.c('success reading blob')
                 o.a.hidden=0
                 zipWriter.close(function(e){
                   o.a.href=o.URL(blb=e)
@@ -177,7 +214,7 @@ o={
       else o.ld(o.fi)}//in order to download house, first add one or upload your own.
     else o.ld()},
   //cl:u.f('n','return o.menu.children[n].material.color'),
-  ntH:function(l,ch){
+  ntH:function(l,ch){//nth House
         //510
     var s=o.S*l,p,n//space between each house h.ntH (its container) has got -40 in x axis, though
     t.ad({a:t.eval(ch),p:p=o.ob3.clone(),gp:t.s})

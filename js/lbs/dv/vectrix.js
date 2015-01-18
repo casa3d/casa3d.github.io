@@ -84,8 +84,15 @@ v={
                 :v.pF(A)}
       v.a[i]=[l[0],l[1]]}
     v.mpf=''
-    for(i in v.a)v.a[i]=new T.Vector2(v.a[i][0],v.a[i][1])
-  return v.a}}
+    v.v2()
+  return v.a},
+  v2:function(s,i){
+    for(i in v.a){
+      s&&(v.a[i]=v.a[i].split(','),
+      v.a[i][0]=v.a[i][0]*100,
+      v.a[i][1]=v.a[i][1]*100)
+      v.a[i]=new T.Vector2(v.a[i][0],v.a[i][1])}
+    return v.a}}
 /*
 Luis Fernando Avila Suarez last editing date: 14.8.6 19:49
   Syntax used into vectrix library

@@ -42,6 +42,8 @@ t={
           v.v(
             sh[0][0],
             t.pf(sh[0][1]))
+          :/\,/.test(sh[0])?
+            v.v2(v.a=sh[0][0].split(' '))
           :sh[0][0].split(' '),
         sh[1].replace(BMexec=/[BDFLNP]|/.exec(sh[1]),'').split(' '),//BMaterial
         t.pr(
@@ -51,7 +53,7 @@ t={
             :(
               s2=!1,
               sh2))]        //[...],['wood/2','.0033'],[0,300.1,600,-1.57,0,0]
-      tx=sh[1][0]&&!(/\|/.test(sh[1][0]))?
+      tx=sh[1][0]&&!(/[|,]/.test(sh[1][0]))?
         T.ImageUtils.loadTexture(
           (/blob/.test(sh[1][0])?'':t.bs)+sh[1][0]+(
             /jpg|png|webp|blob|jpeg/.test(sh[1][0])?
@@ -59,7 +61,7 @@ t={
               :'.jpg'))
         :null
       if(sh[1].length>1)tx.repeat.set(t.pf(sh[1][1]),t.pf(sh[1][1])),tx.wrapS=tx.wrapT=T.RepeatWrapping
-      shape=/\|/.test(sh0)?
+      shape=/[|,]/.test(sh0)?
         T.SceneUtils.createMultiMaterialObject(
           new T.ShapeGeometry(new T.Shape(sh[0])),
           [new T.MeshLambertMaterial({
