@@ -1,5 +1,5 @@
-/*Emoji$027A1$AAD RenderedEmoji
-Emoji$02B05$AAB RenderedEmoji*/
+/*Emoji$027A1$AAD RenderedEmoji ↑
+Emoji$02B05$AAB RenderedEmoji   ↓ */
 f=Function('v,f','return Function(f?v:"",f||v)')
 u={
   d:document,
@@ -180,7 +180,7 @@ u={
       f:f})
     u.set(u.a=0)
     var l,s='idb dvFill'.split(' '),w=(/chrome/i).test(u.nv.userAgent)?1:0
-    u.sty('.embed{height:'+(w?'45%':'')+'}#intro>label{left:'+(w?/zh/.test(u.nv.language)?8.2:3.3:3.45)+'%;top:'+(w?51:37)+'%}#intro>button{top:'+(w?-20:-15)+'%')
+    u.sty('.embed{height:'+(w?'45%':'')+'}#intro>label{left:'+(w?7.3:4.4)+'%;top:'+(w?51:37)+'%}#intro>button{top:'+(w?-20:-15)+'%')
     u.tc(dm,'back')
     for(l in s)u.ap(u.new('script',{src:'js/'+s[l]+'.js'}),'head')
     u.clk(f('u.sty("body *{transition:.6s")'))
