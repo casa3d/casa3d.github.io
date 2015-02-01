@@ -1,11 +1,18 @@
 //move
 m={
+  地点:function(){//地点: location (Dìdiǎn)
+    m[0]&&(
+      m[0].innerHTML=m.f(m.P.x),
+      m[1].innerHTML=m.f(m.P.y),
+      m[2].innerHTML=m.f(m.P.z))},
   c:c.rotation,
   i:1,
   cn:0,
+  P:c.position,
   rKey:!1,
   WASD:{28:1,50:2,31:3,46:4},//0? won't pass, so increase by 1
   sty:".idle{cursor:url(css/cr.cur),auto}trgt{height:40px;left:50%;opacity:.4;position:fixed;top:50%;width:40px}trgt:before{content:'⌖';font-size:5em;left:-50%;position:relative;text-shadow:#FFF 1px 1px 6px;top:-125%}.not{opacity:0",
+  f:function(n){return Number(n.toFixed(2))},
   act:function(){
     m.rKey=m.rKey?(
       u.tg&&(
@@ -40,12 +47,12 @@ m={
   y:function(){
     m.onceY&&(
       m.rq(m.y),
-      c.position.y+=(m.K-1?-5:5)*m.i)},
+      m.P.y+=(m.K-1?-5:5)*m.i)},
   Ρ:function(){
     m.ApprX&&(
       m.rq(m.Ρ),
       c.rotation.y+=m.X?-.0125:.0125)},
-  xy:function(_a,_b){return c.position.z+=_a*m.i,c.position.x+=_b*m.i},
+  xy:function(_a,_b){return m.P.z+=_a*m.i,m.P.x+=_b*m.i},
   p:function(){
     m.onceKey&&(
       m.rq(m.p),
@@ -138,7 +145,8 @@ onkeydown=function(e){
                     :-m.i/2)
               :u.d.activeElement.className!=='ce'&&k==-29&&(
                 e.preventDefault(),
-                e.stopPropagation())}},
+                e.stopPropagation())
+      m.地点()}},//inform about 地点? //location (Dìdiǎn)
 onkeyup=function(e){
   if(u.a){
     var k=m.k(e)-7
@@ -153,5 +161,6 @@ onkeyup=function(e){
           m.i=Math.abs(m.i)
           :k==-21&&k!=[0-3]?
             (m.onceKey=!1)
-            :k==-20&&e.shiftKey&&(m.onceY=!1)}}
+            :k==-20&&e.shiftKey&&(m.onceY=!1)
+    m.地点()}}
 m.init()

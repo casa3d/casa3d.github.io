@@ -19,10 +19,11 @@ o={
   ae:u.f('e,a','for(var i in a)e.addEventListener(i,a[i])'),
   tn:{//thumbnail, if it´s already added any tx before then it won´t repeat its tn
     blob:{}},//perhaps user'd put his/her own textures from hard-disk "blob"
-  dlg:function(c,i,I){
+  dlg:function(c,i,I){//delegate
     c[i].idx=I?Number(I)+Number(i):i
     c[i].onclick=u.f('o.mn.fn[this.idx]()')},
-  mn:function(){var i=0,dv,tg='button div'.split(' '),s='🌄 ✖  ⤴ ↩ ↪ ⤵'.split(' '),e
+  mn:function(){//contextMenu
+    var i=0,dv,tg='button div'.split(' '),s='🌄 ✖  ⤴ ↩ ↪ ⤵'.split(' '),e
     u.ap(dv=o.mn=u.new('div',{id:'opsMenu'}),u.b)
     dv.rt=u.f('xy,p','dr.o&&dr.o.id!=6&&(dr.o.rotation[xy]=dr.o.rotation[xy]+o.π/2*p)')
     dv.fn=[
@@ -33,12 +34,12 @@ o={
           O.parent.id==o.added.id?
             o.added.remove(O)
             :t.s.children[1].remove(O))},,//div space (compulsory)
-        'x',//lie ⤴
-        'y',//rotate to the right ↩
-        'y',//rotate to the left  ↪
-        'x']//raise or stand up   ⤵
+        'x',//lie                     ⤴
+        'y',//rotate to the left   ↩
+        'y',//rotate to the right       ↪
+        'x']//raise or stand up      ⤵
 
-    
+
     while(i<7){
       u.ap(e=u.new(tg[i!=2?0:1],{innerHTML:s[i]}),i<3?dv:dv.lastChild)
       e.onclick=i<3?
@@ -72,12 +73,18 @@ o={
         o.mn.up)}
     clck=setInterval(o.R,100)
     o.clear(clck,'image-click',500)},
-  ad:function(tx,blob){var cp=c.position//camera´s position
+  ad:function(tx,blob){//texture, blob
+    var cp=c.position,p=((cp.x+o.S/2)/o.S+1+'')[0]//position
+    u.c(p)
     t.ad({
       a:10+' '+20+'['+(
         blob?
           tx
-          :tx.split(/img\/(.*)/)[1])+'] '+o.txt.r[o.txt.r.idx]})
+          :tx.split(/img\/(.*)/)[1])+'] '+o.txt.r[o.txt.r.idx],
+      p:p>0?
+        t.s.children[p]||o.ob3.clone()
+        :o.ob3.clone(),
+      gp:t.s})
     /*, p:o.added append ´em to textures-container aka "added"
     in order to avoid same picture position I´d do either
     move each picture just a little (based on prior pic´s ps)
@@ -98,7 +105,6 @@ o={
     o.tx=(blob&&tx.length==36?'blob:http%3A//localhost%3A3000/':'')+tx//update current texture
     blob&&tx.length!=36&&(tx=tx.substr(31,tx.length-1))
     !up&&o.ad(o.tx,blob)//add geometry
-    //o.rs(t.shape.geometry,50) I dunno Y´ts no wrkn´
     ob=o.tn[tx]||o.tn.blob[tx]
     ob?(
       o.tn.o=o.tns.children[ob.id],
@@ -143,10 +149,17 @@ o={
       v=(x=x.children[0]).geometry.vertices
       for(i in v)s+=Number((v[i].x/100).toFixed(6))+','+Number((v[i].y/100).toFixed(6))+' '
       s=s.slice(0,-1)}
-      //  1.7 |2.5R|3,|
-      // 0,3 2.5,3 2.5,2.5 1.7,2.5 1.7,0 0,0
+      /*example decodefying string
+        1.7 |2.5R|3,|                                   original string
+        0,3 2.5,3 2.5,2.5 1.7,2.5 1.7,0 0,0             iteration extended
 
-      //0,0 170,0 170,250 250,250 250,300 0,300
+        0,0 170,0 170,250 250,250 250,300 0,300         final set of vertices
+
+      codefying
+        0,0 170,0 170,250 250,250 250,300 0,300         set of vertices
+
+        0,3 2.5,3 2.5,2.5 1.7,2.5 1.7,0 0,0             ?/100
+        1.7 |2.5R|3,|                                   iteration analyzed */
     m=(M=x.material).map//double side by default so, dot means 1
     f=/img\/(.*)\./.exec(m.sourceFile)[1]
     rp=(rp=m.repeat.x)!=1?' '+rp:''
@@ -174,9 +187,9 @@ o={
       return 1}},
   exp:function(){//export option: house as js inside zip
     if(o.zip()){
-      if(o.house.length){
-        var p=((c.position.x+o.S/2)/o.S+1+'')[0]//position
-        p=p>0?p:1
+      if(t.s.children.length-1){
+        var p=((c.position.x+o.S/2)/o.S+1+'')[0],s,i//position,scene,iterator
+        u.c(p=p>0?p:1)
         /*cpx=camera.position.x, o.S=510
         why offset=cpx+255?
         [ . ] I'd say such "dot" is .5 or 50% but actually it's... 0 "just like vertices work" center
@@ -193,8 +206,9 @@ o={
             1) now in which current house he/she is
             2) export file like so: casa# dateInfo.zip */
         //o.str(p)//spawn string providing its position
-        rz=''
-        for(var i in t.s.children[p].children)o.str(i)
+        rz='',s=t.s.children
+        s=s[p]||s[s.length-1]
+        for(i in s.children)o.str(i)
         s=o.house[p-1]//final string
         x=new Blob([rz.slice(0,-1)]/*[#-1] 'cuz it'd never be 0*/,{type:o.ap+'JavaScript'})//house,mimeType
         x.name='casa3d.js'
@@ -495,7 +509,10 @@ o={
       //Zs&&(u.c(Zs))
       o.txt.hd(N-1+'')},*/
     r:'p  p p'.split(/|/)},//rotation o´ each texture
-  init:function(){var g,m,φ,M,px,py,i=0,clck,msh
+  init:function(){var g,mt,φ,M,px,py,i=0,clck,msh,D
+    //地点: location (Dìdiǎn)
+    hd.insertBefore(D=o.地点=u.new('div',{id:'地点',innerHTML:'<div><button>🎥</button>🏃<button>-</button>1<button>+</button></div><div></div><div></div><div>'}),hd.firstChild)
+    u.sty("#地点{background:rgba(38,38,38,.5);bottom:0;color:#FFF;height:100px;position:absolute;text-shadow:#000 1px 3px 3px;width:110px;z-index:1}#地点>*{width:100%}#地点>*:nth-child(2):before{content:'Χ '}#地点>*:nth-child(3):before{content:'Υ '}#地点>*:nth-child(4):before{content:'Ζ '")
     o.gh=(o.H=o.l0p/10)/10
     o.gw=o.W/10
     o.g=o.pl(100,200)
@@ -505,6 +522,7 @@ o={
     o.ops[10]=o.ops[11]=o.cc
     o.ops[14]=o.exp
     h.ga.add(o.added=o.ob3.clone())
+    o.added.add(o.grH=new T.GridHelper(1e4,40))
     o.im=u.new(
       'input',
       {type:'file',
@@ -520,14 +538,14 @@ o={
     //creating & adding options
     o.st.init(px)
     g=o.pl(o.gw*96,o.gh)//Width & Height
-    m=new T.MeshBasicMaterial({opacity:0,transparent:!0})
-    o.s.add(o.tns=new T.Mesh(g,m))
+    mt=new T.MeshBasicMaterial({opacity:0,transparent:!0})
+    o.s.add(o.tns=new T.Mesh(g,mt))
     o.tns.position.set(o.tns.left=o.gw*43,py,0)
     o.tns.c=1//it's got children
     o.tns.right=o.tns.left+o.gw*10
     g=o.pl(o.gw*1.25,o.gh*8.5)
-    m=new T.MeshLambertMaterial({transparent:1,opacity:.5,blending:0})
-    o.menu=new T.Mesh(g,m)
+    mt=new T.MeshLambertMaterial({transparent:1,opacity:.5,blending:0})
+    o.menu=new T.Mesh(g,mt)
     o.menu.position.set(
       o.gw*4.3,
       -o.gh/4,
@@ -544,7 +562,7 @@ o={
        [-.3,-1.5],[.3,-1.5],
        [-.3,-2.5],[.3,-2.5],
        [-.3,-3.5],[.3,-3.5]]*/
-    function msh(I){
+    function msh(I){//mesh
       φ=new T.ImageUtils.loadTexture(t.bs+'icon/menu.png')
       φ.repeat.y=.0625,φ.offset.y=(i*2+I)*.0625
       /*     Δ=.0625
@@ -556,14 +574,19 @@ o={
       ⌖.625     🎦.6875
       📥.75     📤.8125
       ⓘ.875    🔒.9375 */
-      m=new T.MeshBasicMaterial({map:φ,transparent:1})
+      mt=new T.MeshBasicMaterial({map:φ,transparent:1})
       //i%2&&(m.opacity=.5,m.transparent=!0)//sort evenly
-      M=new T.Mesh(g,m)
+      M=new T.Mesh(g,mt)
       M.position.set(o.gw*.3*(I?1:-1),o.gh*(3.5-i),0)
       o.menu.add(M)}//repeating 'til 24 PlaneGeometries/room for icons
     while(i<8)msh(0),msh(1),i++==4&&(M.il=1)//increase light
     u.ap(u.at(o.r.domElement,{id:'ops'}),u.b)//adding all to body as canvas
-    !u.a&&u.sc(o.r.domElement,'no')
+    !u.a&&u.sc(
+      o.r.domElement,'no',
+      u.sc(D,'no'))
+    m[0]=D.firstChild
+    m[1]=D.children[1]
+    m[2]=D.lastChild
     o.mn()
     o.is=o.pfx+(o.pfx=='webkit'?'Is':'')+o.fs
     o.ex=o.pfx+'Cancel'+o.fs

@@ -24,7 +24,9 @@ dr={
     dr.rC=new T.Raycaster(c.position,dr.V3.sub(c.position).normalize())
     //it'll return children found by raycaster, may be 0 though
     dr.rst=dr.rC.intersectObjects(t.s.children,true)[0]
-    return dr.rst&&dr.rst.object&&dr.rst.object.parent&&dr.rst.object.parent.id==4?0:dr.rst},
+    return dr.rst&&dr.rst.object&&dr.rst.object.parent&&(dr.rst.object.parent.id==4||dr.rst.object.id==o.grH.id)?
+      0
+      :dr.rst},
   drg:{
     crs:'drg',
     rv:1,

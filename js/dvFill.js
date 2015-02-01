@@ -3,7 +3,7 @@ f={
     var b=new Blob([dt],{type:'text/java'+f.s})
     return URL.createObjectURL(b)},
   s:'script',
-  x:'three vectrix t house move jquery-2.x asset drgNrsz ops fnt ../zip rest'.split(' '),
+  x:'three vectrix t house move jquery-2.x asset drgNrsz dv/ops fnt ../zip rest'.split(' '),
   d:document,
   bs:typeof u!='undefined'&&u.path?
     u.path
