@@ -1,6 +1,6 @@
 l='<br>',K='casa3d.hostzi.com'
-//ⓘ info de cambios de version
-vr=['1.0 1.5_'+
+//ⓘ registro de mejoras de desarrollo
+imp=['1.0 1.5_'+
   'usando la biblioteca three.js (rv61) del Español Ricardo Cabello aka Mr.doob',
   'Volumen de la casa 500x1200'+l+
   'Paredes han sido construidas',
@@ -141,13 +141,13 @@ vr=['1.0 1.5_'+
 '2.8 9.21_'+
 '  '+K+'/support ha sido creada, probada, arreglada, mejorada y lanzada al publico'+l+
 '   es un sitio web multi proposito con 7 secciones:'+l+
-'     "tu opinion es importante": tu como usuario ahora puedes reportar un error o sugerir una mejora'+l+
+'     "Lista de Requerimientos" dentro de la lista te daras cuenta cual es la mejor opcion para empezar a trabajar'+l+
 '     "FAQs" ahora puedes leer las preguntas comunes, como se hace?'+l+
-'     "manual del usuario" el abc de: teclas, atajos,  mouse'+l+
-'     "plan de prueba & entrenaminiento" con esta opcion aprenderas y afianzaras tus habilidades en el momento de recrear tu casa'+l+
-'     "lista de requerimientos" dentro de la lista te daras cuenta cual es la mejor opcion para empezar a trabajar'+l+
-'     "info de desarrollo" te actualizaras con el registro de los cambios de desarrollo'+l+
-'     "terminos & condicions de uso" tu como usuario necesitas conocer los beneficios y responsabilidades que '+K+' tiene para ti',
+'     "Manual del Usuario" el abc de: teclas, atajos,  mouse'+l+
+'     "Plan de Prueba & Entrenaminiento" con esta opcion aprenderas y afianzaras tus habilidades en el momento de recrear tu casa'+l+
+'     "Mejoras" te actualizaras con el Registro de las Mejoras de Desarrollo'+l+
+'     "Contacto": tu como usuario ahora puedes reportar un error o sugerir una mejora'+l+
+'     "Periodo & sus Condicions de uso" tu como usuario necesitas conocer los beneficios y responsabilidades que '+K+' tiene para ti',
 '2.9 10.22_'+
 '  (Registro & Inicio de sesion) "conjunto de campos" ha sido agregado de primeras dentro de la pagina indice'+l+
 '  Cookies han sido retiradas y a cambio IndexedDB ha sido implementada mediante idb.js'+l+
@@ -177,4 +177,12 @@ vr=['1.0 1.5_'+
 '  Context Menu (clic derecho) añadido a canvas, tiene 6 opciones:'+l+
 '  cambiar foto, borrar objeto, rotar objeto hacia: arriba, izquierda, derecha, abajo'+l+
 '  Video tutoriales han sido incluidos a la seccion "Plan de Entrenamiento".'+l+
-'  Ha sido establecida la font-family "emoji" de CSS para los navegadores que se ejecuten en la plataforma Linux']
+'  Ha sido apoyada la font-family "Segoe UI Symbol" ya que está interpreta todos los glifos',
+'3.3 2.28_'+
+'  Todos los menus de edición han sido actualizados ya que ahora el usuario tendra a su dispocision el 99% de la pantalla'+l+
+'  Menu Foto-Miniaturas:'+l+
+'   cuenta con descripción util como su nombre y tamaño'+l+
+'   van entrelazados en un fondo blanco, negro incluyendo el canal α (transparencia)'+l+l+
+'  Ahora la intensidad de la luz se ajustará mediante una entrada de tipo rango'+l+
+'  se agregó 2 nuevas opciones: Alternar entre camaras y Configurar su velocidad'+l+
+'  la posición y rotación de la camara estan a la dispocíon del usuario']

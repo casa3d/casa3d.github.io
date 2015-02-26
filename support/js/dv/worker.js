@@ -6,7 +6,7 @@ b={//browser: IE,Chrome,Firefox & 2last
     return f[(/AppleWebKit|Firefox/i).test(br)?1:0]+lg}}
 p={//parse
   N:'⓪①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳'.split(''),
-  sty:"#roll>div fieldset{background:linear-gradient(#FFF,#F5F5F5);border-radius:1em;border:4px groove threedface;border-top:0;border-right:0;box-shadow:black 2px 8px 11px;margin-bottom:.5em_fieldset:after{content:'.'_legend{background:linear-gradient(transparent,white,transparent);font-style:oblique;text-shadow:white 3px 0 2px_center>*{font:1em verdana_fieldset>center>button{display:block_center>label:before{content:' '_center>label:after{content:':'_#roll>div:nth-child(6)>fieldset>legend:before{content:'vr '_#roll>div:nth-child(2)>fieldset>legend:after{content:'?'_fieldset:nth-child(-n+23) label:before{content:' (2014.'_fieldset:nth-child(n+24) label:before{content:' (2015.'_legend>label:after{content:')'_#视频{border-radius:1em;box-shadow:#000 0 0 3em;left:25%;opacity:.95;position:fixed;top:20%_#玩{background:transparent;color:#FFF;cursor:pointer;border:0;font-size:3.1em;left:10%;outline:0;text-shadow:#000 0 0 6px_#玩:hover{color:#000;text-shadow:#FFF 0 0 9px",
+  sty:"#roll>div fieldset{background:linear-gradient(#FFF,#F5F5F5);border-radius:1em;border:4px groove threedface;border-top:0;border-right:0;box-shadow:black 2px 8px 11px;margin-bottom:.5em_fieldset:after{content:'.'_legend{background:linear-gradient(transparent,white,transparent);font-style:oblique;text-shadow:white 3px 0 2px_center>:not(textarea){font-size:1em_textarea{font-size:2em_fieldset>center>button{display:block_center>label:before{content:' '_center>label:after{content:': '_#roll>div:nth-child(6)>fieldset>legend:before{content:'vr '_#roll>div:nth-child(2)>fieldset>legend:after{content:'?'_#roll>:nth-child(5)>:nth-child(-n+23) label:before{content:' (2014.'_#roll>:nth-child(5)>:nth-child(n+24) label:before{content:' (2015.'_legend>label:after{content:')'_#视频{border-radius:1em;box-shadow:#000 0 0 3em;left:25%;opacity:.95;position:fixed;top:20%_#玩{background:transparent;color:#FFF;cursor:pointer;border:0;font-size:3.1em;left:10%;outline:0;text-shadow:#000 0 0 6px_#玩:hover{color:#000;text-shadow:#FFF 0 0 9px",
   C:'<center>',c:'</center>',
   D:'<div>',d:'</div>',
   H:'<h1>',h:'</h1>',
@@ -22,7 +22,7 @@ p={//parse
   fill:function(s,k){v=''       //📅 improvements
     for(i in p.V)p.v=p.V[i],k==p.k[4]&&(v=1,p.v[0]=p.v[0].replace(' ','<label>')),s+=p.F+p.L+(v?'':p.N[Number(i)+1])+' '+p.v[0]+p.l+p.v[1]+p.f
     return s},
-  report:function(s){
+  contact:function(s){
     for(i in p.V){p.v=p.V[i]
       s+='<'+i+'>'
       i=='fieldset'&&(s+=p.C)
@@ -46,7 +46,7 @@ p={//parse
     return s},
   rs:function(k){p.V=str[k]
     s=p.H+(on=='es'?p.i.t[p.k.indexOf(k)]:k)+p.h+'<hr>'
-    return b.i==5?p.report(s):p.fill(s,k)}}
+    return b.i==5?p.contact(s):p.fill(s,k)}}
 this.onmessage=function(e){d=e.data
   if(d.ua){//userAgent
     j='.js',d.rf+='js/'

@@ -1,6 +1,6 @@
 l='<br>',K='casa3d.hostzi.com'
-//ⓘ version changes info
-vr=['1.0 1.5_'+
+//ⓘ improvement development log
+imp=['1.0 1.5_'+
   "using spaniard Ricardo Cabello aka Mr.doob's three.js library (rv61)",
   "House volume's 500x1200"+l+
   'Walls have been built',
@@ -141,13 +141,13 @@ vr=['1.0 1.5_'+
 '2.8 9.21_'+
 '  '+K+'/support is been created, tested, fixed, improved and released to public'+l+
 "   it's multi purpose website including:"+l+
-'     "your opinion is important": you as user can now report an error or suggest inprovement'+l+
+'     "Requirements List" inside it you\'ll notice what\'s best option to start working with'+l+
 '     "FAQs" you can now read the common, how to do? questions'+l+
-'     "user manual" the abc about: keys, shortcuts, mouse'+l+
-'     "test & training plan" with this option you\'ll learn and enhance your skill at the moment to recreate your house'+l+
-'     "requirements list" inside it you\'ll notice what\'s best option to start working with'+l+
-'     "development info" you\'ll be updated about log of development changes'+l+
-'     "terms & conditions of use" you as user need to know the benefits and responsabilities that '+K+' has got for you',
+'     "User Manual" the abc about: keys, shortcuts, mouse'+l+
+'     "Test & Training Plan" with this option you\'ll learn and enhance your skill at the moment to recreate your house'+l+
+'     "Improvements" you\'ll be updated about Development Improvements Log'+l+
+'     "Contact": you as user can now report an error or suggest inprovement'+l+
+'     "Terms & Conditions of use" you as user need to know the benefits and responsabilities that '+K+' has got for you',
 '2.9 10.22_'+
 '  (Sign up & Log in) "fieldset" has been prepended to index page'+l+
 '  Cookies has been removed and IndexedDB has been implemented instead through idb.js'+l+
@@ -184,4 +184,12 @@ vr=['1.0 1.5_'+
 '  Context Menu (right click) added to canvas it has got 6 options:'+l+
 '  change picture, remove object, rotate object to: up, left, right, down'+l+
 '  Video tutorials have been included to section "Training Plan".'+l+
-'  CSS font-family "emoji" has been set to browsers running onto Linux platform']
+'  CSS font-family "Segoe UI Symbol" has been supported since it renders all glyphs',
+'3.3 2.28_'+
+'  All edition menus have been updated since user shall have the display 99% available'+l+
+'  Thumbnails Menu:'+l+
+"   it's got useful description such as its name, size"+l+
+"   they're intertwined in white, black background including channel α (transparency)"+l+l+
+"  Now light intensity it's handled through range input"+l+
+'  2 new options appended: Toggle between cameras & Set its velocity'+l+
+'   position & rotation are made available to user']

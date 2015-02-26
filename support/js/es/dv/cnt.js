@@ -1,4 +1,4 @@
-rp={//🙋 su opinion es importante
+cnt={//📩 contacto
     // reportar un error o sugerir una mejora
   h4:"En el momento de reportar un error o sugerir una mejora, UD deberia tener encuenta que existen varios tipos de actividades (vea detalles)",
   details:{
