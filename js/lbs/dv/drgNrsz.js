@@ -6,15 +6,12 @@ dr={
   act:function(){
     dr.app=dr.app?(
       dr.m&&(
-        dr.m.emissive.g--,
+        dr.m.emissive.g&&(dr.m.emissive.g--),
         dr.o=void 0),
-      u.b.className='idle',
-      $('.trgt').removeClass('not'),
-      !1)
-      :!(
-        $('.trgt').addClass('not'),
-        u.b.className=dr.drg.crs,
-        m.rKey=!1)},
+      0)
+      :1
+    u.tc(u.b,'idle')
+    u.tc(u.b,dr.drg.crs)},
   intrsct:function(){
     dr.o!=dr.new&&(
       dr.o&&(dr.o.material.emissive.g--),

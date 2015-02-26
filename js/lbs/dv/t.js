@@ -100,15 +100,15 @@ t={
         sh2[5])
       ob.p=ob.p||o.added
       t.shape=shape
-    /*                       #stairs 2 290.099 306.4
-      t.ad({a:'B1 .2 .128 14[brick/0]1 2.99999 3'})
-               Box                      x <-- position
-                  width                   y
-                     height                   z
-                       depth*/
+    /*         Box        #stairs
+      t.ad({a:'B1 .2 .128 x15[brick/0]2 2.9005 2.936'})
+                                      x <-- position
+                width                   y
+                   height                       z
+                     depth*/
       if(BGexec=='B'&&(end=sh0[3])){var P,s=shape.clone(),p=s.position,i=0,end=sh0[3].slice(1,sh0[3].length)
         P=new T.Object3D//     -heightHalf-.9x14 --> .99...
-        P.position.set(p.x,p.y-(sh01/2-.1-1e-15),p.z-sh02/2)
+        P.position.set(p.x,p.y,p.z)
         s.position.set(0,sh01,-sh02)
         while(i++<end)P.add(s=s.clone()),s.position.y-=sh01,s.position.z+=sh02
         ob.p.add(P)}

@@ -24,12 +24,10 @@ h={i:0,             //increase
     h.ntH.position.set(-40,1100,600)
     c.position.set(0,100,0)
     r=new T.WebGLRenderer({stencil:!1,canvas:u.cv})
-      r.setSize(innerWidth,innerHeight)//setting canvas' width & height
-      !u.cv&&(u.b.appendChild(r.domElement))//appending/adding it to body as canvas
-      r.domElement.id='cv'//I set its id (just in case)
-      u.a?
-        h.R()
-        :typeof dm!='undefined'&&(r.domElement.className='no')
-    //xhr('js/assets.js','u.a&&(u.shift(u.a=0)),t.ad({a:eval(this.response),p:new T.Object3D(),gp:t.s})')//load default assets and add them to scene
-    onresize=u.f('r.setSize(innerWidth,innerHeight)')}}//when user resizes his page then it'll auto-fit
+    r.setSize(innerWidth,innerHeight)//setting canvas' width & height
+    !u.a&&(edt.className='no')
+    u.ap(u.cv=u.at(r.domElement,{id:'cv'}),edt)//appending/adding it to editor as canvas
+    u.a&&h.R()
+    u.ap(h.tls=u.new('div'),edt)
+    onresize=u.f('u.rz(r.setSize(innerWidth,innerHeight))')}}//when user resizes his page then it'll auto-fit
 h.init()
