@@ -1,0 +1,696 @@
+//Δtime u.c((x=new Date()).getSeconds(),x.getMilliseconds()),
+o={
+  a:u.new('a'),
+  W:innerWidth/100,
+  l0p:innerHeight/10,
+  ap:'application/',
+  asset:asset,
+  fs:'FullScreen',
+  house:[],
+  of:'ho br do gl wa wi wo'.split(' '),//object folder: house,brick,door,glass, wall,window,wood
+  m:new T.MeshBasicMaterial,
+  ob3:new T.Object3D,
+  sty:'canvas{left:0}canvas{top:0}canvas,#mn,#dw,#opsMenu{position:fixed}#opsMenu{background:rgba(0,0,0,.5);border-radius:4px}#opsMenu>div>*{background:rgba(0,0,0,.5);border-radius:4px}#opsMenu>div>:first-child,#opsMenu>div>:last-child{display:block;margin-left:.7em}#opsMenu>:first-child{margin:0}',
+  S:510,//offset among houses, 10 is ´coz "I let user notice when finish one house & when starts another"
+  Π:Math.PI,
+  π:Math.PI/2,
+  pl:u.f('a,b','return new T.PlaneGeometry(a,b)'),
+  URL:u.f('b','return URL.createObjectURL(b)'),
+  ae:u.f('e,a','for(var i in a)e.addEventListener(i,a[i])'),
+  tn:{//thumbnail, if it´s already added any tx before then it won´t repeat its tn
+    blob:{}},//perhaps user'd put his/her own textures from hard-disk "blob"
+  dlg:function(c,i,I){//delegate
+    c[i].idx=I?Number(I)+Number(i):i
+    c[i].onclick=u.f('o.mn.fn[this.idx]()')},
+  mn:function(){//contextMenu
+    var i=0,dv,tg='button div'.split(' '),s='🌄   ⤴ ↩ ↪ ⤵'.split(' '),e
+    u.ap(dv=o.mn=u.new('div',{id:'opsMenu'}),h.tls)
+    dv.rt=u.f('xy,p','dr.o&&dr.o.id!=6&&(dr.o.rotation[xy]=dr.o.rotation[xy]+o.π/2*p)')
+    dv.fn=[
+      u.f('o.in.click(o.mn.up=1)'),
+      function(O){
+        u.sc(dv,'no'),
+        (O=dr.o)&&(
+          O.parent.id==o.added.id?
+            o.added.remove(O)
+            :t.s.children[1].remove(O))},,//div space (compulsory)
+        'x',//lie                     ⤴
+        'y',//rotate to the left   ↩
+        'y',//rotate to the right       ↪
+        'x']//raise or stand up      ⤵
+
+
+    while(i<7){
+      u.ap(e=u.new(tg[i!=2?0:1],{innerHTML:s[i]}),i<3?dv:dv.lastChild)
+      e.onclick=i<3?
+        dv.fn[i]
+        :u.f('o.mn.rt("'+dv.fn[i]+'",'+(i<5?'-':'')+'1)')
+      i++}},
+  tdp:function(h,s){//height,size
+    return{//text default parameters
+      curveSegments:1,
+      font:'janda manatee solid',
+      height:h,
+      size:s}},
+  usrAgnt:{Chrome:'webkit',Trident:'ms',Firefox:'moz'},
+  Δ:[],//its length will be 6;I don't think user´d put into scene more this Quantity of digits (of same texture type)
+  clear:function(clck,msg,tm){
+    setTimeout(function(){
+      clearInterval(clck)
+      //console.clear()
+      u.c(msg+"-renderer clock has been cleared")},tm)},
+  rb:function(F){//read blob; since picture´s source comes from hard disk I´ll have to read it as blob (security reasons:users´ files are private)
+    var i=0,f,de,clck//iterator,files,doesn'tExists,clock
+    //u.c(i,F.length)
+    while(i<F.length){de=1,f=F[i++]//assigning
+      for(var I in o.tn.blob)if(o.tn.blob[I].sz==f.size&&!(de=0))break//{u.c('IAE');break}
+      o.add(
+        o.φ=de?
+          o.URL(f)//since blob "de" yet, let's create it
+          :I,//otherwise it means it !de || alreadyExists/wasCached
+        1,
+        f.size,
+        o.mn.up)}
+    clck=setInterval(o.R,100)
+    o.clear(clck,'image-click',500)},
+  ad:function(tx,blob){//texture, blob
+    var cp=c.position,p=((cp.x+o.S/2)/o.S+1+'')[0]//position
+    u.c(p)
+    t.ad({
+      a:10+' '+20+'['+(
+        blob?
+          tx
+          :tx.split(/img\/(.*)/)[1])+'] '+o.txt.r[o.txt.r.idx],
+      p:p>0?
+        t.s.children[p]||o.ob3.clone()
+        :o.ob3.clone(),
+      gp:t.s})
+    /*, p:o.added append ´em to textures-container aka "added"
+    in order to avoid same picture position I´d do either
+    move each picture just a little (based on prior pic´s ps)
+    or simply move camera a few back each time, like so:*/
+    setTimeout(function(v,i,g,o){
+      v=(g=(o=t.shape).geometry).vertices
+      v[0].x=v[0].y=10,v[2].y=(v[1].x=90)+100
+      dr.rsz.centre(t.shape)
+      o=o.position
+      o.x=cp.x
+      o.y=cp.y
+      o.z=cp.z-200
+      cp.y+=.1
+      cp.z+=.1},10)},
+  add:function(tx,blob,sz,up){var tn,ptx,g,m,M,idx,lg,ob
+    ptx=o.tx//update last/prior texture
+    tx!=o.tx&&(o.txt.r.idx=o.o.parent.id-o.st.rll.children[0].id)//determine whether it should be floor (lie), wall (stand), in other words rotation o´ each texture (see o.txt.r)
+    o.tx=(blob&&tx.length==36?'blob:http%3A//localhost%3A3000/':'')+tx//update current texture
+    blob&&tx.length!=36&&(tx=tx.substr(31,tx.length-1))
+    !up&&o.ad(o.tx,blob)//add geometry
+    ob=o.tn[tx]||o.tn.blob[tx]
+    ob?(
+      o.tn.o=o.tns.children[ob.id],
+      o.txt.get(++ob.x+''))
+      :(
+      g=o.pl(o.gw,o.gh),
+      m=o.m.clone(),
+      m.map=φ=blob?(
+        o.tn.blob[tx]={id:o.tns.children.length,sz:sz,x:1},
+        T.ImageUtils.loadTexture(o.tx))
+        :(o.tn[tx]={id:o.tns.children.length,x:1},
+        o.o.material.map),
+      up&&dr.o&&(
+        o.mn.up=0,
+        dr.o.material.map=T.ImageUtils.loadTexture(o.tx)),
+      o.tns.add(M=new T.Mesh(g,m)),//add new born thumbnail
+      M.position.x=-o.gw*(49-(lg=o.tns.children.length))+o.gw/2,
+      M.N=[],
+      lg>9&&(o.tns.position.x-=o.gw),
+      o.txt.init(M,0),
+      o.tns.right-=o.gw)},
+  cc:function(){/*var c=t.s.__lights[0].color//change color lighting intensity
+    o.o.il?//increase light
+      c.b<1&&(c.b+=.15)//since it hasn't reached 100% it'll increase
+      :c.b>.1&&(c.b-=.15),//since it hasn't reached 15% it'll decrese
+    c.r=c.g=c.b*/
+    var c=t.s.__lights[0].color
+    u.c(c.r=c.g=c.b=this.value/100)},//and finally match them all
+  ld:u.f('e','alert(e||"100% ?")'),
+  dwn:function(n){//save casa3d.js inside casa# Universal Time C.zip
+    o.a.download='casa#'+n+' ('+new Date().toUTCString().split(/, | GMT/)[1]+').zip'
+    if(h.nv.msSaveBlob)h.nv.msSaveBlob(blb,o.a.download)
+    else{
+      clickEvent=u.d.createEvent('MouseEvent')
+      clickEvent.initMouseEvent('click',1,1,h.w,0,0,0,0,0,0,0,0,0,0,null)//type, canBubble, cancelable, view,  detail, screenX, screenY, clientX, clientY,  ctrlKey, altKey, shiftKey, metaKey,  button, relatedTarget
+      o.a.dispatchEvent(clickEvent)}},
+  str:function(P){//spawn string
+    var x,g,s='',m,M,f,r,p,rt,i,v//object x, geometry, string, Material, folder, position, rotation/repeat, iterator, vertices
+    x=t.s.children[1].children[P]
+    p=x.position
+    r=x.rotation
+    if(g=x.geometry)s=g.width/100+' '+g.height/100
+    else{s=''
+      v=(x=x.children[0]).geometry.vertices
+      for(i in v)s+=Number((v[i].x/100).toFixed(6))+','+Number((v[i].y/100).toFixed(6))+' '
+      s=s.slice(0,-1)}
+      /*example decodefying string
+        1.7 |2.5R|3,|                                   original string
+        0,3 2.5,3 2.5,2.5 1.7,2.5 1.7,0 0,0             iteration extended
+
+        0,0 170,0 170,250 250,250 250,300 0,300         final set of vertices
+
+      codefying
+        0,0 170,0 170,250 250,250 250,300 0,300         set of vertices
+
+        0,3 2.5,3 2.5,2.5 1.7,2.5 1.7,0 0,0             ?/100
+        1.7 |2.5R|3,|                                   iteration analyzed */
+    m=(M=x.material).map//double side by default so, dot means 1
+    f=/img\/(.*)\./.exec(m.sourceFile)[1]
+    rp=(rp=m.repeat.x)!=1?' '+rp:''
+    s+='['+f+rp+']'//folder & repeat
+    function d(l,a){
+      if(l||a)l=(a==1?'':' ')+Number((l/100).toFixed(6))
+      return l||''}
+    p=(p.x||p.y)?d(p.x,1)+d(p.y,2)+d(p.z):''
+    s+=p
+    function rt(l,y){// αχισ аксыс
+      if(l){var i=l<0?'-':''
+        l=' '+i+(/1.57/.test(l)?
+          'p'
+          :'P')+(y||'')}
+      return l||''}
+    χ=rt(r.x)//rotation x
+    γ=rt(r.y,'y')//rotation y
+    s+=χ+γ+(M.side==2?'':'.')+'_'
+    rz+=s},
+  zip:function(){
+    if(zip&&zip.method&&zip.method.deflate){
+      var c=o.o.material.color
+      c.r=c.g=c.b=1
+      o.o=o.menu
+      return 1}},
+  exp:function(){//export option: house as js inside zip
+    if(o.zip()){
+      if(t.s.children.length-1){
+        var p=((c.position.x+o.S/2)/o.S+1+'')[0],s,i//position,scene,iterator
+        u.c(p=p>0?p:1)
+        /*cpx=camera.position.x, o.S=510
+        why offset=cpx+255?
+        [ . ] I'd say such "dot" is .5 or 50% but actually it's... 0 "just like vertices work" center
+              but I wanted it to be like [   ] "dot starts in left square-bracket"
+              so, I set as offset its half which actually is 255 "see: o.S"
+        Y offset/510?
+            'coz I wanted it to set every house apart referenced by cpx
+        Y you added 1 to last result?
+          'coz I have no house starting at 0 position and also 'coz I cannot let user see h0, h1, h2 "it feels freaky, doesn't it?"
+        Y u ended up enclosing it in Quotation marks?
+          strings may be treated as vector whilst number not
+          that way I'll get very first number #
+          and therefore user'd do two things:
+            1) now in which current house he/she is
+            2) export file like so: casa# dateInfo.zip */
+        //o.str(p)//spawn string providing its position
+        rz='',s=t.s.children
+        s=s[p]||s[s.length-1]
+        for(i in s.children)o.str(i)
+        s=o.house[p-1]//final string
+        x=new Blob([rz.slice(0,-1)]/*[#-1] 'cuz it'd never be 0*/,{type:o.ap+'JavaScript'})//house,mimeType
+        x.name='casa3d.js'
+        zip.createWriter(
+          new zip.BlobWriter(o.ap+'zip'),
+          function(e){
+            zipWriter=e
+            zipWriter.add(
+              x.name,
+              new zip.BlobReader(x),
+              function(){
+                //u.c('success reading blob')
+                o.a.hidden=0
+                zipWriter.close(function(e){
+                  o.a.href=o.URL(blb=e)
+                  o.dwn(p)})})})}//since 0-->1, this way I'll now current house
+      else o.ld(o.fi)}//in order to download house, first add one or upload your own.
+    else o.ld()},
+  //cl:u.f('n','return o.menu.children[n].material.color'),
+  ntH:function(l,ch){//nth House
+        //510
+    var s=o.S*l,p,n//space between each house h.ntH (its container) has got -40 in x axis, though
+    t.ad({a:t.eval(ch),p:p=o.ob3.clone(),gp:t.s})
+    c.position.set(p.position.x=s,1e3,1700)//1700 so that camera can display almost all houses&numbers
+    c.rotation.set(0,0,0)//make me sure that camera is infront of them
+    h.ntH.add(n=new T.Mesh(new T.TextGeometry(l+1,o.tdp(1,100)),o.m))//number
+    n.position.x=s-(l>8?30:0)
+    o.house[l]=ch},//yeah I want to save it "as is" string
+  imp:function(F){//import house from zip
+    if(F&&o.zip()){var z=F[0]//zipped file
+      zip.createReader(
+        new zip.BlobReader(z),
+        function(zr){//on read end
+          zr.getEntries(function(e){//entries
+            if(E=e=e[0]){
+              e.getData(
+                new zip.BlobWriter(),
+                function(blob){
+                  fr=new FileReader()
+                  fr.onload=function(){
+                    o.ntH(
+                      h.ntH.children.length,
+                      this.result)}//number above house "label"
+                  fr.readAsText(blob)},null)}})})}
+      else o.ld()},
+  mv:function(){//slide to the left/right
+    o.st.rll.position.x+=o.o.id==o.left.id&&o.st.rll.position.x<o.left.lim?//in/decrease only if pnl.ps.x is in inside sliding area
+      o.pnlW//left
+      :o.o.id==o.right.id&&o.st.rll.position.x>o.right.lim&&(//right
+        -o.pnlW)},
+  R:u.f('o.r.render(o.s,o.c)'),
+  how:function(){//show keyboard controls
+    var g,m,M,spk,ks,ctrl
+    if(o.kb)o.kb.position.z=o.kb.position.z?0:-1
+    else{
+      g=o.pl(o.W,o.H)
+      m=new T.MeshLambertMaterial
+      o.s.add(o.kb=new T.Mesh(g,ma=m.clone()))
+      ma.transparent=1
+      ma.opacity=.5
+
+      g=o.pl()
+      o.kb.add(spk=new T.Mesh(g,m))//special keys
+      o.kb.add(ks=spk.clone())     //directional keys
+      spk.add(james=new T.Mesh(g=o.pl(o.gw,o.gh),m))//watch Adventure Time to Understand it
+      spk.add(M=james.clone())
+
+      spk.position.set(-o.gw*3,-o.gh,0)
+      ks.position.set(o.gw*2,-o.gh,0)
+      M.position.y=-o.gh/1.9
+
+      g=new T.CylinderGeometry(0,.2,.2)
+      m=new T.MeshBasicMaterial
+      james.add(new T.Mesh(g,m))
+
+      g=new T.TextGeometry('ctrl',o.tdp(1e-6,.2))
+      M.add(ctrl=new T.Mesh(g,m))
+      ctrl.position.x=-o.gw/5
+
+
+      ks.add(M=james.clone())//  ^
+      M.position.y=o.gh/1.9
+
+      ks.add(M=james.clone())//  >
+      M.position.x=o.gw/1.3
+      M.rotateZ(-o.π)
+
+      ks.add(M=james.clone())//  v
+      M.position.y=-o.gh/1.9
+      M.rotateZ(o.Π)
+
+      ks.add(M=james.clone())//  <
+      M.position.x=-o.gw/1.3
+      M.rotateZ(o.π)
+
+      james.position.y=o.gh/1.9}},
+  st:{
+    app:!1,
+    init:function(px){var g,m,M,φ,i=0,x=[[],[]],y=[[],[]],r//geo,mat,Mesh,foto,iteration,"height-width matriX",roll
+/*          h [.0123,.00498]      v
+                                [
+                                .0085
+                                .00498
+                                ]*/
+      x[0][3]=-(x[0][0]=(x[0][1]=-(x[0][2]=o.gw))*3)
+      y[0][0]=-(y[0][3]=(y[0][2]=-(y[0][1]=o.gh))*3)
+      x[1][0]=-(x[1][3]=123e-4)
+      x[1][1]=y[1][2]=-(x[1][2]=y[1][1]=498e-5)
+      y[1][3]=-(y[1][0]=85e-4)
+      o.pnlW=o.W-o.gw*2,o.pnlH=o.H-o.gh*2
+    //panel
+      g=o.pl(o.W,o.pnlH)
+      m=new T.MeshLambertMaterial({opacity:0,transparent:!0,visible:!1})
+      o.s.add(o.st.pnl=new T.Mesh(g,m))
+      o.shwm()
+      o.st.pnl.c=1//it's got children
+      //roll
+        g=o.pl(o.pnlW*o.of.length,o.pnlH)//*7 Bcoz o' house,ceiling,door,floor,stairs,wall,window
+        o.st.pnl.add(r=o.st.rll=new T.Mesh(g,m))
+        r.position.set(r.geometry.width/2-o.pnlW,0,.0001)
+        //o.st.rll.c=1it's got children
+/*let it be exactly after left container
+          [plane]
+          |window-width or screeen-scope|
+           --screen scope=ss==window width=ww
+        [––‐|--|‐––] 6 dashes but as ss can only see it in 0 in x axis
+        then its offset would be -plane´s half width
+           | [-|-–––––] now plane is right in the middle of ss plane´s half width/2
+           but I´d got to subtract ww´s half to current position o.w/2
+            |.[–|–––––]it is right after left container .
+
+      everything started like this:
+      divide hall new sliding into 4 since 2 was too small
+      then it´ll be 4x4
+      go back to uppermostleft and get plane´s half-width forward
+      |.-----|          |. . . .|
+      |      |   --->   |. . . .|
+      |      |          |. . . .|
+      |------|          |. . . .|
+      til´ finally get accurate measurement and fill it
+      iterate 6x that "4x4" slide and fill it with ceiling,door,floor,stairs,wall,window*/
+        g=o.pl(o.pnlW,o.pnlH)
+        for(i in o.of){var I=0//create rll's children they R 6
+          m=new T.MeshBasicMaterial({visible:!1})
+          r.add(M=new T.Mesh(g,m))
+          M.position.x=-o.pnlW*3+o.pnlW/2+o.pnlW*i
+          M.c=1}
+        o.f=r.children[0].id
+        o.l=r.children[o.of.length-1].id
+        g=o.pl(o.gw*2,o.gh*2)
+        for(i in o.of){var I=0
+          while(I<4){var l=1,II=I*4,f=o.of[i]//start column & continue with previous row
+            φ=new T.ImageUtils.loadTexture(t.bs+f+(f=='ho'?0:II)+'.jpg')
+            m=new T.MeshBasicMaterial({map:φ,opacity:.85,transparent:!0})
+            r.children[i].add(M=new T.Mesh(g,m))
+            M.position.set(x[0][I]+x[1][I],y[0][0]+y[1][0],0)
+            while(l<4){//finish column: vertically add three more
+              φ=new T.ImageUtils.loadTexture(t.bs+f+(f=='ho'?0:l+II)+'.jpg')
+              m=new T.MeshBasicMaterial({map:φ,opacity:.85,transparent:!0})
+              r.children[i].add(M=new T.Mesh(g,m))
+              M.position.set(x[0][I]+x[1][I],y[0][l]+y[1][l],0),l++}I++}}
+      //left container
+        g=o.pl(o.gw,o.pnlH)
+        φ=new T.ImageUtils.loadTexture(t.bs+'icon/left.png')
+        m=new T.MeshBasicMaterial({map:φ,opacity:.3,transparent:!0,blending:0,color:'lightgrey'})
+        o.st.pnl.add(o.left=new T.Mesh(g,m))
+        o.left.position.set(px,0,.001)//-6.446
+        o.left.lim=27
+      //right container
+        o.st.pnl.add(o.right=o.left.clone())
+        o.right.rotation.z=o.Π//rotate it 180° "upsidedown"
+        o.right.position.set(-px,0,.001)
+        o.right.lim=-38}},//6.446
+  s: new T.Scene,//                fov               aspect ratio      near far
+  c: new T.PerspectiveCamera(innerHeight/(768/42),innerWidth/innerHeight,1e-3,10),
+  r: new T.WebGLRenderer,
+  pj:new T.Projector,//raycaster needs it
+  V3:new T.Vector3(0,0,.5),
+  o:{id:''},
+  kbd:u.f('o.kb&&(!o.kb.position.z&&(o.kb.position.z=-1))'),
+  shwm:function(){//show "add geometry" menu
+    o.st.pnl.position.y=o.st.pnl.position.y?(
+      m.rKey&&(m.act()),
+      0)
+      :o.H
+    u.sc(o.mn,'no')
+    o.kbd()},
+  op:[
+    m.rt,//rotate -90° 0 means left-key
+    m.act,//rotate
+    u.f('m.rt(2)'),//rotate 90° 2 means right-key
+    0,//main menu ▩ & 🌄
+    dr.act,//enable/disable drgNrsz's approval
+    u.f(//toggle fullscreen
+      'u.d[o.is]?'+//if currently browser is in fullscreen then:
+        'u.d[o.ex]()'+//exit
+        ':u.b[o.rq]()')],//otherwise request fullscreen
+  op2:[
+    0,
+    u.f(//log out
+      'u.shift(),'+
+      'setTimeout(u.out,100)'),
+    u.f("open(location.href+'support','_new')")],
+  ops:[
+    0,//move
+    0,//move
+    0,//how
+    function(){//toggle mode
+      var p,i,l,x=o.menu.children//position
+      p=o.menu.rotation.z?[
+        (l=1)*o.gw*4.3,
+        0,
+        0]
+        :[
+        0,
+        (l=-1)*o.H/2+o.gh*1.1,
+        o.π]
+      o.menu.rotation.z=p[2]
+      o.menu.position.set(p[0],p[1],0)
+      for(i in x)x[i].rotateZ(l*o.π)},
+    0,//add geometry
+    u.f(//import φoto/texture
+      'o.in.click()'),
+    dr.act,//enable/disable drgNrsz's approval
+    dr.act,//enable/disable drgNrsz's approval
+    m.rt,//rotate -90° 0 means left-key
+    u.f('m.rt(2)'),//rotate 90° 2 means right-key
+    0,//change colour decrease light intensity
+    0,//change colour increase light intensity
+    m.act,//rotate
+    u.f(//toggle fullscreen
+      'u.d[o.is]?'+//if currently browser is in fullscreen then:
+        'u.d[o.ex]()'+//exit
+        ':u.b[o.rq]()'),//otherwise request fullscreen
+    0,//export option
+    u.f(//import option
+      'o.im.click()'),
+    u.f("open(location.href+'support','_new')"),
+    u.f(//log out
+      'u.shift(),'+
+      'setTimeout(u.out,100)')],
+  rc:function(e){//10% & position of mouse in Y
+    o.V3.x=(e.clientX/innerWidth)*2-1,o.V3.y=-((o.y=e.clientY)/innerHeight)*2+1
+    o.pj.unprojectVector(o.V3,o.c)
+    o.rC=new T.Raycaster(o.c.position,o.V3.sub(o.c.position).normalize())
+    o.rst=o.rC.intersectObjects(o.s.children,true)
+
+    for(var i in o.rst)if(o.rst[i].object.parent.c)return o.rst=o.rst[i]
+    return o.rst=o.rst[0]},//it'll return children that been found may be 0 though
+  slide:function(){var l,T,x//move/slide thumbnails´ parent
+    o.app&&(T=o.tns,x=T.position.x,
+      ((l=o.x&&x>T.right)||!o.x&&x<T.left)&&(
+          T.position.x-=l?
+            .05
+            :-.05,
+            requestAnimationFrame(o.slide),
+            o.R()))},
+  at:u.f(//addMenu&thumbnailsMenu proceed only if it comes from thumbnails or rll's children
+                                  //is between first rlls' child & last one (they're 7: h & 6 texture-types though)
+    'return o.o.parent.id==o.tn.id||o.o.parent.id>=o.f&&o.o.parent.id<=o.l'),
+  txt:{
+    init:function(M,i){var g,nm
+      while(i<10){
+        M.N[i]=[nm=new T.Mesh(new T.TextGeometry(i++,o.tdp(1e-6,.2)),o.m)]
+        nm.position.x=-.65
+        nm.position.y=.4
+        M.add(nm)}},
+    hd:function(N,pX){var L1=N.length-1,obj=o.tn.o.N[N[pX=pX?L1-pX:L1]][pX]
+      obj&&(
+        obj.position.y!=.4&&(
+          obj.position.y=.4))},
+    mv:function(N,pX){var L1=N.length-1,O=o.tn.o,ON=O.N[N[pX=pX?L1-pX:L1]]//get specific Number from main Vector of that 1-3 or 1-4 length Number
+      obj=ON[pX]//try to get that N from specific pX position
+      !obj&&(//if it doesn´t exists yet so, create it...
+        O.add(obj=ON[pX]=ON[0].clone()))//and add it to scene
+      obj.position.set(o.Δ[pX],.09,0)},//finally set its position
+    lm:[],//[,19,199,1999,19999,199999],//limit o´ zeroes (i.e 20,200...) since I do not want 2 use >= I'd use > instead; p.s. ps0 won't be used
+    it:function(N,c,l){//Number, counter & length
+      N[l-c]==0&&(
+        o.txt.mv(N,c),
+        N>o.txt.lm[c]&&(
+          o.txt.hd(N-1+'',c),
+          o.txt.it(N,c+1,l)))},
+    get:function(N){//concidering it & lm part o´ this then 10 lines o´ code
+      o.txt.mv(N)//move/request new last digit
+      o.txt.it(N,1,N.length)//iteration is always almost needed
+      o.txt.hd(N-1+'')},//hide previous number
+    /*original "get" script; 27 lines
+    get:function(N){o.txt.mv(N)
+      var l=N.length//,Zs//Zeroes
+      N[l-1]==0&&(
+        //Zs='x0',
+        o.txt.mv(N,1),
+        N>19&&(
+          o.txt.hd(N-1+'',1),
+          N[l-2]==0&&(
+            //Zs='x00',
+            o.txt.mv(N,2),
+            N>199&&(
+              o.txt.hd(N-1+'',2),
+              N[l-3]==0&&(
+                //Zs='x000',
+                o.txt.mv(N,3),
+                N>1999&&(
+                  o.txt.hd(N-1+'',3),
+                  N[l-3]==0&&(
+                    //Zs='x0000',
+                    o.txt.mv(N,4),
+                    N>19999&&(
+                      o.txt.hd(N-1+'',4),
+                      N[l-3]==0&&(
+                        //Zs='x00000',
+                        o.txt.mv(N,5))))))))))
+      //Zs&&(u.c(Zs))
+      o.txt.hd(N-1+'')},*/
+    r:'p  p p'.split(/|/)},//rotation o´ each texture
+  init:function(){var g,mt,φ,M,px,py,i=0,clck,msh,D
+    o.gh=(o.H=o.l0p/10)/10
+    o.gw=o.W/10
+    o.g=o.pl(100,200)
+    o.ops[0]=o.ops[1]=o.mv
+    o.ops[2]=o.how
+    o.ops[4]=o.op[3]=o.shwm
+    o.ops[10]=o.ops[11]=o.cc
+    o.ops[14]=o.op2[0]=o.exp
+    h.ga.add(o.added=o.ob3.clone())
+    o.added.add(o.grH=new T.GridHelper(1e4,40))
+    o.im=u.new(
+      'input',
+      {type:'file',
+      accept:o.ap+'zip',
+      onchange:u.f('o.imp(this.files)')})
+    o.fi=u.lng=='es'?'con el fin de exportar una casa, 1ro debes añadir o importar alguna':'in order to export house, first you must add one or import your own'
+    o.pfx=o.usrAgnt[/(Chrome|Trident|Firefox)/.exec(h.nv.userAgent)[0]]
+    u.sty(o.sty+='#fs,canvas,button,#mn{-'+o.pfx+'-user-select:none')
+    o.r.setSize(innerWidth,innerHeight)//setting width & height
+    o.c.position.z=10
+    px=-o.W/2+o.gw/2//left corner-[ | ]    <-- half width
+    py=o.H/2-o.gh/2//top corner-[ - ]      <-- half height
+    //creating & adding options
+    o.st.init(px)
+    g=o.pl(o.gw*96,o.gh)//Width & Height
+    mt=new T.MeshBasicMaterial({opacity:0,transparent:!0})
+    o.s.add(o.tns=new T.Mesh(g,mt))
+    o.tns.position.set(o.tns.left=o.gw*43,py,0)
+    o.tns.c=1//it's got children
+    o.tns.right=o.tns.left+o.gw*10
+    g=o.pl(o.gw*1.25,o.gh*8.5)
+    mt=new T.MeshLambertMaterial({transparent:1,opacity:.5,blending:0})
+    o.menu=new T.Mesh(g,mt)
+    o.menu.position.set(
+      o.gw*4.3,
+      -o.gh/4,
+      0)
+    o.menu.c=1//it'got children=!0 true
+    o.s.add(o.menu)
+    g=o.pl(o.gw/2,o.gh)//Width & Height
+
+/*    v=[[-.3,3.5], [.3,3.5],//Original matrix
+       [-.3,2.5], [.3,2.5],
+       [-.3,1.5], [.3,1.5],
+       [-.3,.5],  [.3,.5],
+       [-.3,-.5], [.3,-.5],
+       [-.3,-1.5],[.3,-1.5],
+       [-.3,-2.5],[.3,-2.5],
+       [-.3,-3.5],[.3,-3.5]]*/
+    function msh(I){//mesh
+      φ=new T.ImageUtils.loadTexture(t.bs+'icon/menu.png')
+      φ.repeat.y=.0625,φ.offset.y=(i*2+I)*.0625
+      /*     Δ=.0625
+      ⌨ 0      📌.0625
+      ➕.125    🌄.1875
+      ✋.25      ↔.3125
+      ⟲.375     ⟳.4375
+      🌙.5      ☀.5625
+      ⌖.625     🎦.6875
+      📥.75     📤.8125
+      ⓘ.875    🔒.9375 */
+      mt=new T.MeshBasicMaterial({map:φ,transparent:1})
+      //i%2&&(m.opacity=.5,m.transparent=!0)//sort evenly
+      M=new T.Mesh(g,mt)
+      M.position.set(o.gw*.3*(I?1:-1),o.gh*(3.5-i),0)
+      o.menu.add(M)}//repeating 'til 24 PlaneGeometries/room for icons
+    o.e='⥀ 👁 ⥁ ➕  '.split(' ')
+    bt='button>'
+    dv='<div>🔅<input id=lit type=range>🔆</div><div>'
+    u.ap(u.new('div',{id:'mn',innerHTML:dv}),h.tls)
+    ops=mn.children[1]
+    for(i in o.e)ops.innerHTML+='<'+bt+o.e[i],msh(0),msh(1),i++==4&&(M.il=1)//increase light
+    edt.insertBefore(u.at(o.r.domElement,{id:'ops'}),h.tls)//adding all to body as canvas
+    o.mn()
+    //地点: location (Dìdiǎn)
+    u.ap(D=u.new('div',{id:'地点',innerHTML:'<div><button></button><button>🔘</button></div><div><input><input></div><div><input><input></div><div><input><input>'}),mn)
+    u.ap(u.new('div',{innerHTML:'<button id=cmr>📹</button><input type=number min=-10 max=10>'}),D)
+    mn.innerHTML+='<div><'+bt+'💾</'+bt+'<'+bt+'🔒</'+bt+'<'+bt+'ⓘ'
+    u.ap(u.new('button',{id:'dw',innerHTML:''}),h.tls)
+
+    o.is=o.pfx+(o.pfx=='webkit'?'Is':'')+o.fs
+    o.ex=o.pfx+'Cancel'+o.fs
+    o.rq=o.pfx+'Request'+o.fs
+    o.tn.id=o.s.children[1].id
+    for(i in o.ops)o.ops[Number(i)+(i<2?o.left.id:o.tn.id)]=o.ops[i],delete o.ops[i]
+    //x:-2.0434, y:-3.4419 z:9.96 inside o.s.children[1].children[6]
+    for(i in o.of)o.Δ[i]=-.62+i*.15,o.txt.lm[i]=Math.pow(10,i)*2-1//position o´ each digit;I don't think user´d put into scene more than a Quantity o´ 6-digit Number of same type/texture
+    o.in=u.new(
+      'input',
+      {type:'file',
+      accept:'image/*',
+      multiple:1,
+      onchange:u.f('o.rb(this.files)')})
+    clck=setInterval(o.R,500)
+    o.clear(clck,'ops',6e3)
+    o.re=RegExp(o.left.id+'|'+o.menu.children[0].id+'|'+o.menu.children[2].id+'|'+o.right.id)
+    u.sty("#mn{background:rgba(0,0,0,.6);font-size:1.5em;width:18%}#mn>:nth-child(odd){background:linear-gradient(rgba(155,251,228,.8),rgba(5,80,109,.5));color:#FD0}#mn>:nth-child(even){background:linear-gradient(rgba(15,89,122,.5),rgba(79,159,140,.8))}#lit{width:60%}#mn button{color:rgba(255,255,255,.8);margin:-.01em}#mn button:hover{background:radial-gradient(rgba(155,251,228,.8),rgba(5,80,109,.5));text-shadow:#000 -15px 10px 7px;color:#FFF}#地点>:nth-child(1)>*{background:rgba(83,111,117,.5);box-shadow:#000 0 -2px 10px;width:50%}#地点>:nth-child(2):before{content:'X '}#地点>:nth-child(3):before{content:'Y '}#地点>:nth-child(4):before{content:'Z '}#地点 input{width:40%;font-size:1.25em}#dw{paddin:0}#dw:hover{rgba(0,178,255,.5)}#mn,#dw{left:0;top:10%")
+    setTimeout(function(){
+      //u.a=!u.a
+      lit.onchange=o.cc
+      var mc=mn.children[1].children
+      for(i in o.op)mc[i].onclick=o.op[i]
+      cmr.onclick=function(){
+        this.innerHTML=this.innerHTML=='🎥'?
+          '📹'
+          :'🎥'}
+      cmr.nextSibling.onchange=function(){var v;if(v=this.value)u.c(m.i=v)}
+
+      dc=地点.nextSibling.children//💾 🔒 ⓘ
+      for(i in o.op2)dc[i].onclick=o.op2[i]
+      u.c(D)
+      m[0]=地点.children[1].firstChild
+      m[1]=地点.children[2].firstChild
+      m[2]=地点.children[3].firstChild
+      dw.onclick=function(){
+        this.innerHTML=this.innerHTML==''?'':''
+        mn.style.left=mn.style.left?'':'-34%'}},1e3)}}
+o.init()
+o.ae(ops,
+  {click:function(e){var i=o.o.id,sf
+    i&&(
+      o.ops[i]?
+        o.ops[i]()
+        :o.at()&&(//let it proceed since it comes from add-menu or thumbnails
+          o.o.parent.id==o.f?//first rll´s child means "import-house section"
+            o.ntH(
+              t.s.children.length-1,
+              o.asset)
+            :(sf=o.o.material.map.sourceFile)&&(o.add(sf,/blob/.test(sf)))))//let it know if its sourceFile comes from a blob
+    //left kbrd add right
+    !o.st.pnl.position.y&&!o.re.test(i)&&o.shwm()
+    i!=o.left.id&&i!=o.right.id&&u.clk(o.zip)
+    o.R()},//know where it comes from, 1 of 6 sliding pages must be though
+  contextmenu:function(e){
+    e.preventDefault()
+    e.stopPropagation()
+    !dr.app&&dr.act()
+    u.clk(function(){
+      u.sc(
+        o.mn,
+        dr.o&&dr.o.id!=6?(
+          o.mn.setAttribute('style','left:'+e.clientX+'px;top:'+e.clientY+'px'),
+          '')
+          :'no')})},
+  mousemove:function(e){//may pass since Y is 'ops territory' and any object's been found
+    ((o.x=e.clientX)<1||o.x>innerWidth-2)?
+      !o.app&&o.slide(o.app=1)
+      :o.app&&(o.app=0)
+    o.rc(e)?
+      o.o.id!=o.rst.object.id&&(
+        o.o.id&&(
+          o.at()?(//set ps.z & opacity only if it comes from thumbnails or rll's children
+            o.o.position.z=0,
+            o.o.material.opacity=.85)
+            :o.mc&&(//let's restore its OST color, (I mean Original)
+              (o.mc=o.o.material.color).r=o.pc[0],o.mc.g=o.pc[1],o.mc.b=o.pc[2])),//pick colour
+        o.o=o.rst.object,
+        o.at()?(
+          o.o.position.z=.125,
+          o.o.material.opacity=1)
+          :!o.o.parent.N&&(o.mc=o.o.material.color,//backing up its color to further restore it when mouse gets out
+            o.pc=[o.mc.r,o.mc.g,o.mc.b],
+            o.mc.r=o.mc.g=o.mc.b=0),
+        o.R())
+      :o.o.id!=o.menu.id&&(o.o=o.menu)},
+  resize:u.f('o.r.setSize(innerWidth,innerHeight)')})
