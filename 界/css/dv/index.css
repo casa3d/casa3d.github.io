@@ -1,0 +1,27 @@
+body{font-family:Segoe UI Symbol;margin:0;overflow:hidden}
+#ops button,fieldset{font-family:Segoe UI Symbol}
+div{transition:.6s ease}
+div{font-weight:bold}
+#ops:hover{top:0}
+#ops{height:15%;position:fixed;min-height:100px;width:100%}
+#ops button{border-radius:15px 0;box-shadow:#1e90ff 4px 3px 10px;color:#fff;cursor:pointer;font-size:4.4em;height:100%;min-width:100px;opacity:.9;padding:0;transition:.4s;width:10%}
+#ops button:hover{text-shadow:-5px 5px 9px #000}
+#ops button:nth-of-type(1){background:linear-gradient(45deg,#004c4c,#00c9c9)}
+#ops button:nth-of-type(2){background:linear-gradient(45deg,#070032,#917cff)}
+#ops button:nth-of-type(3){background:linear-gradient(45deg,#D9671F,#FFA100)}
+#ops button:nth-of-type(4){background:linear-gradient(45deg,#004a00,#00e500)}
+#ops button:nth-of-type(5){background:linear-gradient(45deg,#003971,#68c2ff)}
+#ops button:nth-of-type(6){background:linear-gradient(45deg,#62005d,#f84cf8)}
+#ops button:nth-of-type(7){background:linear-gradient(45deg,#691b00,#ff6f3e)}
+div#roll{height:100%;position:absolute;width:700%}
+div#roll>div{height:100%;float:left;font-size:1.15em;overflow:auto;width:14.2857%}
+div#roll>div>h1{text-transform:capitalize}
+.in{top:0}
+.out{top:-13.5%}
+.zero{background:#54a095;left:0%}
+.one{background:#9189c0;left:-100%}
+.two{background:#d3894d;left:-200%}
+.three{background:#469e4a;left:-300%}
+.four{background:#4e99d5;left:-400%}
+.five{background:#b268b9;left:-500%}
+.six{background:#d38266;left:-600%}
