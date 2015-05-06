@@ -1,0 +1,16 @@
+body{
+ background:#000;
+ color:#FFF;
+ font-size:2em;
+ font-family:jv,km,ml,my,ne,si,ta,te,th,ko,zh}
+@font-face{font-family:jv;src:url(jv/jv.ttf)}
+@font-face{font-family:ko;src:url(ko/ko.ttf)}
+@font-face{font-family:km;src:url(km/km.ttf)}
+@font-face{font-family:ml;src:url(ml/ml.ttf)}
+@font-face{font-family:my;src:url(my/my.ttf)}
+@font-face{font-family:ne;src:url(ne/ne.ttf)}
+@font-face{font-family:si;src:url(si/si.ttf)}
+@font-face{font-family:ta;src:url(ta/ta.ttf)}
+@font-face{font-family:te;src:url(te/te.ttf)}
+@font-face{font-family:th;src:url(th/th.ttf)}
+@font-face{font-family:zh;src:url(zh/zh.ttf)}
