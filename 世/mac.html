@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html manifest=mac.appcache>
+<head>
+ <meta charset=utf-8>
+ <style></style>
+ <script src=../js/dv/mac.js></script>
+ <script src=js/ISO639-1.js></script>
+ <script src=js/font-init.js></script>
+ <script src=js/rel.js></script>
+ <script src=../js/dv/three.js></script>
+ <script src=js/pack.js async></script>
+ <script src=js/planet.js async></script></head>
+<body>
+ <div id=container></div>
+ <div id=L><a>○</a></div><h1 id=C>1%</h1></div>
+ <script id=globeVertexShader type='x-shader/x-vertex'>
+  varying vec3 vNormal;
+  varying vec2 vUv;
+  void main(){
+   gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0);
+   vNormal = normalize( normalMatrix * normal );
+   vUv = uv;}</script>
+ <script id=globeFragmentShader type='x-shader/x-fragment'>
+  uniform sampler2D mapIndex;
+  uniform sampler2D lookup;
+  uniform sampler2D outline;
+  uniform sampler2D blendImage;
+  varying vec3 vNormal;
+  varying vec2 vUv;
+  void main(){
+   vec4 mapColor = texture2D( mapIndex, vUv );    
+   float indexedColor = mapColor.y;       
+   vec2 lookupUV = vec2( indexedColor, 0.0 );
+   vec4 lookupColor = texture2D( lookup, lookupUV );                              
+   vec4 outlineColor = texture2D( outline, vUv );
+   vec4 blendColor = texture2D( blendImage, vUv );
+   // if (outlineColor.x > 0.1) outlineColor = vec4(1.0,1.0,1.0,1.0);
+   gl_FragColor = 0.5 * outlineColor + 1.0 * lookupColor + 0.5 * blendColor;}</script>
