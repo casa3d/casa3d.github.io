@@ -1,4 +1,4 @@
-бзو一l= {// ISO 639-1
+бзو一l={// ISO 639-1
  af:'afrikaans',
  ar:'العربية',// ʻarabī: arabic
  az:'azeri türki | azerbaijani türki',
@@ -8,7 +8,7 @@
  bn:'বাংলা',// Bangla | bengali
  bs:'bosanski',//bosnian
  ca:'català',//Catalan–Valencian–Balear
- cs:'čeština | český jazyk',//formeryly known as Bohemian
+ cs:'čeština | český jazyk',//formeryly known as Bohemian: czech
  da:'dansk',//danish
  de:'deutsch',// german
  el:'ελληνικά',// elliniká: greek
@@ -35,7 +35,7 @@
  ja:'日本語',//Nihongo: japanese
  jv:'ꦧꦱꦗꦮ',//Basa Jawa: javanese
  ka:'ქართული ენა',//kartuli ena: georgian language
- kk:'қазақ тілі',//kazak language
+ kk:'қазақ тілі',//kazakh language
  km:'ភាសាខ្មែរ',//khmer | cambodian
  kn:'ಕನ್ನಡ',//Kannada
  ko:'한국어 | 조선말',//han kuk eo | zhu seon mal:korean
@@ -49,7 +49,7 @@
  mr:'मराठी',//Marāṭhī
  ms:'bahasa melayu',//malay
  mt:'malti',//maltese
- my:'မြန်မာဘာသာ',//myanmar: burmese
+ my:'မြန်မာဘာသာ',//myanma bhasa: burmese
  ne:'नेपाली भाषा',//Nepālī bhāṣā: nepali language
  nl:'nederlands | flemish',//aka dutch | vlaams
  no:'norsk',//Norwegian
@@ -57,11 +57,11 @@
  pa:'ਪੰਜਾਬੀ',//Punjabi
  pl:'język polski',//polish language
  pt:'português',//portuguese
- ro:'limba română | daco-romanian',
+ ro:'limba română | daco-romanian',//romanian
  ru:'русский язык',// russky yazyk: russian language
  si:'සිංහල',//singhala: sinhalese
- sl:'slovene | slovenian',//slovenski jezik | slovenščina
  sk:'slovak',//slovenčina | slovenský jazyk
+ sl:'slovene | slovenian',//slovenski jezik | slovenščina
  so:'af-soomaali | somali',
  sq:'gjuha shqipe',//albanian
  sr:'српски',//srpski: serbian
@@ -74,14 +74,12 @@
  th:'ภาษาไทย',//phasa thai
  tk:'türkmençe | түркмен дили',//turkmen | torkoman
  tr:'türkçe',//istanbul turkish
- ur:'اُردُو',// urdu
  uk:'українська мова',// ukrayins'ka mova
+ ur:'اُردُو',// urdu
  uz:'oʻzbek tili | oʻzbekcha',//uzbekian
  vi:'tiếng việt',//vietnamese
  yi:'ייִדיש | אידיש',// yidish | idish
  yo:'èdè yorùbá',//yoruba
  yua:'yucatec maya',
  zh:'普通话',//:putonghua; Pǔtōnghuà: 普通话 (Mainland China)
- z二:'国语',//Guóyǔ: (taiwan)
- z三:'华语',//Huáyǔ: (Malaysia, Singapore, and Philippines)
  zu:'isiZulu | zulu'}

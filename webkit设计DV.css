@@ -1,0 +1,312 @@
+@font-face{
+ font-family:G;
+ src:url(css/g.woff),url(css/g.ttf)}
+*{
+ outline:none;
+ transition:1s}
+body,#高>:nth-child(1){overflow:hidden}
+ #高>:nth-child(1){display:none}
+ #高>:nth-child(1)>*{color:#FFF}
+ #高,#高>:nth-child(2)>*,#高>:nth-child(2)>*>*,#高>:nth-child(4)>:nth-child(2n){
+  height:100%!important;
+  width:100%!important}
+ #高>:nth-child(2)>*,#高>:nth-child(4) *~*,#ζ{text-align:center}
+ #倒挂 div{
+  text-shadow:#000 -1px -1px 1px,#000 -1px -1px 10px,#FFF 1px 1px 1px,#FFF 1px 1px 10px;
+  text-transform:capitalize}
+ #高>:nth-child(2) input{
+  margin-top:1em}
+ #高>:nth-child(2) label{
+  display:block;
+  font-size:2em;
+  text-align:left}
+ #倒挂>:first-child label:before{content:' '}
+ #倒挂>:last-child label:before{content:' '}
+ #高>:nth-child(2)>* a{display:block}
+ #检:before{
+  color:#F00;
+  content:"⬜ "}
+ .检:before{
+  color:#0F0!important;
+  content:"☑ "!important}
+ #ζ{
+  bottom:0;
+  position:fixed;
+  right:0}
+ #ζ>*~*{float:left}
+ body>em{
+  border:3px groove;
+  border-radius:0 5em;
+  display:none;
+  position:fixed;
+  top:0}
+button{
+ background:linear-gradient(45deg,#000,rgba(0,0,0,.65)50%),url(img/wa2.jpg);
+ border-radius:5em;
+ color:rgba(255,255,255,.5);
+ font-size:2em;
+ text-shadow:#000 1px 1px 0}
+button:hover{
+ color:#FFF;
+ text-shadow:#0F0 0 -1px 20px,#00F 0 3px 20px}
+input{
+ background:rgba(0,0,0,.85);
+ border-radius:0 0 1em 1em;
+ color:#FFF;
+ padding:0 1em}
+canvas{background:radial-gradient(#EEF,#CB8,#445)}
+.☸ code,.load code{display:none}
+#edt,.ㄨ li,iframe{-webkit-user-select:none}
+.load{box-shadow:#330 -10px 1px 15px}
+.load canvas{opacity:0!Important}
+.load button{
+ background:linear-gradient(45deg,#000,rgba(0,0,0,.85)50%),url(img/wa2.jpg);
+ box-shadow:#000 -10px 3px 5px,#FFF 5px 0 5px}
+.ㄨ button{
+ background:rgba(0,0,0,.5);
+ box-shadow:rgba(255,0,0,.5) 0 0 0px 10px,#000 0 9px 9px 10px}
+.ㄨ button:hover{text-shadow:#F00 0 -3px 5px,#F00 3px 0 5px,#F00 0 3px 5px,#F00 -3px 0 5px}
+.ㄨ code{
+ background:rgba(0,0,0,.75);
+ border-radius:55em;
+ box-shadow:#000 0 1ch 10px;
+ color:#FFF;
+ display:block;
+ font:1em Arial;
+ text-shadow:#000 1px 1px 3px,#000 1px 1px 3px}
+a{color:#0AF}
+b{color:#F70}
+st{color:#6A3}
+tg{color:#FA0}
+
+/*MAIN EDT*/
+#ζ{display:none}
+body,#mn,#th>:nth-child(3),#图片,#th label{overflow:hidden}
+button,img{cursor:pointer}
+input:not([type="email"]),#高>:nth-child(1) label,#师二 span,#mn{text-align:center}
+code,#cv +*,#th,#图片>*>*{width:100%}
+#师一 label,.tg{
+ background:rgba(0,0,0,.5);
+ border:0}
+#师一 label,.tg,#图片,#mn>:nth-child(2){position:relative}
+.no{display:none}
+#高>:nth-child(1){
+ height:100%;
+ left:0;
+ top:0;
+ width:100%}
+ #高>:nth-child(1) button{
+  background:none;
+  border:0}
+ #高>:nth-child(1)>*{
+  height:100%;
+  left:0;
+  position:fixed;
+  top:0;
+  width:100%}
+ #高>:nth-child(1)>*>*{position:absolute}
+ #th{
+  height:10%;
+  top:0}
+ #mn,#大师{
+  bottom:0;
+  height:90%;
+  position:absolute}
+ #th>*,#th>:nth-child(3) *{height:100%}
+  #th>:not(.tg),#图片>*,#图片 img,#大师 *,#mn,#opsMenu *,#mn>*,#mn>:nth-child(3)>*{float:left}
+  #th>.tg{
+   left:48%}
+  #th>:not(.tg),#师一,#师一>*>*{height:100%}
+  #th>:nth-child(3){width:85%}
+  #th>:nth-child(-n+2),#th>:nth-child(4){width:5%}
+  #th>:nth-child(-n+2)>*,#th>:nth-child(4)>*{height:60%;width:100%}
+  #th>button:not(.tg),#大师>.tg{
+   width:5%;
+   z-index:1}
+  #th label{
+   display:inline-block}
+   #图片{width:1000%}
+    #图片 label:hover{box-shadow:rgba(0,0,0,1) 0 -10px 10px 5px,rgba(0,0,0,.5) 0 -20px 10px 5px,rgba(0,0,0,.5) 0 -30px 10px 5px}
+    #图片>*{width:1%}
+    #图片>:nth-child(odd) *+*{
+     color:#000;
+     text-shadow:#000 0 0;
+     background:rgba(255,255,255,.7)}
+    #图片>:nth-child(even) *+*{background:rgba(0,0,0,.5)}
+ #mn,#opsMenu *{padding:0}
+ #mn{
+  width:45%}
+  #mn label{text-shadow:#FFF 2px -2px 10px,#000 -2px 2px 1px,#000 -2px 2px 1px}
+  #mn>:nth-child(-n+2){
+   height:100%;
+   width:10%}
+   #mn>:nth-child(-n+2) div{height:15%}
+   #mn>:nth-child(-n+2) input{height:70%}
+  #mn>:nth-child(2){
+   float:right;
+   top:0}
+  #mn>:nth-child(n+3){
+   height:50%;
+   width:80%}
+  #mn>:nth-child(n+3) button{box-shadow:#000 -10px 10px 5px,rgba(0,0,0,0.5) 0 15px 5px}
+   #mn>:nth-child(3)>*{
+    border:transparent 2px dotted;
+    border-radius:1em;
+    margin:3%}
+   #mn>:nth-child(3)>*:hover{border:#E92 2px dashed}
+   #mn>:nth-child(3)>*>*{display:100%}
+  #地点 input{width:50%}
+ #大师{
+  right:0;
+  width:50%}
+  #师一{
+   width:25%;
+   padding-top:7%}
+   #师一>*{
+    border:#E92 3px groove;
+    height:8.8%;
+    margin:-2px;
+    width:60%}
+   #师一>:nth-child(odd){box-shadow:#000 15px 15px 10px 1px}
+   #师一>:nth-child(even){box-shadow:#000 -10px 10px 10px}
+   #师一>*:hover{
+    background:linear-gradient(45deg,#000 50%,#FFF 50%);
+    text-shadow:#0F0 0 -1px 10px,#00F 0 1px 10px,#00F 0 1px 10px,#0F0 -1px 0 10px;
+    text-transform:uppercase}
+   #师一 img:hover{opacity:.6}
+   #师一 label{
+    background:transparent;
+    display:inline-block;
+    height:auto;
+    topx:-35%}
+    #师一>*>*{width:100%}
+    #师二 input{
+     border:0;
+     height:0;
+     opacity:0;
+     width:0}
+ #opsMenu{
+  border-radius:5px;
+  left:0;
+  position:fixed;
+  top:0;  
+  width:10%;
+  background:radial-gradient(rgba(12,175,124,.5),rgba(24,55,74,.8))}
+ #opsMenu>:nth-child(-n+2){width:49%}
+ #opsMenu>:nth-child(3),#opsMenu>:last-child{width:100%}
+ #opsMenu>button:nth-child(n+4):nth-child(-n+6){width:33%}
+#中{
+ border:rgba(0,200,255,.5) 3px dotted!important;
+ box-shadow:#000 -20px 20px 10px 1px,#0AF 1px -1px 1em!important}
+
+/* Δ */
+#师二{
+ background:linear-gradient(rgba(99,0,0,.5),rgba(0,99,0,.5),rgba(0,0,99,.5));
+ height:900%;
+ top:0;
+ width:70%}
+ #师二 input+* button:hover{text-shadow:#F00 0 -5px 20px,#0F0 5px 5px 20px,#00F -5px 5px 20px}
+ #师二 input~*>*{width:100%}
+ #师二>*{
+  border-left:rgba(0,0,0,.1) 10px dotted;
+  width:100%}
+ #师二 img{
+  border:transparent 1px dashed;
+  content:'';
+  height:18.5%;
+  width:25%}
+  #师二 img:hover{
+   border:#FFF 1px dashed}
+ #师二>:first-child>:not(ol){width:24%}
+ #师二 ol,#师二 label,#师二 li{
+  background:rgba(0,0,0,.25);
+  margin-top:1em;
+  width:100%}
+
+/*step:11.111111*/
+#师二>:nth-child(2) img{border-radius:5em}
+#师二>:nth-child(5) *{border-radius:5em 5em 0}
+#师二>:nth-child(7) *:nth-child(2n){border-radius:5em 0}
+#师二>:nth-child(7) *:nth-child(odd){border-radius:55em 0 0}
+
+/*webkit stuff*/
+#高,body{-webkit-perspective:999999em}
+#高>*,#高>:nth-child(4)>*{position:absolute}
+#高>*~*{
+ height:50%;
+ left:25%;
+ top:25%;
+ width:50%}
+#高>:nth-child(2){-webkit-transform:translateZ(-9999999em)}
+#高>:nth-child(3){-webkit-transform:translateZ(-1099999em)}
+#高>:nth-child(4){-webkit-transform:translateZ(169999em)}
+#高>:nth-child(5){-webkit-transform:translateZ(490000em)}
+button{
+ height:51px;
+ width:51px}
+input{font:1.1em/1 Monotype Corsiva}
+.二>:first-child{display:block!important}
+.一{-webkit-transform:translateZ(1852998em)}
+.。{-webkit-transform:translateZ(1229999em)}
+.丨{-webkit-transform:translateZ(50999em)}
+.刂{-webkit-transform:translateZ(-999999em)}
+#ζ>*{
+ background:rgba(0,0,0,.5);
+ border-radius:10px}
+.☸ canvas{opacity:.3}
+.☸>div{-webkit-transform:translateY(44%)}
+.☸ button{
+ background:rgba(0,0,0,.85);
+ border:#888 double;
+ box-shadow:#000 -10px 3px 5px;
+ padding-top:0}
+.☸ button:hover{text-shadow:#0FF 0 0 10px}
+.load div{-webkit-transform:translateY(35%)}
+.load button{
+ border-radius:100em;
+ height:100px;
+ text-shadow:#FA0 0 0 9px;
+ width:100px}
+.load button:hover{text-shadow:#000 -3px 3px 1px,#FA0 -3px 3px 1px,#FA0 2px -2px 20px,#FF0 2px -2px 2em}
+
+/*PRE*/
+body,#高,#高>:nth-child(2),#高>:nth-child(2)>*,#高>:nth-child(5){-webkit-transform-style:preserve-3D}
+#高>:nth-child(1)>*{-webkit-perspective:99em}
+#高>:nth-child(2),#高>:nth-child(2)>*{-webkit-perspective:50em}
+ #高>:nth-child(2)>*>:nth-child(2){-webkit-transform:translate3D(-100%,-200%,0)rotate(180deg)}
+#高>:nth-child(5){-webkit-perspective:99em}
+ #图片 label:hover{-webkit-transform:translateY(-104%)}
+ #mn>:nth-child(n+3){-webkit-transform:translateZ(0)}
+ #大师 .tg{-webkit-transform:translateY(600%)}
+ #师一{-webkit-perspective:45em}
+  #师一>:nth-child(odd){-webkit-transform:translateZ(5em)rotateY(-45deg)}
+  #师一>:nth-child(even){-webkit-transform:translate3D(80%,0,5em)rotateY(45deg)}
+ #师二>*{-webkit-perspective:9em}
+ #师二 img:active{-webkit-transform:rotateY(5deg)}
+ #师二>:nth-child(2) *:nth-child(odd){-webkit-transform:rotate3D(0,0,1,45deg)}
+ #师二>:nth-child(2) *:nth-child(even){-webkit-transform:translateZ(-1em)rotate3D(1,-1,1,20deg)}
+ #师二>:nth-child(3) *:nth-child(3n){-webkit-transform:rotate3D(-0,1,0,15deg)}
+ #师二>:nth-child(3) *:nth-child(3n+2){-webkit-transform:translateZ(1.5em)}
+ #师二>:nth-child(3) *:nth-child(3n+1){-webkit-transform:rotate3D(-0,-1,0,15deg)}
+ #师二>:nth-child(4) *{-webkit-transform:rotate3D(1,1,1,-15deg)}
+ #师二>:nth-child(5) *{-webkit-transform:rotateY(15deg)}
+ #师二>:nth-child(6) *:nth-child(3n){-webkit-transform:rotate3D(0,-1,1,15deg)}
+ #师二>:nth-child(6) *:nth-child(3n+2){-webkit-transform:translateZ(-1.5em)rotateX(-15deg)}
+ #师二>:nth-child(6) *:nth-child(3n+1){-webkit-transform:rotate3D(0,1,-1,15deg)}
+ #师二>:nth-child(7) *:nth-child(odd){-webkit-transform:rotate(-45deg)}
+ #师二>:nth-child(8) *{-webkit-transform:rotate3D(1,1,1,35deg)}
+ #师二>:nth-child(9) *:nth-child(2n+1){-webkit-transform:rotateX(9deg)}
+ #师二>:nth-child(9) *:nth-child(2n){-webkit-transform:rotateX(-9deg)}
+#中{-webkit-transform:rotateY(90deg)translateZ(8em)!important}
+.false{-webkit-transform:translate3D(-100%,-100%,0)rotate(180deg)}
+.ㄨ>div{-webkit-transform:translate3D(-50%,-7%,0)}
+
+/*EDT*/
+ #图片 label{-webkit-transform:translateY(-33%)}
+ #mn>:nth-child(-n+2) input{
+  width:700%;
+  -webkit-transform:translate(-43.5%)rotate(-90deg)}
+.二>*~*{-webkit-transform:translateZ(1699999em)!important}
+.左{-webkit-transform:translate(-112%)rotateY(360deg)rotateZ(45deg)}
+.上{-webkit-transform:translateY(-115%)rotateX(360deg)}
+.权{-webkit-transform:translate(95%)rotateY(-360deg)}

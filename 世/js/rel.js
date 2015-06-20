@@ -25,19 +25,19 @@ rel=[//co-relation
 ['الجمهورية الجزائرية الديمقراطية الشعبية',//People's Democratic Republic of Algeria
  'ar'],
 ['schweizerische eidgenossenschaft',//Swiss Confederation
- 'de,fr,it,ssg'],
+ 'de,fr,it'],/*,ssg*/
 ['république du cameroun',
  'fr,en'],
 ['република македонија',//Republika Makedonija
  'mk'],
 ['lefatshe la botswana',//Republic of Botswana
- 'en,TN'],
+ 'en'],/*,tn*/
 ['україна',//ukraine
  'uk,hy,be,bg,el,hu,pl,ro,sk,yi'],
 ['jamhuri ya kenya',//Republic of Kenya
  'en,sw'],
 ['中華民國',//(Taiwan) Zhōnghuá Mínguó:  Republic of China
- 'z二'],
+ 'zh'],
 ['المملكة الأردنية الهاشمية',//Hashemite Kingdom of Jordan
  'ar'],
 ['estados unidos mexicanos',
@@ -59,7 +59,7 @@ rel=[//co-relation
 ['jamhuuriyadda federaalka soomaaliya',//Federal Republic of Somalia
  'so,ar'],
 ['د افغانستان اسلامي جمهوریت',//Islamic Republic of Afghanistan
- 'ps,prs,tg,tk'],
+/*ps,prs,*/'tg,tk'],
 ['গণপ্রজাতন্ত্রী বাংলাদেশ',//People's Republic of Bangladesh
  'bn'],
 ['república dominicana',
@@ -105,15 +105,15 @@ rel=[//co-relation
 ['independen stet bilong papua niugini',//Independent State of Papua New Guinea
  'en'],
 ['جمهورية العـراق',//Republic of Iraq
- 'ar,ku'],
+ 'ar'],/*,ku*/
 ['republika hrvatska',//Republic of Croatia
  'hr'],
 ['kalaallit nunaat',//greenland
- 'kl,da'],
+/*kl,*/'da'],
 ['république du niger',
  'fr'],
 ['kongeriget danmark',//Kingdom of Denmark
- 'da,føroyskt,kl,de'],
+ 'da,føroyskt,de'],/*,KL,de*/
 ['latvijas republika',//Republic of Latvia
  'lv'],
 ['românia',
@@ -121,11 +121,11 @@ rel=[//co-relation
 ['republic of zambia',
  'en,ny'],
 ['جمهوری اسلامی ایران',//Islamic Republic of Iran
- 'fa,az,ku,tk,ar,ka,hy'],
+ 'fa,az,tk,ar,ka,hy'],/*az,KU,tk*/
 ['ပြည်ထောင်စု သမ္မတ မြန်မာနိုင်ငံတော်',//Republic of the Union of Myanmar | Burma
  'my'],
 ['የኢትዮጵያ ፌዴራላዊ ዴሞክራሲያዊ ሪፐብሊክ',//Federal Democratic Republic of Ethiopia
- 'am'],
+ 'አማርኛ'],//Amarəñña: amharic ',am,' 'am'
 ['república de guatemala',
  'es'],
 ['republiek suriname',
@@ -143,7 +143,7 @@ rel=[//co-relation
 ['الجمهورية العربية السورية',//Syrian Arab Republic
  'ar'],
 ['кыргыз республикасы',//Kyrgyz Republic
- 'ky,ru'],
+/*ky,*/'ru'],
 ['solomon islands',//
  'en'],
 ['سلطنة عُمان',//Sultanate of Oman
@@ -167,11 +167,11 @@ rel=[//co-relation
 ['الجمهورية التونسية',//Tunisian Republic
  'ar'],
 ['rzeczpospolita polska',//Republic of Poland
- 'pl,csb'],
+ 'pl'],/*,csb*/
 ['republic of namibia',
  'en,af,de'],
 ['republiek van suid-afrika',//Republic of South Africa
- 'af,en,TN,zu'],
+ 'af,en,zu'],/*en,TN,zu*/
 ['جمهورية مصر العربية',//Arab Republic of Egypt
  'ar'],
 ['jamhuri ya muungano wa tanzania',//United Republic of Tanzania
@@ -215,7 +215,7 @@ rel=[//co-relation
 ['malaysia',
  'ms,en'],
 ['republika ng pilipinas',//Republic of the Philippines
- 'fil,en,ceb,es,ar'],
+ 'fil,en,es,ar'],/*en,CEB,es*/
 ['república oriental del uruguay',
  'es'],
 ['république du congo',
@@ -271,7 +271,7 @@ rel=[//co-relation
 ['lietuvos respublika',//Republic of Lithuania
  'lt,pl,ru,be'],
 ['republic of zimbabwe',
- 'ny,chibarwe,en,st,TN'],
+ 'ny,chibarwe,en,st'],/*,tn*/
 ['ශ්‍රී ලංකා ප්‍රජාතාන්ත්‍රික සමාජවාදී ජනරජය',//Democratic Socialist Republic of Sri Lanka
  'si,ta,en'],
 ['מְדִינַת יִשְׂרָאֵל',//State of Israel
@@ -314,11 +314,11 @@ rel=[//co-relation
 ['монгол улс',//Mongolia
  'mn,kk'],
 ['འབྲུག་རྒྱལ་ཁབ་',//Kingdom of Bhutan
- 'dz'],
+ 'རྫོང་ཁ་'],//dzongkha: dz ',dz,' 'dz'
 ['nouvelle-calédonie',//New Caledonia
  'fr'],
 ['matanitu tugalala o viti',//Republic of Fiji
- 'en,fj'],
+ 'en'],/*fj*/
 ['دولة الكويت',//State of Kuwait
  'ar'],
 ['repúblika demokrátika timór-leste',//Democratic Republic of Timor-Leste
@@ -352,9 +352,9 @@ rel=[//co-relation
 ['malo saʻoloto tutoʻatasi o sāmoa',//Independent State of Samoa
  "gagana fa'a sāmoa,en"],
 ['groussherzogtum lëtzebuerg',//Grand Duchy of Luxembourg
- 'fr,de,lb'],
+ 'fr,de'],/*,lb*/
 ['udzima wa komori',//Union of the Comoros
- 'zdj,ar,fr'],
+/*zdj,*/'ar,fr'],
 ['republic of mauritius',
  'en,fr'],
 ['føroyar',//Faroe Islands
@@ -368,7 +368,7 @@ rel=[//co-relation
 ['puleʻanga fakatuʻi ʻo tonga',//Kingdom of Tonga
  'lea faka-tonga,en'],
 ['republic of kiribati',
- 'en,gil'],
+ 'en'],/*,gil*/
 ['federated states of micronesia',
  'en'],
 ['مملكة البحرين',//Kingdom of Bahrain
@@ -376,9 +376,9 @@ rel=[//co-relation
 ["principat d'andorra",//Principality of Andorra
  'ca,es,fr,pt'],
 ['commonwealth of the northern mariana islands',
- "en,finu' chamorro,cal"],
+ "en,finu' chamorro"],/*,cal*/
 ['beluu er a belau',//Republic of Palau
- 'palauan,en,ja,sov,tobian,fil'],
+ 'palauan,en,ja,tobian,fil'],/*ja,SOV,tobian*/
 ['république des seychelles',
  'en,fr,seychellois creole'],
 ['antigua and barbuda',
@@ -400,7 +400,7 @@ rel=[//co-relation
 ["repubblika ta' malta",//Republic of Malta
  'mt,en'],
 ['maldives',
- 'dv'],
+ 'ދިވެހިބަސް'],//dhivehi: Maldivian ',dv,' 'dv'
 ['cayman islands',
  'en'],
 ['federation of saint christopher and nevis',//Christopher | Kitts
@@ -421,11 +421,11 @@ rel=[//co-relation
 ['american samoa',
  "gagana fa'a sāmoa"],
 ['aolepān aorōkin m̧ajeļ',//Marshal Islands
- 'mh,en'],
+/*mh,*/'en'],
 ['aruba',
  'nl,papiamento'],
 ['fürstentum liechtenstein',//Principality of Liechtenstein
- 'de,ssg'],
+ 'de'],/*,ssg*/
 ['british virgin islands',
  'en'],
 ['saint helena',
@@ -459,4 +459,4 @@ rel=[//co-relation
 ['guam',
  "en,finu' chamorro"],
 ['republik singapura',
- 'ms,en,z三,ta']]
+ 'ms,en,zh,ta']]

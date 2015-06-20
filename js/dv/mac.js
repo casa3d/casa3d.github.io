@@ -1,0 +1,23 @@
+D='Devanagari Sangam MN,Devanagari MT,DevanagariMT'
+fam={//by default Noto Sans
+ ber:'Hapax Berbre,Hapax TifinarSimplifie,Hapax Tifinar Rond',
+ bn:'Bangla Sangam MN,Bangla MN',
+ gu:'Gujarati',
+ hi:D,
+ ja:'Hiragino Maru Gothic ProN,Hiragino Kaku Gothic Pro,Hiragino Mincho ProN,Hiragino Kaku Gothic Std,Hiragino Maru Gothic Pro,Hiragino Mincho Pro,Osaka,Hiragino Kaku Gothic ProN,Hiragino Kaku Gothic StdN',
+ jv:'NA',
+ ka:'NA',
+ km:'Khmer Sangam MN,Khmer MN',
+ kn:'Kannada Sangam MN,Kannada MN',
+ ko:'Apple Gothic,Apple Myungjo,Hangangche,Jung Gothic,Seoul,Shin Myungjo Neue,Tae Graphic,Gung Seoche,HeadlineA,PC Myungjo,Pilgiche',
+ lo:'Lao Sangam MN,Lao MN',
+ ml:'Malayalam Sangam MN,Malayalam MN',
+ mr:D,
+ my:'Myanmar Sangam MN,Myanmar MN',
+ ne:D,
+ pa:'Gurmukhi MN,Gurmukhi',
+ si:'Sinhala Sangam MN,Sinhala MN',
+ ta:'Tamil Sangam MN,Tamil MN,KrungthepInai Mathi',
+ te:'Telugu Sangam MN,Telugu MN',
+ th:'Ayuthaya,Sathu,Silom,Krungthep,Thonburi',
+ zh:'Fang Song,Hei,STHeiti Ligh,Kai,Song,ST FangSong,ST Heiti,ST Kaiti,ST Song,Apple LiGothic,Apple LiSung,BiauKai,LiHei Pro'}
