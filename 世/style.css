@@ -1,0 +1,17 @@
+body{background:#000;color:#FFF;
+font:147% ber,bn,el,gu,hi,jv,ka,kn,my,ko,si,ta,te,th,zh}
+@font-face{font:0 ber;src:local(Ebrima)}
+@font-face{font:0 bn;src:local(Nirmala UI),local(Vrinda),local(Shonar Bangla)}
+@font-face{font:0 el;src:local(Sylfaen),local(Lucida Console),local(Georgia),local(Franklin Gothic),local(Trebuchet MS),local(Candara),local(Verdana),local(Palatino Linotype),local(Courier New),local(Tahoma),local(Segoe UI),local(Calibri),local(Arial),local(Times New Roman)}
+@font-face{font:0 gu;src:local(Shruti)}
+@font-face{font:0 hi;src:local(Mangal)}
+@font-face{font:0 jv;src:local(Javanese Text)}
+@font-face{font:0 ka;src:local(Segoe UI)}
+@font-face{font:0 kn;src:local(Tunga)}
+@font-face{font:0 my;src:local(Myanmar Text)}
+@font-face{font:0 ko;src:local(Malgun Gothic)}
+@font-face{font:0 si;src:local(Iskoola Pota)}
+@font-face{font:0 ta;src:local(Latha),local(Vijaya)}
+@font-face{font:0 te;src:local(Vani)}
+@font-face{font:0 th;src:local(Leelawadee UI),local(Angsana New)}
+@font-face{font:0 zh;src:local(FangSong),local(SimSun)}
